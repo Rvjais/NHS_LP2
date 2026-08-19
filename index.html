@@ -3,18 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NHS Hospital Jalandhar | Multi-Specialty Hospital, 24×7 Emergency</title>
-<meta name="description" content="NHS Hospital Jalandhar — a 200-bed multi-specialty hospital near Sports College. Joint replacement, cardiology, urology, nephrology and gastroenterology. 24×7 emergency, cashless TPA.">
-<link rel="canonical" href="https://www.nhshospital.in/">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11323462665"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-11323462665');
-</script>
-<script src="support.js"></script>
+<script src="/support.js"></script>
 </head>
 <body>
 <x-dc>
@@ -22,8 +11,52 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;500;600;700;800&family=Noto+Sans+Gurmukhi:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="_ds/organic-2a0d5984-5018-463a-8cfa-2b454c753079/styles.css">
-<script src="_ds/organic-2a0d5984-5018-463a-8cfa-2b454c753079/_ds_bundle.js"></script>
+<link rel="stylesheet" href="/_ds/organic-2a0d5984-5018-463a-8cfa-2b454c753079/styles.css">
+<script src="/_ds/organic-2a0d5984-5018-463a-8cfa-2b454c753079/_ds_bundle.js"></script>
+<style>/* NHS palette — sage & clay */
+:root {
+  --color-bg: #f7f4ef;
+  --color-surface: #ffffff;
+  --color-text: #171310;
+  --color-accent: #3c6e4f;
+  --color-accent-2: #c26b3c;
+  --color-divider: color-mix(in srgb, #171310 13%, transparent);
+
+  --color-neutral-100: #f7f4ef;
+  --color-neutral-200: #ece7de;
+  --color-neutral-300: #d9d1c3;
+  --color-neutral-400: #b3a996;
+  --color-neutral-500: #8c8171;
+  --color-neutral-600: #665e52;
+  --color-neutral-700: #463f37;
+  --color-neutral-800: #2b2620;
+  --color-neutral-900: #171310;
+
+  --color-accent-100: #e9f0ea;
+  --color-accent-200: #cde0d2;
+  --color-accent-300: #a3c7ac;
+  --color-accent-400: #74a682;
+  --color-accent-500: #4f8763;
+  --color-accent-600: #3c6e4f;
+  --color-accent-700: #2f5940;
+  --color-accent-800: #234432;
+  --color-accent-900: #152c20;
+
+  --color-accent-2-100: #fbeee5;
+  --color-accent-2-200: #f3d3bd;
+  --color-accent-2-300: #e8b088;
+  --color-accent-2-400: #d8895a;
+  --color-accent-2-500: #c26b3c;
+  --color-accent-2-600: #a2542c;
+  --color-accent-2-700: #7e4122;
+  --color-accent-2-800: #5b2f18;
+  --color-accent-2-900: #3a1d0e;
+
+  --shadow-sm: 0 1px 2px color-mix(in srgb, #171310 14%, transparent);
+  --shadow-md: 0 3px 10px color-mix(in srgb, #171310 16%, transparent);
+  --shadow-lg: 0 14px 36px color-mix(in srgb, #171310 22%, transparent);
+}
+</style>
 <style>
 html { scroll-behavior: smooth; }
 body { margin: 0; font-size: 17px; line-height: 1.6; }
@@ -31,16 +64,11 @@ a { color: var(--color-accent-700); }
 a:hover { color: var(--color-accent-800); }
 img { max-width: 100%; }
 
-/* bilingual: one language shows at a time; Gurmukhi gets its own face and looser leading */
 [data-lang="en"] .pa { display: none !important; }
 [data-lang="pa"] .en { display: none !important; }
 .pa { font-family: "Noto Sans Gurmukhi", var(--font-body); line-height: 1.8; }
 h1 .pa, h2 .pa, h3 .pa { font-weight: 700; line-height: 1.35; letter-spacing: 0; }
-/* language toggle: active state comes from aria-pressed, no inline style needed */
-.lang-btn { border: 0; cursor: pointer; border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 600; background: transparent; color: var(--color-neutral-800); font-family: "Noto Sans Gurmukhi", var(--font-body); }
-.lang-btn[aria-pressed="true"] { font-weight: 700; background: var(--color-accent); color: var(--color-bg); }
 
-/* photo mosaic: 4 columns wide, 2 columns narrow — lead tiles span two, so a row is never left half-empty */
 .photo-mosaic { display: grid; gap: 20px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .photo-mosaic > figure { position: relative; margin: 0; }
 .photo-mosaic > figure > img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
@@ -49,19 +77,30 @@ h1 .pa, h2 .pa, h3 .pa { font-weight: 700; line-height: 1.35; letter-spacing: 0;
 .photo-mosaic figcaption { position: absolute; left: 14px; right: 14px; bottom: 14px; margin: 0; font-size: 13px; color: var(--color-neutral-100); background: color-mix(in srgb, var(--color-neutral-900) 74%, transparent); border-radius: 999px; padding: 7px 14px; }
 @media (min-width: 980px) { .photo-mosaic { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
-/* sticky call bar — phones only */
+details.faq > summary { list-style: none; cursor: pointer; }
+details.faq > summary::-webkit-details-marker { display: none; }
+details.faq .faq-plus { transition: transform .2s ease; }
+details.faq[open] .faq-plus { transform: rotate(45deg); }
+
+.orbit-dot { position: absolute; border-radius: 50%; overflow: hidden; box-shadow: var(--shadow-md); border: 4px solid var(--color-bg); }
+
 .call-bar { display: none; }
 @media (max-width: 768px) {
-  .call-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+  .call-bar { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
     padding: 12px 14px calc(12px + env(safe-area-inset-bottom)); background: var(--color-neutral-900); }
   .call-pad { height: 96px; }
+  .orbit-wrap { display: none; }
+}
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr !important; }
+  .bento-row { grid-template-columns: 1fr !important; }
 }
 </style>
 </helmet>
 <div data-lang="{{ lang }}" style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body)">
 
 <div style="background:var(--color-neutral-900);color:var(--color-neutral-200);font-size:13.5px">
-<div style="max-width:1120px;margin:0 auto;padding:9px 24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+<div style="max-width:1160px;margin:0 auto;padding:9px 24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
 <span><span class="en">Near Sports College, 300 m from Kapurthala Chowk, Jalandhar</span><span class="pa">ਸਪੋਰਟਸ ਕਾਲਜ ਦੇ ਨੇੜੇ, ਕਪੂਰਥਲਾ ਚੌਕ ਤੋਂ 300 ਮੀਟਰ, ਜਲੰਧਰ</span></span>
 <a href="tel:+911814707700" style="color:var(--color-accent-300);text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:7px">
 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
@@ -69,92 +108,110 @@ h1 .pa, h2 .pa, h3 .pa { font-weight: 700; line-height: 1.35; letter-spacing: 0;
 </div>
 </div>
 
-<header style="position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--color-bg) 92%, transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--color-divider)">
-<div style="max-width:1120px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:14px;flex-wrap:nowrap">
-<a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;background:var(--color-neutral-900);padding:8px 14px;border-radius:999px;flex:0 0 auto">
-<img src="assets/logo.png" alt="NHS Hospital — Nasa &amp; Hub Superspeciality Hospital, Jalandhar" style="height:34px;width:auto">
+<header style="position:sticky;top:0;z-index:50;padding:14px 24px;background:color-mix(in srgb, var(--color-bg) 90%, transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--color-divider)">
+<div style="max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:10px">
+<a href="/" style="display:flex;align-items:center;text-decoration:none;background:var(--color-neutral-900);border-radius:999px;padding:8px 16px;flex:0 0 auto">
+<img src="/assets/logo.png" alt="NHS Hospital — Nasa &amp; Hub Superspeciality Hospital, Jalandhar" style="height:30px;width:auto">
 </a>
-<nav aria-label="Specialties" style="display:flex;gap:2px;flex:1 1 auto;min-width:0;overflow-x:auto;justify-content:flex-end;scrollbar-width:none">
-<a href="Orthopaedics/index.html" style="text-decoration:none;color:var(--color-text);font-size:14px;font-weight:600;padding:8px 11px;border-radius:999px;white-space:nowrap" style-hover="background:var(--color-accent-100);color:var(--color-accent-700)"><span class="en">Joint Replacement</span><span class="pa">ਗੋਡਾ-ਚੂਲਾ ਬਦਲਣਾ</span></a>
-<a href="Cardiology/index.html" style="text-decoration:none;color:var(--color-text);font-size:14px;font-weight:600;padding:8px 11px;border-radius:999px;white-space:nowrap" style-hover="background:var(--color-accent-100);color:var(--color-accent-700)"><span class="en">Heart</span><span class="pa">ਦਿਲ</span></a>
-<a href="Urology/index.html" style="text-decoration:none;color:var(--color-text);font-size:14px;font-weight:600;padding:8px 11px;border-radius:999px;white-space:nowrap" style-hover="background:var(--color-accent-100);color:var(--color-accent-700)"><span class="en">Kidney Stones</span><span class="pa">ਪੱਥਰੀ</span></a>
-<a href="Nephrology/index.html" style="text-decoration:none;color:var(--color-text);font-size:14px;font-weight:600;padding:8px 11px;border-radius:999px;white-space:nowrap" style-hover="background:var(--color-accent-100);color:var(--color-accent-700)"><span class="en">Dialysis</span><span class="pa">ਡਾਇਲਸਿਸ</span></a>
-<a href="Gastroenterology/index.html" style="text-decoration:none;color:var(--color-text);font-size:14px;font-weight:600;padding:8px 11px;border-radius:999px;white-space:nowrap" style-hover="background:var(--color-accent-100);color:var(--color-accent-700)"><span class="en">Stomach &amp; Liver</span><span class="pa">ਪੇਟ ਤੇ ਜਿਗਰ</span></a>
+<nav aria-label="Specialties" style="display:flex;gap:4px;padding:5px;border-radius:999px;background:var(--color-surface);border:1px solid var(--color-divider);flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none">
+<a href="/Orthopaedics/" style="text-decoration:none;color:var(--color-text);font-size:14px;font-weight:600;padding:9px 14px;border-radius:999px;white-space:nowrap" style-hover="background:var(--color-accent-100);color:var(--color-accent-700)"><span class="en">Joints</span><span class="pa">ਜੋੜ</span></a>
+<a href="/Cardiology/" style="text-decoration:none;color:var(--color-text);font-size:14px;font-weight:600;padding:9px 14px;border-radius:999px;white-space:nowrap" style-hover="background:var(--color-accent-100);color:var(--color-accent-700)"><span class="en">Heart</span><span class="pa">ਦਿਲ</span></a>
+<a href="/Urology/" style="text-decoration:none;color:var(--color-text);font-size:14px;font-weight:600;padding:9px 14px;border-radius:999px;white-space:nowrap" style-hover="background:var(--color-accent-100);color:var(--color-accent-700)"><span class="en">Stones</span><span class="pa">ਪੱਥਰੀ</span></a>
+<a href="/Nephrology/" style="text-decoration:none;color:var(--color-text);font-size:14px;font-weight:600;padding:9px 14px;border-radius:999px;white-space:nowrap" style-hover="background:var(--color-accent-100);color:var(--color-accent-700)"><span class="en">Dialysis</span><span class="pa">ਡਾਇਲਸਿਸ</span></a>
+<a href="/Gastroenterology/" style="text-decoration:none;color:var(--color-text);font-size:14px;font-weight:600;padding:9px 14px;border-radius:999px;white-space:nowrap" style-hover="background:var(--color-accent-100);color:var(--color-accent-700)"><span class="en">Stomach</span><span class="pa">ਪੇਟ</span></a>
 </nav>
 <div role="group" aria-label="Language" style="display:flex;gap:2px;padding:3px;border-radius:999px;background:var(--color-neutral-200);flex:0 0 auto">
-<button type="button" class="lang-btn" onClick="{{ setEn }}" aria-pressed="{{ isEn }}">English</button>
-<button type="button" class="lang-btn" onClick="{{ setPa }}" aria-pressed="{{ isPa }}">ਪੰਜਾਬੀ</button>
+<button type="button" onClick="{{ setEn }}" aria-pressed="{{ isEn }}" style="{{ enBtn }}">English</button>
+<button type="button" onClick="{{ setPa }}" aria-pressed="{{ isPa }}" style="{{ paBtn }}">ਪੰਜਾਬੀ</button>
 </div>
-<a href="#book" class="btn btn-primary" style="border-radius:999px;padding:11px 20px;font-size:15px;white-space:nowrap;flex:0 0 auto"><span class="en">Book an appointment</span><span class="pa">ਮੁਲਾਕਾਤ ਬੁੱਕ ਕਰੋ</span></a>
+<a href="#book" class="btn btn-primary" style="border-radius:999px;padding:11px 18px;font-size:14.5px;white-space:nowrap;flex:0 0 auto"><span class="en">Book now</span><span class="pa">ਬੁੱਕ ਕਰੋ</span></a>
 </div>
 </header>
 
-<section style="position:relative;overflow:hidden;background:var(--color-neutral-900);border-radius:0 0 48px 48px">
-<img src="assets/banner1.jpg" alt="" class="washed" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.34">
-<div style="position:absolute;inset:0;background:linear-gradient(100deg,var(--color-neutral-900) 6%,color-mix(in srgb, var(--color-neutral-900) 88%, transparent) 48%,color-mix(in srgb, var(--color-neutral-900) 45%, transparent) 100%)"></div>
-<div aria-hidden="true" style="position:absolute;top:-120px;left:-90px;width:300px;height:300px;border-radius:50%;background:color-mix(in srgb, var(--color-accent) 26%, transparent)"></div>
-<div aria-hidden="true" style="position:absolute;bottom:-140px;right:34%;width:240px;height:240px;border-radius:50%;background:color-mix(in srgb, var(--color-accent-2) 22%, transparent)"></div>
-<div style="position:relative;max-width:1120px;margin:0 auto;padding:clamp(44px,6vw,84px) 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:clamp(28px,4vw,56px);align-items:center">
-<div>
-<span class="tag" style="background:color-mix(in srgb, var(--color-accent-300) 22%, transparent);color:var(--color-accent-200);border-radius:999px;padding:6px 14px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase"><span class="en">Multi-specialty hospital · Jalandhar</span><span class="pa">ਮਲਟੀ-ਸਪੈਸ਼ਲਟੀ ਹਸਪਤਾਲ · ਜਲੰਧਰ</span></span>
-<h1 style="font-size:clamp(36px,5vw,64px);line-height:1.02;color:var(--color-neutral-100);margin:18px 0 16px;max-width:20ch;text-wrap:pretty"><span class="en">Specialist treatment, all in one building.</span><span class="pa">ਹਰ ਇਲਾਜ, ਇੱਕੋ ਇਮਾਰਤ ਵਿੱਚ।</span></h1>
-<p style="font-size:19px;color:var(--color-neutral-200);max-width:50ch;margin:0 0 26px;text-wrap:pretty"><span class="en">A 200-bed hospital with five super-specialty institutes, 24×7 emergency care, on-site MRI and CT, and a cashless insurance desk.</span><span class="pa">200 ਬਿਸਤਰਿਆਂ ਵਾਲਾ ਹਸਪਤਾਲ — ਪੰਜ ਸੁਪਰ-ਸਪੈਸ਼ਲਟੀ ਵਿਭਾਗ, 24 ਘੰਟੇ ਐਮਰਜੈਂਸੀ, ਹਸਪਤਾਲ ਵਿੱਚ ਹੀ MRI ਤੇ CT, ਅਤੇ ਕੈਸ਼ਲੈਸ ਬੀਮੇ ਦਾ ਕਾਊਂਟਰ।</span></p>
-<div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px">
-<span style="display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:color-mix(in srgb, var(--color-neutral-100) 12%, transparent);color:var(--color-neutral-200);font-size:14.5px;font-weight:600"><span class="en">200 beds</span><span class="pa">200 ਬਿਸਤਰੇ</span></span>
-<span style="display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:color-mix(in srgb, var(--color-neutral-100) 12%, transparent);color:var(--color-neutral-200);font-size:14.5px;font-weight:600"><span class="en">45 critical care beds</span><span class="pa">45 ICU ਬਿਸਤਰੇ</span></span>
-<span style="display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:color-mix(in srgb, var(--color-neutral-100) 12%, transparent);color:var(--color-neutral-200);font-size:14.5px;font-weight:600"><span class="en">Cashless TPA desk</span><span class="pa">ਕੈਸ਼ਲੈਸ TPA ਕਾਊਂਟਰ</span></span>
-</div>
-<div style="display:flex;flex-wrap:wrap;gap:12px">
-<a href="#treatments" class="btn btn-primary" style="border-radius:999px;padding:15px 26px;font-size:16px"><span class="en">See treatments offered</span><span class="pa">ਇਲਾਜ ਦੇਖੋ</span>
-<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
-<a href="tel:+911814633333" class="btn" style="border-radius:999px;padding:15px 26px;font-size:16px;border:1.5px solid color-mix(in srgb, var(--color-neutral-100) 40%, transparent);color:var(--color-neutral-100)" style-hover="background:color-mix(in srgb, var(--color-neutral-100) 14%, transparent)"><span class="en">Call 0181-4633333</span><span class="pa">ਫ਼ੋਨ ਕਰੋ 0181-4633333</span></a>
+<section style="max-width:1160px;margin:0 auto;padding:clamp(28px,4vw,48px) 24px 0">
+<div class="hero-grid" style="background:var(--color-surface);border-radius:44px;overflow:hidden;box-shadow:var(--shadow-md);display:grid;grid-template-columns:1fr 0.92fr;align-items:stretch">
+
+<div style="padding:clamp(32px,4.5vw,56px);display:flex;flex-direction:column;gap:18px;justify-content:center">
+<span style="display:inline-flex;align-items:center;gap:8px;background:var(--color-accent-100);color:var(--color-accent-700);border-radius:999px;padding:8px 16px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;width:fit-content"><span class="en">Multi-specialty · Jalandhar</span><span class="pa">ਮਲਟੀ-ਸਪੈਸ਼ਲਟੀ · ਜਲੰਧਰ</span></span>
+<h1 style="font-family:var(--font-heading);font-size:clamp(34px,4.6vw,54px);line-height:1.05;margin:0;max-width:16ch;text-wrap:pretty;color:var(--color-neutral-900)"><span class="en">One roof for every specialist you need.</span><span class="pa">ਹਰ ਡਾਕਟਰ ਲਈ ਇੱਕੋ ਇਮਾਰਤ।</span></h1>
+<p style="font-size:18px;color:var(--color-neutral-700);max-width:40ch;margin:0;text-wrap:pretty"><span class="en">200 beds, five super-specialty institutes, on-site MRI &amp; CT, and 24×7 emergency care — with a cashless insurance desk to handle the paperwork.</span><span class="pa">200 ਬਿਸਤਰੇ, ਪੰਜ ਸੁਪਰ-ਸਪੈਸ਼ਲਟੀ ਵਿਭਾਗ, ਹਸਪਤਾਲ ਵਿੱਚ ਹੀ MRI ਤੇ CT, ਅਤੇ 24 ਘੰਟੇ ਐਮਰਜੈਂਸੀ — ਕਾਗ਼ਜ਼ੀ ਕੰਮ ਲਈ ਕੈਸ਼ਲੈਸ ਬੀਮਾ ਕਾਊਂਟਰ।</span></p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;padding-top:6px">
+<a href="#treatments" class="btn btn-primary" style="border-radius:999px;padding:15px 26px;font-size:16px"><span class="en">See treatments</span><span class="pa">ਇਲਾਜ ਦੇਖੋ</span></a>
+<a href="tel:+911814707700" class="btn" style="border-radius:999px;padding:15px 26px;font-size:16px;border:1.5px solid var(--color-divider);color:var(--color-neutral-800)" style-hover="background:var(--color-neutral-100)"><span class="en">Emergency 0181-4707700</span><span class="pa">ਐਮਰਜੈਂਸੀ 0181-4707700</span></a>
 </div>
 </div>
 
-<form id="book" action="{{ formAction }}" method="POST" style="background:var(--color-neutral-100);border-radius:var(--radius-lg);padding:clamp(22px,2.6vw,30px);box-shadow:var(--shadow-lg);max-width:440px;width:100%;justify-self:end">
-<input type="hidden" name="_redirect" value="https://enquire.nhshospital.in/thank-you">
-<h2 style="font-size:26px;margin:0 0 6px"><span class="en">Request an appointment</span><span class="pa">ਮੁਲਾਕਾਤ ਲਈ ਬਿਨਤੀ</span></h2>
-<p style="font-size:15px;color:var(--color-neutral-700);margin:0 0 20px"><span class="en">Tell us which specialist you need. Our appointment desk calls you back during OPD hours.</span><span class="pa">ਦੱਸੋ ਕਿਸ ਡਾਕਟਰ ਦੀ ਲੋੜ ਹੈ। ਸਾਡਾ ਕਾਊਂਟਰ OPD ਸਮੇਂ ਵਿੱਚ ਤੁਹਾਨੂੰ ਫ਼ੋਨ ਕਰੇਗਾ।</span></p>
-<div style="display:flex;flex-direction:column;gap:13px">
-<div class="field"><label for="h-name" style="font-size:13.5px"><span class="en">Patient name</span><span class="pa">ਮਰੀਜ਼ ਦਾ ਨਾਂ</span></label><input class="input" id="h-name" name="patient_name" type="text" required placeholder="{{ phName }}" style="min-height:50px;font-size:16px;border-radius:999px;padding:10px 18px;background:#fff"></div>
-<div class="field"><label for="h-mobile" style="font-size:13.5px"><span class="en">Mobile number</span><span class="pa">ਮੋਬਾਈਲ ਨੰਬਰ</span></label><input class="input" id="h-mobile" name="mobile" type="tel" required placeholder="{{ phMobile }}" style="min-height:50px;font-size:16px;border-radius:999px;padding:10px 18px;background:#fff"></div>
-<div class="field"><label for="h-dept" style="font-size:13.5px"><span class="en">Department</span><span class="pa">ਵਿਭਾਗ</span></label>
-<select class="input" id="h-dept" name="department" style="min-height:50px;font-size:16px;border-radius:999px;padding:10px 18px;background:#fff">
-<option>ਹੱਡੀਆਂ ਤੇ ਜੋੜ / Orthopaedics &amp; joint replacement</option>
-<option>ਦਿਲ / Cardiology</option>
-<option>ਪੱਥਰੀ / Urology &amp; kidney stones</option>
-<option>ਡਾਇਲਸਿਸ / Nephrology &amp; dialysis</option>
-<option>ਪੇਟ ਤੇ ਜਿਗਰ / Gastroenterology</option>
-<option>ਪੂਰੀ ਜਾਂਚ / General health check</option>
-<option>ਪਤਾ ਨਹੀਂ, ਸਲਾਹ ਦਿਓ / Not sure — please advise</option>
-</select></div>
-<div class="field"><label for="h-city" style="font-size:13.5px"><span class="en">City</span><span class="pa">ਸ਼ਹਿਰ</span></label><input class="input" id="h-city" name="city" type="text" placeholder="{{ phCity }}" style="min-height:50px;font-size:16px;border-radius:999px;padding:10px 18px;background:#fff"></div>
-<label style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--color-neutral-700);line-height:1.55;cursor:pointer">
-<input type="checkbox" name="consent" required style="margin-top:3px;width:19px;height:19px;accent-color:var(--color-accent)">
-<span><span class="en">I agree to be contacted about this enquiry by phone, SMS or WhatsApp, and I have read the <a href="privacy.html#privacy">privacy policy</a>.</span><span class="pa">ਮੈਂ ਸਹਿਮਤ ਹਾਂ ਕਿ ਇਸ ਬਿਨਤੀ ਬਾਰੇ ਮੈਨੂੰ ਫ਼ੋਨ, SMS ਜਾਂ WhatsApp ਰਾਹੀਂ ਸੰਪਰਕ ਕੀਤਾ ਜਾਵੇ, ਅਤੇ ਮੈਂ <a href="privacy.html#privacy">ਪਰਾਈਵੇਸੀ ਪਾਲਿਸੀ</a> ਪੜ੍ਹ ਲਈ ਹੈ।</span></span>
-</label>
-<button type="submit" class="btn btn-primary btn-block" style="border-radius:999px;padding:16px;font-size:16.5px;margin-top:2px"><span class="en">Request appointment</span><span class="pa">ਬਿਨਤੀ ਭੇਜੋ</span></button>
-<p style="font-size:13px;color:var(--color-neutral-600);margin:0;text-align:center"><span class="en">This form is an appointment request, not medical advice or a diagnosis.</span><span class="pa">ਇਹ ਸਿਰਫ਼ ਮੁਲਾਕਾਤ ਦੀ ਬਿਨਤੀ ਹੈ — ਡਾਕਟਰੀ ਸਲਾਹ ਜਾਂ ਜਾਂਚ ਨਹੀਂ।</span></p>
+<div style="position:relative;min-height:340px">
+<img src="/assets/nhs-hospital-building.jpg" alt="NHS Hospital building, Jalandhar" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+<svg viewBox="0 0 400 400" style="position:absolute;top:-6%;left:-16%;width:62%;color:var(--color-accent-2-400);filter:drop-shadow(0 3px 8px rgba(0,0,0,.28))" aria-hidden="true">
+<defs><path id="heroRibbon" d="M 30 220 A 170 170 0 1 1 370 220" fill="none"></path></defs>
+<text font-family="Figtree, sans-serif" font-size="27" font-weight="700" fill="currentColor" letter-spacing="1"><textPath href="#heroRibbon" startOffset="4%">200 beds · 45 ICU · MRI &amp; CT on site · 24×7 care</textPath></text>
+</svg>
+<div style="position:absolute;left:18px;bottom:18px;background:color-mix(in srgb, var(--color-neutral-900) 60%, transparent);color:#fff;font-size:13px;padding:7px 14px;border-radius:999px"><span class="en">NHS Hospital, Jalandhar</span><span class="pa">NHS ਹਸਪਤਾਲ, ਜਲੰਧਰ</span></div>
 </div>
-</form>
 </div>
 </section>
 
-<section id="treatments" style="max-width:1120px;margin:0 auto;padding:clamp(48px,6vw,84px) 24px;scroll-margin-top:80px">
+<section style="max-width:1160px;margin:0 auto;padding:0 24px clamp(48px,6vw,84px)">
+<span style="display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700);font-weight:700;margin-bottom:14px"><span style="width:10px;height:10px;border-radius:50%;background:var(--color-accent);display:inline-block"></span><span class="en">Inside the hospital</span><span class="pa">ਹਸਪਤਾਲ ਦੇ ਅੰਦਰ</span></span>
+<h2 style="font-family:var(--font-heading);font-size:clamp(28px,3.4vw,42px);margin:0 0 10px"><span class="en">Have a look around before you come</span><span class="pa">ਆਉਣ ਤੋਂ ਪਹਿਲਾਂ ਹਸਪਤਾਲ ਦੇਖ ਲਓ</span></h2>
+<p style="font-size:18px;color:var(--color-neutral-700);max-width:56ch;margin:0 0 28px"><span class="en">Photographs from the hospital — the outpatient department, imaging, the theatres and the wards.</span><span class="pa">ਹਸਪਤਾਲ ਦੀਆਂ ਤਸਵੀਰਾਂ — OPD, ਸਕੈਨ ਵਿਭਾਗ, ਆਪਰੇਸ਼ਨ ਥੀਏਟਰ ਤੇ ਵਾਰਡ।</span></p>
+<div class="photo-mosaic">
+<figure class="lead"><img src="/assets/nhs-opd-waiting-hall.jpg" alt="Outpatient department at NHS Hospital on a working morning" loading="lazy" class="washed"><figcaption><span class="en">Outpatient department on a working morning</span><span class="pa">ਕੰਮ ਵਾਲੇ ਦਿਨ ਦੀ OPD</span></figcaption></figure>
+<figure class="lead"><img src="/assets/nhs-modular-ot.jpg" alt="Modular operation theatre at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">Modular operation theatre</span><span class="pa">ਮਾਡਿਊਲਰ ਆਪਰੇਸ਼ਨ ਥੀਏਟਰ</span></figcaption></figure>
+<figure><img src="/assets/nhs-mri-silent-ge.jpg" alt="Silent MRI suite at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">GE silent MRI suite</span><span class="pa">ਸਾਈਲੈਂਟ MRI</span></figcaption></figure>
+<figure><img src="/assets/nhs-icu-critical-care.jpg" alt="Intensive care unit at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">Intensive care unit — 45 beds</span><span class="pa">ICU — 45 ਬਿਸਤਰੇ</span></figcaption></figure>
+<figure><img src="/assets/nhs-doctor-consultation.jpg" alt="Consultation at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">A consultation in progress</span><span class="pa">ਡਾਕਟਰੀ ਸਲਾਹ</span></figcaption></figure>
+<figure><img src="/assets/ortho-robotics-team.jpg" alt="Clinical team at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">The clinical team</span><span class="pa">ਸਾਡੀ ਡਾਕਟਰੀ ਟੀਮ</span></figcaption></figure>
+</div>
+</section>
+
+<section class="bento-row" style="max-width:1160px;margin:0 auto;padding:20px 24px clamp(48px,6vw,84px);display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px">
+
+<a href="/Nephrology/" style="position:relative;border-radius:28px;overflow:hidden;text-decoration:none;min-height:260px;display:block;box-shadow:var(--shadow-sm)">
+<img src="/assets/nhs-icu-critical-care.jpg" alt="Intensive care unit at NHS Hospital" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,color-mix(in srgb, var(--color-neutral-900) 78%, transparent) 100%)"></div>
+<span style="position:absolute;top:14px;right:14px;background:#fff;border-radius:999px;width:36px;height:36px;display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#171310" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"></path></svg></span>
+<span style="position:absolute;left:18px;bottom:18px;right:18px;color:#fff;font-size:20px;font-weight:700"><span class="en">Critical &amp; emergency care</span><span class="pa">ਐਮਰਜੈਂਸੀ ਦੇਖਭਾਲ</span></span>
+</a>
+
+<a href="/Orthopaedics/" style="position:relative;border-radius:28px;overflow:hidden;text-decoration:none;min-height:260px;display:block;box-shadow:var(--shadow-sm)">
+<img src="/assets/ortho-navio-robot-system.jpg" alt="Robotic joint replacement system at NHS Hospital" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,color-mix(in srgb, var(--color-neutral-900) 78%, transparent) 100%)"></div>
+<span style="position:absolute;top:14px;right:14px;background:#fff;border-radius:999px;width:36px;height:36px;display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#171310" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"></path></svg></span>
+<span style="position:absolute;left:18px;bottom:18px;right:18px;color:#fff;font-size:20px;font-weight:700"><span class="en">Robotic joint replacement</span><span class="pa">ਰੋਬੋਟਿਕ ਜੋੜ ਬਦਲਣਾ</span></span>
+</a>
+
+<form id="book" action="{{ formAction }}" method="POST" style="background:var(--color-neutral-900);border-radius:28px;padding:26px;display:flex;flex-direction:column;gap:12px;min-height:260px;box-shadow:var(--shadow-sm)">
+<input type="hidden" name="_redirect" value="https://enquire.nhshospital.in/thank-you">
+<h2 style="font-size:21px;margin:0;color:#fff"><span class="en">Book a consultation</span><span class="pa">ਸਲਾਹ ਲਈ ਬੁੱਕ ਕਰੋ</span></h2>
+<p style="font-size:14px;color:var(--color-neutral-300);margin:0"><span class="en">We call you back during OPD hours.</span><span class="pa">ਅਸੀਂ OPD ਸਮੇਂ ਵਿੱਚ ਫ਼ੋਨ ਕਰਾਂਗੇ।</span></p>
+<input class="input" name="patient_name" type="text" required placeholder="{{ phName }}" style="min-height:46px;font-size:15px;border-radius:12px;padding:9px 14px">
+<input class="input" name="mobile" type="tel" required placeholder="{{ phMobile }}" style="min-height:46px;font-size:15px;border-radius:12px;padding:9px 14px">
+<label style="display:flex;gap:8px;align-items:flex-start;font-size:12px;color:var(--color-neutral-400);line-height:1.5;cursor:pointer">
+<input type="checkbox" name="consent" required style="margin-top:3px;width:16px;height:16px;accent-color:var(--color-accent-400)">
+<span><span class="en">I agree to be contacted about this enquiry; see <a href="/privacy.html#privacy" style="color:var(--color-accent-300)">privacy policy</a>.</span><span class="pa">ਮੈਂ ਸੰਪਰਕ ਲਈ ਸਹਿਮਤ ਹਾਂ; ਦੇਖੋ <a href="/privacy.html#privacy" style="color:var(--color-accent-300)">ਪਰਾਈਵੇਸੀ ਪਾਲਿਸੀ</a>।</span></span>
+</label>
+<button type="submit" class="btn btn-primary btn-block" style="margin-top:auto;border-radius:999px;padding:13px;font-size:15.5px"><span class="en">Request call back</span><span class="pa">ਕਾਲ ਲਈ ਬਿਨਤੀ</span></button>
+</form>
+</section>
+
+
+<section id="treatments" style="max-width:1160px;margin:0 auto;padding:0 24px clamp(48px,6vw,84px);scroll-margin-top:90px">
 <span style="display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700);font-weight:700;margin-bottom:14px"><span style="width:10px;height:10px;border-radius:50%;background:var(--color-accent);display:inline-block"></span><span class="en">Centres of excellence</span><span class="pa">ਖ਼ਾਸ ਵਿਭਾਗ</span></span>
-<h2 style="font-size:clamp(30px,3.8vw,46px);margin:0 0 12px;max-width:24ch;text-wrap:pretty"><span class="en">Treatments we are known for</span><span class="pa">ਸਾਡੇ ਮੁੱਖ ਇਲਾਜ</span></h2>
-<p style="font-size:18.5px;color:var(--color-neutral-700);max-width:56ch;margin:0 0 34px"><span class="en">Five institutes, each led by a senior consultant. Pick the one closest to your problem — every page tells you what is treated and what happens next.</span><span class="pa">ਪੰਜ ਵਿਭਾਗ, ਹਰੇਕ ਦੀ ਅਗਵਾਈ ਸੀਨੀਅਰ ਡਾਕਟਰ ਕਰਦੇ ਹਨ। ਆਪਣੀ ਤਕਲੀਫ਼ ਨਾਲ ਮਿਲਦਾ ਵਿਭਾਗ ਚੁਣੋ — ਹਰ ਪੰਨਾ ਦੱਸਦਾ ਹੈ ਕੀ ਇਲਾਜ ਹੁੰਦਾ ਹੈ ਤੇ ਅੱਗੇ ਕੀ ਹੋਵੇਗਾ।</span></p>
+<h2 style="font-family:var(--font-heading);font-size:clamp(30px,3.8vw,46px);margin:0 0 12px;max-width:24ch;text-wrap:pretty"><span class="en">Treatments we are known for</span><span class="pa">ਸਾਡੇ ਮੁੱਖ ਇਲਾਜ</span></h2>
+<p style="font-size:18.5px;color:var(--color-neutral-700);max-width:56ch;margin:0 0 34px"><span class="en">Five institutes, each led by a senior consultant. Pick the one closest to your problem.</span><span class="pa">ਪੰਜ ਵਿਭਾਗ, ਹਰੇਕ ਦੀ ਅਗਵਾਈ ਸੀਨੀਅਰ ਡਾਕਟਰ ਕਰਦੇ ਹਨ।</span></p>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px">
 
-<a href="Orthopaedics/index.html" style="text-decoration:none;color:inherit;background:var(--color-neutral-900);border-radius:var(--radius-lg);padding:30px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow-sm);transition:transform .24s ease, box-shadow .24s ease" style-hover="box-shadow:var(--shadow-lg);transform:translateY(-6px)">
+<a href="/Orthopaedics/" style="text-decoration:none;color:inherit;background:var(--color-accent-900);border-radius:28px;padding:30px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow-sm);transition:transform .24s ease" style-hover="transform:translateY(-6px)">
 <span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-300)"><span class="en">Orthopaedics</span><span class="pa">ਹੱਡੀਆਂ ਤੇ ਜੋੜ</span></span>
 <h3 style="font-size:26px;margin:0;color:var(--color-neutral-100)"><span class="en">Robotic knee &amp; hip replacement</span><span class="pa">ਰੋਬੋਟਿਕ ਗੋਡਾ ਤੇ ਚੂਲਾ ਬਦਲਣਾ</span></h3>
-<p style="font-size:16px;color:var(--color-neutral-300);margin:0"><span class="en">Total and half knee replacement, hip replacement, sports injuries, scoliosis and trauma care.</span><span class="pa">ਪੂਰਾ ਤੇ ਅੱਧਾ ਗੋਡਾ ਬਦਲਣਾ, ਚੂਲਾ ਬਦਲਣਾ, ਖੇਡਾਂ ਦੀਆਂ ਸੱਟਾਂ, ਰੀੜ੍ਹ ਦੀ ਟੇਢ ਤੇ ਹਾਦਸੇ ਦਾ ਇਲਾਜ।</span></p>
+<p style="font-size:16px;color:var(--color-accent-200);margin:0"><span class="en">Total and half knee replacement, hip replacement, sports injuries, scoliosis and trauma care.</span><span class="pa">ਪੂਰਾ ਤੇ ਅੱਧਾ ਗੋਡਾ ਬਦਲਣਾ, ਚੂਲਾ ਬਦਲਣਾ, ਖੇਡਾਂ ਦੀਆਂ ਸੱਟਾਂ, ਰੀੜ੍ਹ ਦੀ ਟੇਢ ਤੇ ਹਾਦਸੇ ਦਾ ਇਲਾਜ।</span></p>
 <span style="margin-top:auto;display:inline-flex;align-items:center;gap:8px;color:var(--color-accent-300);font-weight:700;font-size:15.5px"><span class="en">Joint pain consultation</span><span class="pa">ਗੋਡੇ ਦੇ ਦਰਦ ਦੀ ਸਲਾਹ</span>
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></span>
 </a>
 
-<a href="Cardiology/index.html" style="text-decoration:none;color:inherit;background:var(--color-surface);border-radius:var(--radius-lg);padding:30px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow-sm);transition:transform .24s ease, box-shadow .24s ease" style-hover="box-shadow:var(--shadow-lg);transform:translateY(-6px)">
+<a href="/Cardiology/" style="text-decoration:none;color:inherit;background:var(--color-surface);border-radius:28px;padding:30px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow-sm);transition:transform .24s ease" style-hover="transform:translateY(-6px)">
 <span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-700)"><span class="en">Cardiac sciences</span><span class="pa">ਦਿਲ ਦੇ ਰੋਗ</span></span>
 <h3 style="font-size:26px;margin:0"><span class="en">Cardiology &amp; second opinion</span><span class="pa">ਦਿਲ ਦਾ ਇਲਾਜ ਤੇ ਦੂਜੀ ਰਾਏ</span></h3>
 <p style="font-size:16px;color:var(--color-neutral-700);margin:0"><span class="en">Angiography and angioplasty, pacemakers, and a written review of reports if a stent has been advised.</span><span class="pa">ਐਂਜੀਓਗ੍ਰਾਫ਼ੀ ਤੇ ਐਂਜੀਓਪਲਾਸਟੀ, ਪੇਸਮੇਕਰ, ਅਤੇ ਜੇ ਸਟੰਟ ਪਾਉਣ ਦੀ ਸਲਾਹ ਮਿਲੀ ਹੈ ਤਾਂ ਰਿਪੋਰਟਾਂ ਦੀ ਲਿਖਤੀ ਦੂਜੀ ਰਾਏ।</span></p>
@@ -162,7 +219,7 @@ h1 .pa, h2 .pa, h3 .pa { font-weight: 700; line-height: 1.35; letter-spacing: 0;
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></span>
 </a>
 
-<a href="Urology/index.html" style="text-decoration:none;color:inherit;background:var(--color-surface);border-radius:var(--radius-lg);padding:30px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow-sm);transition:transform .24s ease, box-shadow .24s ease" style-hover="box-shadow:var(--shadow-lg);transform:translateY(-6px)">
+<a href="/Urology/" style="text-decoration:none;color:inherit;background:var(--color-surface);border-radius:28px;padding:30px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow-sm);transition:transform .24s ease" style-hover="transform:translateY(-6px)">
 <span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-700)"><span class="en">Urology</span><span class="pa">ਪਿਸ਼ਾਬ ਤੇ ਗੁਰਦਾ</span></span>
 <h3 style="font-size:26px;margin:0"><span class="en">Laser treatment for kidney stones</span><span class="pa">ਗੁਰਦੇ ਦੀ ਪੱਥਰੀ ਦਾ ਲੇਜ਼ਰ ਇਲਾਜ</span></h3>
 <p style="font-size:16px;color:var(--color-neutral-700);margin:0"><span class="en">Holmium laser, RIRS, URS and PCNL for stones; HoLEP for an enlarged prostate. No open incision.</span><span class="pa">ਪੱਥਰੀ ਲਈ ਹੋਲਮੀਅਮ ਲੇਜ਼ਰ, RIRS, URS ਤੇ PCNL; ਵਧੇ ਹੋਏ ਪ੍ਰੋਸਟੇਟ ਲਈ HoLEP। ਖੁੱਲ੍ਹਾ ਚੀਰਾ ਨਹੀਂ।</span></p>
@@ -170,7 +227,7 @@ h1 .pa, h2 .pa, h3 .pa { font-weight: 700; line-height: 1.35; letter-spacing: 0;
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></span>
 </a>
 
-<a href="Nephrology/index.html" style="text-decoration:none;color:inherit;background:var(--color-surface);border-radius:var(--radius-lg);padding:30px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow-sm);transition:transform .24s ease, box-shadow .24s ease" style-hover="box-shadow:var(--shadow-lg);transform:translateY(-6px)">
+<a href="/Nephrology/" style="text-decoration:none;color:inherit;background:var(--color-surface);border-radius:28px;padding:30px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow-sm);transition:transform .24s ease" style-hover="transform:translateY(-6px)">
 <span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-2-700)"><span class="en">Nephrology</span><span class="pa">ਗੁਰਦੇ ਦੇ ਰੋਗ</span></span>
 <h3 style="font-size:26px;margin:0"><span class="en">Dialysis &amp; kidney care</span><span class="pa">ਡਾਇਲਸਿਸ ਤੇ ਗੁਰਦੇ ਦੀ ਸੰਭਾਲ</span></h3>
 <p style="font-size:16px;color:var(--color-neutral-700);margin:0"><span class="en">Maintenance haemodialysis, critical care nephrology, renal biopsy and long-term kidney treatment.</span><span class="pa">ਨਿਯਮਿਤ ਡਾਇਲਸਿਸ, ICU ਵਿੱਚ ਗੁਰਦੇ ਦਾ ਇਲਾਜ, ਗੁਰਦੇ ਦੀ ਬਾਇਓਪਸੀ ਤੇ ਲੰਮੇ ਸਮੇਂ ਦਾ ਇਲਾਜ।</span></p>
@@ -178,7 +235,7 @@ h1 .pa, h2 .pa, h3 .pa { font-weight: 700; line-height: 1.35; letter-spacing: 0;
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></span>
 </a>
 
-<a href="Gastroenterology/index.html" style="text-decoration:none;color:inherit;background:var(--color-surface);border-radius:var(--radius-lg);padding:30px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow-sm);transition:transform .24s ease, box-shadow .24s ease" style-hover="box-shadow:var(--shadow-lg);transform:translateY(-6px)">
+<a href="/Gastroenterology/" style="text-decoration:none;color:inherit;background:var(--color-surface);border-radius:28px;padding:30px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow-sm);transition:transform .24s ease" style-hover="transform:translateY(-6px)">
 <span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-2-700)"><span class="en">Gastroenterology</span><span class="pa">ਪੇਟ ਤੇ ਜਿਗਰ</span></span>
 <h3 style="font-size:26px;margin:0"><span class="en">Endoscopy, colonoscopy &amp; liver care</span><span class="pa">ਐਂਡੋਸਕੋਪੀ, ਕੋਲਨੋਸਕੋਪੀ ਤੇ ਜਿਗਰ ਦਾ ਇਲਾਜ</span></h3>
 <p style="font-size:16px;color:var(--color-neutral-700);margin:0"><span class="en">Endoscopy, colonoscopy, ERCP and painless FibroScan for fatty liver, plus laser treatment for piles.</span><span class="pa">ਐਂਡੋਸਕੋਪੀ, ਕੋਲਨੋਸਕੋਪੀ, ERCP ਅਤੇ ਚਰਬੀ ਵਾਲੇ ਜਿਗਰ ਲਈ ਬਿਨਾਂ ਦਰਦ ਫ਼ਾਈਬਰੋਸਕੈਨ, ਨਾਲੇ ਬਵਾਸੀਰ ਦਾ ਲੇਜ਼ਰ ਇਲਾਜ।</span></p>
@@ -186,120 +243,158 @@ h1 .pa, h2 .pa, h3 .pa { font-weight: 700; line-height: 1.35; letter-spacing: 0;
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></span>
 </a>
 
-<div style="background:var(--color-accent-200);border-radius:var(--radius-lg);padding:30px;display:flex;flex-direction:column;gap:14px">
-<span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-700)"><span class="en">Not sure where to start?</span><span class="pa">ਪਤਾ ਨਹੀਂ ਕਿੱਥੋਂ ਸ਼ੁਰੂ ਕਰੀਏ?</span></span>
+<div style="background:var(--color-accent-2-100);border-radius:28px;padding:30px;display:flex;flex-direction:column;gap:14px">
+<span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-2-700)"><span class="en">Not sure where to start?</span><span class="pa">ਪਤਾ ਨਹੀਂ ਕਿੱਥੋਂ ਸ਼ੁਰੂ ਕਰੀਏ?</span></span>
 <h3 style="font-size:26px;margin:0"><span class="en">Talk to the appointment desk</span><span class="pa">ਸਾਡੇ ਕਾਊਂਟਰ ਨਾਲ ਗੱਲ ਕਰੋ</span></h3>
-<p style="font-size:16px;color:var(--color-accent-900);margin:0"><span class="en">Describe the problem and we will tell you which specialist to see — and which reports to bring.</span><span class="pa">ਆਪਣੀ ਤਕਲੀਫ਼ ਦੱਸੋ, ਅਸੀਂ ਦੱਸਾਂਗੇ ਕਿਹੜੇ ਡਾਕਟਰ ਨੂੰ ਮਿਲਣਾ ਹੈ ਤੇ ਕਿਹੜੀਆਂ ਰਿਪੋਰਟਾਂ ਲਿਆਉਣੀਆਂ ਹਨ।</span></p>
+<p style="font-size:16px;color:var(--color-accent-2-900);margin:0"><span class="en">Describe the problem and we will tell you which specialist to see — and which reports to bring.</span><span class="pa">ਆਪਣੀ ਤਕਲੀਫ਼ ਦੱਸੋ, ਅਸੀਂ ਦੱਸਾਂਗੇ ਕਿਹੜੇ ਡਾਕਟਰ ਨੂੰ ਮਿਲਣਾ ਹੈ।</span></p>
 <a href="tel:+911814633333" class="btn btn-primary" style="margin-top:auto;border-radius:999px;padding:14px 24px;font-size:15.5px;align-self:flex-start"><span class="en">Call 0181-4633333</span><span class="pa">ਫ਼ੋਨ ਕਰੋ 0181-4633333</span></a>
 </div>
 </div>
 </section>
 
-<section style="background:var(--color-surface)">
-<div style="max-width:1120px;margin:0 auto;padding:clamp(48px,6vw,84px) 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);align-items:center">
-<figure>
-<img src="assets/hospital-14.jpg" alt="NHS Hospital, Jalandhar" class="washed" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-md)">
-<figcaption style="font-size:13.5px;margin-top:10px"><span class="en">NHS Hospital, near Sports College, Jalandhar.</span><span class="pa">NHS ਹਸਪਤਾਲ, ਸਪੋਰਟਸ ਕਾਲਜ ਦੇ ਨੇੜੇ, ਜਲੰਧਰ।</span></figcaption>
-</figure>
-<div>
-<span style="display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700);font-weight:700;margin-bottom:14px"><span style="width:10px;height:10px;border-radius:50%;background:var(--color-accent);display:inline-block"></span><span class="en">One building, one team</span><span class="pa">ਇੱਕ ਇਮਾਰਤ, ਇੱਕ ਟੀਮ</span></span>
-<h2 style="font-size:clamp(28px,3.4vw,42px);margin:0 0 16px;text-wrap:pretty"><span class="en">Why families across Punjab come here</span><span class="pa">ਪੰਜਾਬ ਭਰ ਤੋਂ ਪਰਿਵਾਰ ਇੱਥੇ ਕਿਉਂ ਆਉਂਦੇ ਹਨ</span></h2>
-<p style="font-size:18px;color:var(--color-neutral-700);margin:0 0 22px;max-width:52ch"><span class="en">The consultant, the scan and the operating theatre are in the same building, so a workup that usually takes days across three addresses finishes here.</span><span class="pa">ਡਾਕਟਰ, ਸਕੈਨ ਤੇ ਆਪਰੇਸ਼ਨ ਥੀਏਟਰ ਸਭ ਇੱਕੋ ਇਮਾਰਤ ਵਿੱਚ ਹਨ। ਜਿਹੜੀ ਜਾਂਚ ਤਿੰਨ ਥਾਵਾਂ ਉੱਤੇ ਕਈ ਦਿਨ ਲੈਂਦੀ ਹੈ, ਉਹ ਇੱਥੇ ਹੀ ਪੂਰੀ ਹੋ ਜਾਂਦੀ ਹੈ।</span></p>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:16px">
-<div style="background:var(--color-accent-200);border-radius:50%;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px"><div style="font-family:var(--font-heading);font-size:clamp(26px,3vw,34px);line-height:1;color:var(--color-accent-900)">200+</div><div style="font-size:13.5px;color:var(--color-accent-900);opacity:.8;margin-top:6px;max-width:12ch"><span class="en">Hospital beds</span><span class="pa">ਕੁੱਲ ਬਿਸਤਰੇ</span></div></div>
-<div style="background:var(--color-accent-2-200);border-radius:50%;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px"><div style="font-family:var(--font-heading);font-size:clamp(26px,3vw,34px);line-height:1;color:var(--color-accent-2-900)">45</div><div style="font-size:13.5px;color:var(--color-accent-2-900);opacity:.8;margin-top:6px;max-width:12ch"><span class="en">Critical care beds</span><span class="pa">ICU ਬਿਸਤਰੇ</span></div></div>
-<div style="background:var(--color-accent-2-200);border-radius:50%;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px"><div style="font-family:var(--font-heading);font-size:clamp(26px,3vw,34px);line-height:1;color:var(--color-accent-2-900)">31+</div><div style="font-size:13.5px;color:var(--color-accent-2-900);opacity:.8;margin-top:6px;max-width:12ch"><span class="en">Super-specialists</span><span class="pa">ਸੁਪਰ-ਸਪੈਸ਼ਲਿਸਟ</span></div></div>
-<div style="background:var(--color-accent-200);border-radius:50%;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px"><div style="font-family:var(--font-heading);font-size:clamp(26px,3vw,34px);line-height:1;color:var(--color-accent-900)">24×7</div><div style="font-size:13.5px;color:var(--color-accent-900);opacity:.8;margin-top:6px;max-width:12ch"><span class="en">Emergency, MRI &amp; CT</span><span class="pa">ਐਮਰਜੈਂਸੀ, MRI ਤੇ CT</span></div></div>
-</div>
-</div>
-</div>
-</section>
-
-<section style="max-width:1120px;margin:0 auto;padding:clamp(48px,6vw,84px) 24px">
-<span style="display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-2-700);font-weight:700;margin-bottom:14px"><span style="width:10px;height:10px;border-radius:50%;background:var(--color-accent-2);display:inline-block"></span><span class="en">The people who treat you</span><span class="pa">ਤੁਹਾਡਾ ਇਲਾਜ ਕਰਨ ਵਾਲੇ</span></span>
-<h2 style="font-size:clamp(28px,3.4vw,42px);margin:0 0 30px"><span class="en">The consultants who lead each institute</span><span class="pa">ਹਰ ਵਿਭਾਗ ਦੇ ਸੀਨੀਅਰ ਡਾਕਟਰ</span></h2>
+<section style="background:var(--color-neutral-900)">
+<div style="max-width:1160px;margin:0 auto;padding:clamp(48px,6vw,84px) 24px">
+<span style="display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-300);font-weight:700;margin-bottom:14px"><span style="width:10px;height:10px;border-radius:50%;background:var(--color-accent-300);display:inline-block"></span><span class="en">The people who treat you</span><span class="pa">ਤੁਹਾਡਾ ਇਲਾਜ ਕਰਨ ਵਾਲੇ</span></span>
+<h2 style="font-family:var(--font-heading);font-size:clamp(28px,3.4vw,42px);margin:0 0 30px;color:var(--color-neutral-100)"><span class="en">Meet our consultants</span><span class="pa">ਸਾਡੇ ਸੀਨੀਅਰ ਡਾਕਟਰ</span></h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px">
-<div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:24px;text-align:center;transition:transform .24s ease, box-shadow .24s ease" style-hover="box-shadow:var(--shadow-md);transform:translateY(-4px)">
-<img src="assets/dr-shubhang.jpg" alt="Dr. Shubhang Aggarwal" class="washed" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;margin-bottom:16px">
-<h3 style="font-size:20px;margin:0 0 4px"><span class="en">Dr. Shubhang Aggarwal</span><span class="pa">ਡਾ. ਸ਼ੁਭੰਗ ਅਗਰਵਾਲ</span></h3>
-<p style="font-size:14.5px;color:var(--color-neutral-700);margin:0"><span class="en">Orthopaedics &amp; robotic joint replacement</span><span class="pa">ਹੱਡੀਆਂ, ਜੋੜ ਤੇ ਰੋਬੋਟਿਕ ਸਰਜਰੀ</span></p>
+<div style="background:var(--color-neutral-800);border-radius:24px;padding:20px;text-align:center">
+<img src="/assets/dr-shubhang.jpg" alt="Dr. Shubhang Aggarwal" class="washed" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:18px;margin-bottom:16px">
+<h3 style="font-size:19px;margin:0 0 4px;color:var(--color-neutral-100)"><span class="en">Dr. Shubhang Aggarwal</span><span class="pa">ਡਾ. ਸ਼ੁਭੰਗ ਅਗਰਵਾਲ</span></h3>
+<p style="font-size:14px;color:var(--color-neutral-400);margin:0"><span class="en">Orthopaedics &amp; robotics</span><span class="pa">ਹੱਡੀਆਂ ਤੇ ਰੋਬੋਟਿਕ ਸਰਜਰੀ</span></p>
 </div>
-<div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:24px;text-align:center;transition:transform .24s ease, box-shadow .24s ease" style-hover="box-shadow:var(--shadow-md);transform:translateY(-4px)">
-<img src="assets/dr-sahil.jpeg" alt="Dr. Sahil Sareen" class="washed" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;margin-bottom:16px">
-<h3 style="font-size:20px;margin:0 0 4px"><span class="en">Dr. Sahil Sareen</span><span class="pa">ਡਾ. ਸਾਹਿਲ ਸਰੀਨ</span></h3>
-<p style="font-size:14.5px;color:var(--color-neutral-700);margin:0"><span class="en">Consultant cardiologist</span><span class="pa">ਦਿਲ ਦੇ ਰੋਗਾਂ ਦੇ ਮਾਹਿਰ</span></p>
+<div style="background:var(--color-neutral-800);border-radius:24px;padding:20px;text-align:center">
+<img src="/assets/dr-sahil.jpeg" alt="Dr. Sahil Sareen" class="washed" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:18px;margin-bottom:16px">
+<h3 style="font-size:19px;margin:0 0 4px;color:var(--color-neutral-100)"><span class="en">Dr. Sahil Sareen</span><span class="pa">ਡਾ. ਸਾਹਿਲ ਸਰੀਨ</span></h3>
+<p style="font-size:14px;color:var(--color-neutral-400);margin:0"><span class="en">Consultant cardiologist</span><span class="pa">ਦਿਲ ਦੇ ਰੋਗਾਂ ਦੇ ਮਾਹਿਰ</span></p>
 </div>
-<div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:24px;text-align:center;transition:transform .24s ease, box-shadow .24s ease" style-hover="box-shadow:var(--shadow-md);transform:translateY(-4px)">
-<img src="assets/dr-satinder.jpeg" alt="Dr. Satinder Pal Aggarwal" class="washed" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;margin-bottom:16px">
-<h3 style="font-size:20px;margin:0 0 4px"><span class="en">Dr. Satinder Pal Aggarwal</span><span class="pa">ਡਾ. ਸਤਿੰਦਰ ਪਾਲ ਅਗਰਵਾਲ</span></h3>
-<p style="font-size:14.5px;color:var(--color-neutral-700);margin:0"><span class="en">Urology &amp; kidney transplant surgery</span><span class="pa">ਪਿਸ਼ਾਬ ਰੋਗ ਤੇ ਗੁਰਦਾ ਟਰਾਂਸਪਲਾਂਟ ਸਰਜਰੀ</span></p>
+<div style="background:var(--color-neutral-800);border-radius:24px;padding:20px;text-align:center">
+<img src="/assets/dr-satinder.jpeg" alt="Dr. Satinder Pal Aggarwal" class="washed" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:18px;margin-bottom:16px">
+<h3 style="font-size:19px;margin:0 0 4px;color:var(--color-neutral-100)"><span class="en">Dr. Satinder Pal Aggarwal</span><span class="pa">ਡਾ. ਸਤਿੰਦਰ ਪਾਲ ਅਗਰਵਾਲ</span></h3>
+<p style="font-size:14px;color:var(--color-neutral-400);margin:0"><span class="en">Urology &amp; transplant surgery</span><span class="pa">ਪਿਸ਼ਾਬ ਰੋਗ ਤੇ ਟਰਾਂਸਪਲਾਂਟ</span></p>
 </div>
-<div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:24px;text-align:center;transition:transform .24s ease, box-shadow .24s ease" style-hover="box-shadow:var(--shadow-md);transform:translateY(-4px)">
-<img src="assets/dr-sanjay.jpeg" alt="Dr. Sanjay Kumar Sharma" class="washed" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;margin-bottom:16px">
-<h3 style="font-size:20px;margin:0 0 4px"><span class="en">Dr. Sanjay Kumar Sharma</span><span class="pa">ਡਾ. ਸੰਜੇ ਕੁਮਾਰ ਸ਼ਰਮਾ</span></h3>
-<p style="font-size:14.5px;color:var(--color-neutral-700);margin:0"><span class="en">Consultant nephrologist</span><span class="pa">ਗੁਰਦੇ ਰੋਗਾਂ ਦੇ ਮਾਹਿਰ</span></p>
+<div style="background:var(--color-neutral-800);border-radius:24px;padding:20px;text-align:center">
+<img src="/assets/dr-sanjay.jpeg" alt="Dr. Sanjay Kumar Sharma" class="washed" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:18px;margin-bottom:16px">
+<h3 style="font-size:19px;margin:0 0 4px;color:var(--color-neutral-100)"><span class="en">Dr. Sanjay Kumar Sharma</span><span class="pa">ਡਾ. ਸੰਜੇ ਕੁਮਾਰ ਸ਼ਰਮਾ</span></h3>
+<p style="font-size:14px;color:var(--color-neutral-400);margin:0"><span class="en">Consultant nephrologist</span><span class="pa">ਗੁਰਦੇ ਰੋਗਾਂ ਦੇ ਮਾਹਿਰ</span></p>
 </div>
-<div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:24px;text-align:center;transition:transform .24s ease, box-shadow .24s ease" style-hover="box-shadow:var(--shadow-md);transform:translateY(-4px)">
-<img src="assets/dr-anuj.jpeg" alt="Dr. Anuj Arora" class="washed" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;margin-bottom:16px">
-<h3 style="font-size:20px;margin:0 0 4px"><span class="en">Dr. Anuj Arora</span><span class="pa">ਡਾ. ਅਨੁਜ ਅਰੋੜਾ</span></h3>
-<p style="font-size:14.5px;color:var(--color-neutral-700);margin:0"><span class="en">Consultant gastroenterologist</span><span class="pa">ਪੇਟ ਤੇ ਜਿਗਰ ਰੋਗਾਂ ਦੇ ਮਾਹਿਰ</span></p>
+<div style="background:var(--color-neutral-800);border-radius:24px;padding:20px;text-align:center">
+<img src="/assets/dr-anuj.jpeg" alt="Dr. Anuj Arora" class="washed" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:18px;margin-bottom:16px">
+<h3 style="font-size:19px;margin:0 0 4px;color:var(--color-neutral-100)"><span class="en">Dr. Anuj Arora</span><span class="pa">ਡਾ. ਅਨੁਜ ਅਰੋੜਾ</span></h3>
+<p style="font-size:14px;color:var(--color-neutral-400);margin:0"><span class="en">Consultant gastroenterologist</span><span class="pa">ਪੇਟ ਤੇ ਜਿਗਰ ਰੋਗਾਂ ਦੇ ਮਾਹਿਰ</span></p>
+</div>
+</div>
+</div>
+</section>
+
+<section style="max-width:1160px;margin:0 auto;padding:clamp(48px,6vw,84px) 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+<div style="position:relative;border-radius:28px;overflow:hidden;min-height:280px">
+<img src="/assets/nhs-mri-silent-ge.jpg" alt="Health checkup imaging at NHS Hospital" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,color-mix(in srgb, var(--color-neutral-900) 82%, transparent) 100%)"></div>
+<div style="position:absolute;left:24px;right:24px;bottom:24px">
+<h3 style="font-size:24px;margin:0 0 6px;color:#fff"><span class="en">Full-body health checkups</span><span class="pa">ਪੂਰੇ ਸਰੀਰ ਦੀ ਜਾਂਚ</span></h3>
+<p style="font-size:15px;color:var(--color-neutral-200);margin:0 0 14px;max-width:36ch"><span class="en">Blood work, ECG and imaging in a single visit, with a doctor explaining the results.</span><span class="pa">ਇੱਕੋ ਦਿਨ ਖ਼ੂਨ ਦੀ ਜਾਂਚ, ECG ਤੇ ਸਕੈਨ, ਨਾਲੇ ਡਾਕਟਰ ਵੱਲੋਂ ਨਤੀਜੇ ਸਮਝਾਏ ਜਾਂਦੇ ਹਨ।</span></p>
+<a href="tel:+911814633333" style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--color-neutral-900);border-radius:999px;padding:11px 20px;font-size:14.5px;font-weight:700;text-decoration:none"><span class="en">Ask about packages</span><span class="pa">ਪੈਕੇਜ ਬਾਰੇ ਪੁੱਛੋ</span></a>
+</div>
+</div>
+<div style="position:relative;border-radius:28px;overflow:hidden;min-height:280px">
+<img src="/assets/nhs-opd-waiting-hall.jpg" alt="Insurance desk area at NHS Hospital" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,color-mix(in srgb, var(--color-accent-900) 84%, transparent) 100%)"></div>
+<div style="position:absolute;left:24px;right:24px;bottom:24px">
+<h3 style="font-size:24px;margin:0 0 6px;color:#fff"><span class="en">Cashless insurance desk</span><span class="pa">ਕੈਸ਼ਲੈਸ ਬੀਮਾ ਕਾਊਂਟਰ</span></h3>
+<p style="font-size:15px;color:var(--color-accent-100);margin:0 0 14px;max-width:36ch"><span class="en">TPA and government scheme approvals handled at the hospital, so you don't have to run between offices.</span><span class="pa">TPA ਤੇ ਸਰਕਾਰੀ ਸਕੀਮਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਹਸਪਤਾਲ ਵਿੱਚ ਹੀ ਹੋ ਜਾਂਦੀ ਹੈ।</span></p>
+<a href="tel:+911814633333" style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--color-accent-900);border-radius:999px;padding:11px 20px;font-size:14.5px;font-weight:700;text-decoration:none"><span class="en">Talk to our desk</span><span class="pa">ਕਾਊਂਟਰ ਨਾਲ ਗੱਲ ਕਰੋ</span></a>
 </div>
 </div>
 </section>
 
-<section style="max-width:1120px;margin:0 auto;padding:clamp(44px,5vw,76px) 24px">
-<span style="display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700);font-weight:700;margin-bottom:14px"><span style="width:10px;height:10px;border-radius:50%;background:var(--color-accent);display:inline-block"></span><span class="en">Inside the hospital</span><span class="pa">ਹਸਪਤਾਲ ਦੇ ਅੰਦਰ</span></span>
-<h2 style="font-size:clamp(28px,3.4vw,42px);margin:0 0 10px"><span class="en">Have a look around before you come</span><span class="pa">ਆਉਣ ਤੋਂ ਪਹਿਲਾਂ ਹਸਪਤਾਲ ਦੇਖ ਲਓ</span></h2>
-<p style="font-size:18px;color:var(--color-neutral-700);max-width:56ch;margin:0 0 28px"><span class="en">Photographs from the hospital — the outpatient department, imaging, the theatres and the wards.</span><span class="pa">ਹਸਪਤਾਲ ਦੀਆਂ ਤਸਵੀਰਾਂ — OPD, ਸਕੈਨ ਵਿਭਾਗ, ਆਪਰੇਸ਼ਨ ਥੀਏਟਰ ਤੇ ਵਾਰਡ।</span></p>
-<div class="photo-mosaic">
-<figure class="lead"><img src="assets/hospital-15.jpg" alt="Outpatient department at NHS Hospital on a working morning" loading="lazy" class="washed"><figcaption><span class="en">Outpatient department on a working morning</span><span class="pa">ਕੰਮ ਵਾਲੇ ਦਿਨ ਦੀ OPD</span></figcaption></figure>
-<figure class="lead"><img src="assets/hospital-12.jpg" alt="Modular operation theatre at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">Modular operation theatre</span><span class="pa">ਮਾਡਿਊਲਰ ਆਪਰੇਸ਼ਨ ਥੀਏਟਰ</span></figcaption></figure>
-<figure><img src="assets/hospital-7.jpg" alt="Silent MRI suite at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">GE silent MRI suite</span><span class="pa">ਸਾਈਲੈਂਟ MRI</span></figcaption></figure>
-<figure><img src="assets/hospital-10.jpg" alt="Intensive care unit at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">Intensive care unit — 45 beds</span><span class="pa">ICU — 45 ਬਿਸਤਰੇ</span></figcaption></figure>
-<figure><img src="assets/hospital-9.jpg" alt="Cath lab with C-arm fluoroscopy at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">Cath lab — C-arm fluoroscopy suite</span><span class="pa">ਦਿਲ ਦੀ ਕੈਥ ਲੈਬ</span></figcaption></figure>
-<figure><img src="assets/hospital-17.jpg" alt="Consultant round at the bedside" loading="lazy" class="washed"><figcaption><span class="en">Consultant round at the bedside</span><span class="pa">ਡਾਕਟਰ ਦਾ ਬਿਸਤਰੇ ਕੋਲ ਗੇੜਾ</span></figcaption></figure>
+<section style="background:var(--color-surface)">
+<div class="orbit-wrap" style="max-width:1160px;margin:0 auto;padding:clamp(48px,6vw,84px) 24px;position:relative">
+<div style="position:relative;height:520px;max-width:600px;margin:0 auto">
+<svg viewBox="0 0 600 600" style="position:absolute;inset:0;color:var(--color-accent-2-200)" aria-hidden="true">
+<defs><path id="testRibbon" d="M 40 460 A 260 260 0 1 1 560 460" fill="none"></path></defs>
+<text font-family="Figtree, sans-serif" font-size="16" font-weight="700" fill="currentColor" letter-spacing="2"><textPath href="#testRibbon" startOffset="2%">FAMILIES ACROSS PUNJAB TRUST NHS HOSPITAL · JALANDHAR ·</textPath></text>
+</svg>
+<div class="orbit-dot" style="width:88px;height:88px;top:26px;left:110px"><img src="/assets/nhs-opd-waiting-hall.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+<div class="orbit-dot" style="width:64px;height:64px;top:70px;right:70px"><img src="/assets/nhs-modular-ot.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+<div class="orbit-dot" style="width:72px;height:72px;bottom:120px;left:26px"><img src="/assets/nhs-icu-critical-care.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+<div class="orbit-dot" style="width:60px;height:60px;bottom:90px;right:20px"><img src="/assets/nhs-mri-silent-ge.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+<div class="orbit-dot" style="width:70px;height:70px;bottom:10px;left:150px"><img src="/assets/ortho-robotics-team.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+<div class="orbit-dot" style="width:56px;height:56px;bottom:20px;right:140px"><img src="/assets/nhs-doctor-consultation.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+<div style="position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);width:min(88%,340px);background:var(--color-neutral-900);color:#fff;border-radius:24px;padding:28px;box-shadow:var(--shadow-lg)">
+<span style="display:inline-block;background:var(--color-accent-2-800);color:var(--color-accent-2-200);border-radius:999px;padding:5px 13px;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px"><span class="en">Patient family</span><span class="pa">ਮਰੀਜ਼ ਦਾ ਪਰਿਵਾਰ</span></span>
+<p style="font-size:16px;line-height:1.55;margin:0 0 14px"><span class="en">"The doctors explained every step and the staff followed up after we went home. Getting the consultation, scan and admission done in the same building saved us days."</span><span class="pa">"ਡਾਕਟਰਾਂ ਨੇ ਹਰ ਗੱਲ ਸਮਝਾਈ ਤੇ ਸਟਾਫ਼ ਨੇ ਘਰ ਜਾਣ ਮਗਰੋਂ ਵੀ ਖ਼ਬਰ ਲਈ। ਸਲਾਹ, ਸਕੈਨ ਤੇ ਦਾਖ਼ਲਾ ਇੱਕੋ ਇਮਾਰਤ ਵਿੱਚ ਹੋ ਜਾਣ ਨਾਲ ਕਈ ਦਿਨ ਬਚ ਗਏ।"</span></p>
+<p style="font-size:14px;color:var(--color-neutral-400);margin:0"><span class="en">Family member of a patient, Jalandhar</span><span class="pa">ਇੱਕ ਮਰੀਜ਼ ਦਾ ਪਰਿਵਾਰਕ ਮੈਂਬਰ, ਜਲੰਧਰ</span></p>
+</div>
+</div>
 </div>
 </section>
 
-<section style="max-width:1120px;margin:0 auto;padding:clamp(20px,3vw,40px) 24px clamp(56px,6vw,88px)">
-<div style="background:var(--color-accent-2-100);border-radius:48px;padding:clamp(30px,4vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px">
+<section style="max-width:1160px;margin:0 auto;padding:clamp(48px,6vw,84px) 24px;display:grid;grid-template-columns:0.9fr 1.1fr;gap:clamp(28px,4vw,56px)">
 <div>
-<h2 style="font-size:clamp(24px,2.8vw,32px);margin:0 0 10px"><span class="en">Visit us</span><span class="pa">ਸਾਡੇ ਕੋਲ ਆਓ</span></h2>
-<p style="font-size:17px;color:var(--color-accent-2-800);margin:0"><span class="en">Nasa &amp; Hub Superspeciality Hospital (NHS Hospital)<br>Near Sports College, 300 m from Kapurthala Chowk<br>Jalandhar, Punjab 144001, India</span><span class="pa">ਨਾਸਾ ਐਂਡ ਹੱਬ ਸੁਪਰਸਪੈਸ਼ਲਟੀ ਹਸਪਤਾਲ (NHS ਹਸਪਤਾਲ)<br>ਸਪੋਰਟਸ ਕਾਲਜ ਦੇ ਨੇੜੇ, ਕਪੂਰਥਲਾ ਚੌਕ ਤੋਂ 300 ਮੀਟਰ<br>ਜਲੰਧਰ, ਪੰਜਾਬ 144001</span></p>
+<span style="display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700);font-weight:700;margin-bottom:14px"><span style="width:10px;height:10px;border-radius:50%;background:var(--color-accent);display:inline-block"></span><span class="en">Before you visit</span><span class="pa">ਆਉਣ ਤੋਂ ਪਹਿਲਾਂ</span></span>
+<h2 style="font-family:var(--font-heading);font-size:clamp(28px,3.4vw,40px);margin:0 0 14px"><span class="en">Common questions</span><span class="pa">ਆਮ ਸਵਾਲ</span></h2>
+<p style="font-size:17px;color:var(--color-neutral-700);margin:0 0 18px;max-width:36ch"><span class="en">Can't find your answer here? Call the appointment desk any time during OPD hours.</span><span class="pa">ਜਵਾਬ ਨਹੀਂ ਮਿਲਿਆ? OPD ਸਮੇਂ ਵਿੱਚ ਕਾਊਂਟਰ ਨੂੰ ਫ਼ੋਨ ਕਰੋ।</span></p>
+<a href="tel:+911814633333" class="btn btn-primary" style="border-radius:999px;padding:13px 22px;font-size:15px;display:inline-flex;width:fit-content"><span class="en">Call 0181-4633333</span><span class="pa">ਫ਼ੋਨ ਕਰੋ 0181-4633333</span></a>
 </div>
-<div>
-<h3 style="font-size:21px;margin:0 0 10px"><span class="en">Contact</span><span class="pa">ਸੰਪਰਕ</span></h3>
-<p style="font-size:17px;color:var(--color-accent-2-800);margin:0"><span class="en">Emergency, 24 hours: <a href="tel:+911814707700">0181-4707700</a><br>Appointments: <a href="tel:+911814633333">0181-4633333</a><br>Email: <a href="mailto:info@nhshospital.in">info@nhshospital.in</a></span><span class="pa">ਐਮਰਜੈਂਸੀ, 24 ਘੰਟੇ: <a href="tel:+911814707700">0181-4707700</a><br>ਮੁਲਾਕਾਤ: <a href="tel:+911814633333">0181-4633333</a><br>ਈਮੇਲ: <a href="mailto:info@nhshospital.in">info@nhshospital.in</a></span></p>
+<div style="display:flex;flex-direction:column;gap:12px">
+<details class="faq" style="background:var(--color-neutral-100);border-radius:16px;padding:18px 20px">
+<summary style="display:flex;justify-content:space-between;align-items:center;font-size:16.5px;font-weight:600"><span><span class="en">Do I need to book before coming to OPD?</span><span class="pa">ਕੀ OPD ਲਈ ਪਹਿਲਾਂ ਬੁਕਿੰਗ ਲੋੜੀਂਦੀ ਹੈ?</span></span><span class="faq-plus" style="font-size:20px;color:var(--color-accent-700)">+</span></summary>
+<p style="font-size:15.5px;color:var(--color-neutral-700);margin:10px 0 0"><span class="en">Walk-ins are welcome, but booking ahead means a shorter wait and the right consultant is available.</span><span class="pa">ਸਿੱਧੇ ਆਉਣਾ ਵੀ ਠੀਕ ਹੈ, ਪਰ ਪਹਿਲਾਂ ਬੁੱਕ ਕਰਨ ਨਾਲ ਘੱਟ ਉਡੀਕ ਹੁੰਦੀ ਹੈ।</span></p>
+</details>
+<details class="faq" style="background:var(--color-neutral-100);border-radius:16px;padding:18px 20px">
+<summary style="display:flex;justify-content:space-between;align-items:center;font-size:16.5px;font-weight:600"><span><span class="en">Which reports should I bring?</span><span class="pa">ਕਿਹੜੀਆਂ ਰਿਪੋਰਟਾਂ ਲਿਆਵਾਂ?</span></span><span class="faq-plus" style="font-size:20px;color:var(--color-accent-700)">+</span></summary>
+<p style="font-size:15.5px;color:var(--color-neutral-700);margin:10px 0 0"><span class="en">Bring any past scans, blood reports and current medicines. The desk will tell you if more are needed.</span><span class="pa">ਪਹਿਲਾਂ ਦੇ ਸਕੈਨ, ਖ਼ੂਨ ਦੀ ਜਾਂਚ ਤੇ ਚੱਲ ਰਹੀਆਂ ਦਵਾਈਆਂ ਲਿਆਓ।</span></p>
+</details>
+<details class="faq" style="background:var(--color-neutral-100);border-radius:16px;padding:18px 20px">
+<summary style="display:flex;justify-content:space-between;align-items:center;font-size:16.5px;font-weight:600"><span><span class="en">Is cashless insurance accepted?</span><span class="pa">ਕੀ ਕੈਸ਼ਲੈਸ ਬੀਮਾ ਚੱਲਦਾ ਹੈ?</span></span><span class="faq-plus" style="font-size:20px;color:var(--color-accent-700)">+</span></summary>
+<p style="font-size:15.5px;color:var(--color-neutral-700);margin:10px 0 0"><span class="en">Yes — most TPAs and select government schemes. Our desk manages approvals on your behalf.</span><span class="pa">ਹਾਂ — ਬਹੁਤੇ TPA ਤੇ ਕੁਝ ਸਰਕਾਰੀ ਸਕੀਮਾਂ। ਮਨਜ਼ੂਰੀ ਸਾਡਾ ਕਾਊਂਟਰ ਸੰਭਾਲਦਾ ਹੈ।</span></p>
+</details>
+<details class="faq" style="background:var(--color-neutral-100);border-radius:16px;padding:18px 20px">
+<summary style="display:flex;justify-content:space-between;align-items:center;font-size:16.5px;font-weight:600"><span><span class="en">Is help available in Punjabi?</span><span class="pa">ਕੀ ਪੰਜਾਬੀ ਵਿੱਚ ਮਦਦ ਮਿਲਦੀ ਹੈ?</span></span><span class="faq-plus" style="font-size:20px;color:var(--color-accent-700)">+</span></summary>
+<p style="font-size:15.5px;color:var(--color-neutral-700);margin:10px 0 0"><span class="en">Yes, our front desk and most consultants converse comfortably in Punjabi and Hindi.</span><span class="pa">ਹਾਂ, ਸਾਡਾ ਕਾਊਂਟਰ ਤੇ ਬਹੁਤੇ ਡਾਕਟਰ ਪੰਜਾਬੀ ਤੇ ਹਿੰਦੀ ਵਿੱਚ ਗੱਲ ਕਰਦੇ ਹਨ।</span></p>
+</details>
 </div>
-<div>
-<h3 style="font-size:21px;margin:0 0 10px"><span class="en">Insurance</span><span class="pa">ਬੀਮਾ</span></h3>
-<p style="font-size:17px;color:var(--color-accent-2-800);margin:0"><span class="en">Cashless treatment under TPA and government schemes. Our desk handles approvals and paperwork for you.</span><span class="pa">TPA ਤੇ ਸਰਕਾਰੀ ਸਕੀਮਾਂ ਹੇਠ ਕੈਸ਼ਲੈਸ ਇਲਾਜ। ਮਨਜ਼ੂਰੀ ਤੇ ਕਾਗ਼ਜ਼ੀ ਕੰਮ ਸਾਡਾ ਕਾਊਂਟਰ ਸੰਭਾਲਦਾ ਹੈ।</span></p>
+</section>
+
+<section style="max-width:1160px;margin:0 auto;padding:0 24px clamp(56px,6vw,90px)">
+<div style="position:relative;background:var(--color-accent-900);border-radius:40px;overflow:hidden;padding:clamp(40px,6vw,72px) 24px;text-align:center">
+<svg viewBox="0 0 800 300" style="position:absolute;inset:0;width:100%;height:100%;color:var(--color-accent-700);opacity:.5" aria-hidden="true">
+<defs><path id="ctaRibbon" d="M -40 260 A 460 460 0 1 1 840 260" fill="none"></path></defs>
+<text font-family="Figtree, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="2"><textPath href="#ctaRibbon" startOffset="6%">SAME BUILDING · SAME TEAM · SAME DAY ANSWERS ·</textPath></text>
+</svg>
+<div style="position:relative">
+<h2 style="font-family:var(--font-heading);font-size:clamp(28px,4vw,44px);color:#fff;margin:0 0 16px;max-width:20ch;margin-inline:auto;text-wrap:pretty"><span class="en">Every specialist you need, under one roof.</span><span class="pa">ਹਰ ਲੋੜੀਂਦਾ ਡਾਕਟਰ, ਇੱਕੋ ਇਮਾਰਤ ਵਿੱਚ।</span></h2>
+<a href="#book" class="btn" style="display:inline-flex;background:#fff;color:var(--color-accent-900);border-radius:999px;padding:15px 28px;font-size:16px;font-weight:700;text-decoration:none"><span class="en">Book your appointment</span><span class="pa">ਮੁਲਾਕਾਤ ਬੁੱਕ ਕਰੋ</span></a>
 </div>
 </div>
 </section>
 
 <footer id="legal" style="background:var(--color-neutral-900);color:var(--color-neutral-300)">
-<div style="max-width:1120px;margin:0 auto;padding:clamp(36px,4vw,56px) 24px;display:flex;flex-direction:column;gap:22px">
+<div style="max-width:1160px;margin:0 auto;padding:clamp(36px,4vw,56px) 24px;display:flex;flex-direction:column;gap:22px">
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px">
 <div>
-<img src="assets/logo.png" alt="NHS Hospital" style="height:38px;width:auto;margin-bottom:12px">
+<img src="/assets/logo.png" alt="NHS Hospital" style="height:38px;width:auto;margin-bottom:12px">
 <p style="font-size:14.5px;margin:0;color:var(--color-neutral-400)"><span class="en">Nasa &amp; Hub Superspeciality Hospital, Jalandhar, Punjab. A 200-bed multi-specialty hospital.</span><span class="pa">ਨਾਸਾ ਐਂਡ ਹੱਬ ਸੁਪਰਸਪੈਸ਼ਲਟੀ ਹਸਪਤਾਲ, ਜਲੰਧਰ, ਪੰਜਾਬ। 200 ਬਿਸਤਰਿਆਂ ਵਾਲਾ ਮਲਟੀ-ਸਪੈਸ਼ਲਟੀ ਹਸਪਤਾਲ।</span></p>
 </div>
 <div>
 <h3 style="font-size:16.5px;color:var(--color-neutral-100);margin:0 0 8px"><span class="en">Specialties</span><span class="pa">ਵਿਭਾਗ</span></h3>
 <div style="display:flex;flex-direction:column;gap:6px;font-size:14.5px">
-<a href="Orthopaedics/index.html" style="color:var(--color-neutral-300);text-decoration:none"><span class="en">Orthopaedics &amp; joint replacement</span><span class="pa">ਹੱਡੀਆਂ, ਜੋੜ ਤੇ ਗੋਡਾ ਬਦਲਣਾ</span></a>
-<a href="Cardiology/index.html" style="color:var(--color-neutral-300);text-decoration:none"><span class="en">Cardiology &amp; second opinion</span><span class="pa">ਦਿਲ ਦਾ ਇਲਾਜ ਤੇ ਦੂਜੀ ਰਾਏ</span></a>
-<a href="Urology/index.html" style="color:var(--color-neutral-300);text-decoration:none"><span class="en">Urology &amp; laser stone treatment</span><span class="pa">ਪੱਥਰੀ ਦਾ ਲੇਜ਼ਰ ਇਲਾਜ</span></a>
-<a href="Nephrology/index.html" style="color:var(--color-neutral-300);text-decoration:none"><span class="en">Nephrology &amp; dialysis</span><span class="pa">ਗੁਰਦੇ ਦੇ ਰੋਗ ਤੇ ਡਾਇਲਸਿਸ</span></a>
-<a href="Gastroenterology/index.html" style="color:var(--color-neutral-300);text-decoration:none"><span class="en">Gastroenterology</span><span class="pa">ਪੇਟ ਤੇ ਜਿਗਰ</span></a>
+<a href="/Orthopaedics/" style="color:var(--color-neutral-300);text-decoration:none"><span class="en">Orthopaedics &amp; joint replacement</span><span class="pa">ਹੱਡੀਆਂ, ਜੋੜ ਤੇ ਗੋਡਾ ਬਦਲਣਾ</span></a>
+<a href="/Cardiology/" style="color:var(--color-neutral-300);text-decoration:none"><span class="en">Cardiology &amp; second opinion</span><span class="pa">ਦਿਲ ਦਾ ਇਲਾਜ ਤੇ ਦੂਜੀ ਰਾਏ</span></a>
+<a href="/Urology/" style="color:var(--color-neutral-300);text-decoration:none"><span class="en">Urology &amp; laser stone treatment</span><span class="pa">ਪੱਥਰੀ ਦਾ ਲੇਜ਼ਰ ਇਲਾਜ</span></a>
+<a href="/Nephrology/" style="color:var(--color-neutral-300);text-decoration:none"><span class="en">Nephrology &amp; dialysis</span><span class="pa">ਗੁਰਦੇ ਦੇ ਰੋਗ ਤੇ ਡਾਇਲਸਿਸ</span></a>
+<a href="/Gastroenterology/" style="color:var(--color-neutral-300);text-decoration:none"><span class="en">Gastroenterology</span><span class="pa">ਪੇਟ ਤੇ ਜਿਗਰ</span></a>
 </div>
+</div>
+<div>
+<h3 style="font-size:16.5px;color:var(--color-neutral-100);margin:0 0 8px"><span class="en">Contact</span><span class="pa">ਸੰਪਰਕ</span></h3>
+<p style="font-size:14.5px;margin:0 0 12px;color:var(--color-neutral-400)"><span class="en">Near Sports College, 300 m from Kapurthala Chowk, Jalandhar, Punjab 144001<br>Emergency: <a href="tel:+911814707700" style="color:var(--color-neutral-300)">0181-4707700</a><br>Appointments: <a href="tel:+911814633333" style="color:var(--color-neutral-300)">0181-4633333</a><br>Email: <a href="mailto:info@nhshospital.in" style="color:var(--color-neutral-300)">info@nhshospital.in</a></span><span class="pa">ਸਪੋਰਟਸ ਕਾਲਜ ਦੇ ਨੇੜੇ, ਕਪੂਰਥਲਾ ਚੌਕ ਤੋਂ 300 ਮੀਟਰ, ਜਲੰਧਰ<br>ਐਮਰਜੈਂਸੀ: <a href="tel:+911814707700" style="color:var(--color-neutral-300)">0181-4707700</a><br>ਮੁਲਾਕਾਤ: <a href="tel:+911814633333" style="color:var(--color-neutral-300)">0181-4633333</a></span></p>
 </div>
 <div>
 <h3 style="font-size:16.5px;color:var(--color-neutral-100);margin:0 0 8px"><span class="en">Information</span><span class="pa">ਜਾਣਕਾਰੀ</span></h3>
 <div style="display:flex;flex-direction:column;gap:6px;font-size:14.5px">
-<a href="privacy.html#privacy" style="color:var(--color-neutral-300);text-decoration:none"><span class="en">Privacy policy</span><span class="pa">ਪਰਾਈਵੇਸੀ ਪਾਲਿਸੀ</span></a>
-<a href="privacy.html#terms" style="color:var(--color-neutral-300);text-decoration:none"><span class="en">Terms &amp; conditions</span><span class="pa">ਨਿਯਮ ਤੇ ਸ਼ਰਤਾਂ</span></a>
+<a href="/privacy.html#privacy" style="color:var(--color-neutral-300);text-decoration:none"><span class="en">Privacy policy</span><span class="pa">ਪਰਾਈਵੇਸੀ ਪਾਲਿਸੀ</span></a>
+<a href="/privacy.html#terms" style="color:var(--color-neutral-300);text-decoration:none"><span class="en">Terms &amp; conditions</span><span class="pa">ਨਿਯਮ ਤੇ ਸ਼ਰਤਾਂ</span></a>
 <a href="#book" style="color:var(--color-neutral-300);text-decoration:none"><span class="en">Appointments</span><span class="pa">ਮੁਲਾਕਾਤ</span></a>
 <a href="tel:+911814707700" style="color:var(--color-neutral-300);text-decoration:none"><span class="en">Emergency 0181-4707700</span><span class="pa">ਐਮਰਜੈਂਸੀ 0181-4707700</span></a>
 </div>
@@ -314,10 +409,16 @@ h1 .pa, h2 .pa, h3 .pa { font-weight: 700; line-height: 1.35; letter-spacing: 0;
 
 <div class="call-pad"></div>
 <div class="call-bar">
+<a href="https://wa.me/911814633333?text=Hello%20NHS%20Hospital%2C%20I%20would%20like%20to%20ask%20about%20an%20appointment." target="_blank" rel="noopener" class="btn" style="border-radius:999px;padding:16px 6px;font-size:14.5px;background:#25D366;color:#fff;text-align:center"><span class="en">WhatsApp</span><span class="pa">WhatsApp</span></a>
+
 <a href="tel:+911814633333" class="btn btn-primary" style="border-radius:999px;padding:16px 10px;font-size:16.5px"><span class="en">Call for appointment</span><span class="pa">ਮੁਲਾਕਾਤ ਲਈ ਫ਼ੋਨ</span></a>
 <a href="tel:+911814707700" class="btn" style="border-radius:999px;padding:16px 10px;font-size:16.5px;border:1.5px solid var(--color-accent-300);color:var(--color-accent-300)"><span class="en">Emergency 24×7</span><span class="pa">ਐਮਰਜੈਂਸੀ 24 ਘੰਟੇ</span></a>
 </div>
 </div>
+
+<a href="https://wa.me/911814633333?text=Hello%20NHS%20Hospital%2C%20I%20would%20like%20to%20ask%20about%20an%20appointment." target="_blank" rel="noopener" aria-label="Chat on WhatsApp" style="position:fixed;right:20px;bottom:100px;z-index:95;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.28);text-decoration:none">
+<svg width="30" height="30" viewBox="0 0 32 32" fill="#fff"><path d="M16.04 3.5c-6.9 0-12.5 5.6-12.5 12.5 0 2.2.58 4.27 1.6 6.06L3.5 28.5l6.6-1.6a12.4 12.4 0 0 0 5.94 1.5h.01c6.9 0 12.5-5.6 12.5-12.5S22.94 3.5 16.04 3.5Zm0 22.8h-.01a10.3 10.3 0 0 1-5.24-1.44l-.38-.22-3.9.94.95-3.8-.25-.4a10.27 10.27 0 0 1-1.57-5.38c0-5.7 4.64-10.34 10.4-10.34 2.78 0 5.38 1.08 7.34 3.05a10.3 10.3 0 0 1 3.05 7.33c0 5.7-4.64 10.34-10.39 10.34Zm5.7-7.74c-.31-.16-1.85-.91-2.14-1.02-.29-.1-.5-.16-.71.16-.21.31-.81 1.02-1 1.23-.18.21-.37.23-.68.08-.31-.16-1.32-.49-2.51-1.55-.93-.83-1.55-1.85-1.74-2.16-.18-.31-.02-.48.14-.64.15-.15.31-.39.47-.58.16-.19.21-.33.31-.55.1-.21.05-.4-.05-.55-.1-.16-.44-1.06-.85-2.02-.31-.75-.63-.66-.87-.67h-.6a1.16 1.16 0 0 0-.83.39c-.29.31-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.2 3.36 5.33 4.58 3.13 1.22 3.13.81 3.7.76.57-.05 1.85-.76 2.11-1.49.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.36Z"></path></svg>
+</a>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;formAction&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://app.formester.com/forms/xh1pxuMQJ/submissions&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lead form&quot;}}">
 class Component extends DCLogic {
@@ -341,15 +442,22 @@ class Component extends DCLogic {
     this.setState({ lang: lang });
   }
 
+  btnStyle(active) {
+    return active
+      ? "border:0;cursor:pointer;border-radius:999px;padding:8px 14px;font-size:14px;font-weight:700;background:var(--color-accent);color:var(--color-bg);font-family:'Noto Sans Gurmukhi',var(--font-body)"
+      : "border:0;cursor:pointer;border-radius:999px;padding:8px 14px;font-size:14px;font-weight:600;background:transparent;color:var(--color-neutral-800);font-family:'Noto Sans Gurmukhi',var(--font-body)";
+  }
+
   renderVals() {
     const lang = this.state.lang;
     return {
       lang: lang,
       phName: lang === "pa" ? "ਪੂਰਾ ਨਾਂ" : "Full name",
       phMobile: lang === "pa" ? "10 ਅੰਕਾਂ ਦਾ ਮੋਬਾਈਲ ਨੰਬਰ" : "10-digit mobile",
-      phCity: lang === "pa" ? "ਜਿਵੇਂ ਜਲੰਧਰ" : "e.g. Jalandhar",
       isEn: lang === "en",
       isPa: lang === "pa",
+      enBtn: this.btnStyle(lang === "en"),
+      paBtn: this.btnStyle(lang === "pa"),
       setEn: () => this.setLang("en"),
       setPa: () => this.setLang("pa"),
       formAction: this.props.formAction ?? "https://app.formester.com/forms/xh1pxuMQJ/submissions"
