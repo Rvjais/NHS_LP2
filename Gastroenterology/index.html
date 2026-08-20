@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="/support.js"></script>
+<script src="../support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;500;600;700;800&family=Noto+Sans+Gurmukhi:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/_ds/organic-2a0d5984-5018-463a-8cfa-2b454c753079/styles.css">
-<script src="/_ds/organic-2a0d5984-5018-463a-8cfa-2b454c753079/_ds_bundle.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+Gurmukhi:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../_ds/organic-2a0d5984-5018-463a-8cfa-2b454c753079/styles.css">
+<script src="../_ds/organic-2a0d5984-5018-463a-8cfa-2b454c753079/_ds_bundle.js"></script>
 <style>/* NHS palette — sage & clay */
 :root {
   --color-bg: #f7f4ef; --color-surface: #ffffff; --color-text: #171310;
@@ -27,9 +27,12 @@
   --color-accent-2-100: #fbeee5; --color-accent-2-200: #f3d3bd; --color-accent-2-300: #e8b088;
   --color-accent-2-400: #d8895a; --color-accent-2-500: #c26b3c; --color-accent-2-600: #a2542c;
   --color-accent-2-700: #7e4122; --color-accent-2-800: #5b2f18; --color-accent-2-900: #3a1d0e;
-  --shadow-sm: 0 1px 2px color-mix(in srgb, #171310 14%, transparent);
-  --shadow-md: 0 3px 10px color-mix(in srgb, #171310 16%, transparent);
-  --shadow-lg: 0 14px 36px color-mix(in srgb, #171310 22%, transparent);
+  --shadow-sm: 0 2px 4px color-mix(in srgb, #171310 8%, transparent);
+  --shadow-md: 0 8px 24px color-mix(in srgb, #171310 10%, transparent);
+  --shadow-lg: 0 24px 48px color-mix(in srgb, #171310 16%, transparent);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
 }
 </style>
 <style>
@@ -47,29 +50,271 @@ h1 .pa, h2 .pa, h3 .pa { font-weight: 700; line-height: 1.35; letter-spacing: 0;
   .call-bar { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
     padding: 12px 14px calc(12px + env(safe-area-inset-bottom)); background: var(--color-neutral-900); }
   .call-pad { height: 96px; }
+  
+  /* Mobile Responsiveness Improvements */
+  header { padding: 12px 0 0 0 !important; }
+  header > div { flex-wrap: wrap; gap: 0 !important; padding: 0 16px; justify-content: space-between; }
+  header > div > a.btn-primary { display: none !important; }
+  header nav { 
+    width: 100%; 
+    order: 3; 
+    margin-top: 12px; 
+    border-radius: 0 !important; 
+    border: none !important; 
+    border-top: 1px solid color-mix(in srgb, var(--color-divider) 30%, transparent) !important;
+    padding: 10px 16px !important;
+    background: transparent !important;
+  }
+  .hero-grid { border-radius: 24px !important; }
+  .hero-grid > div:first-child { padding: 24px !important; }
+  .photo-mosaic { gap: 12px; grid-template-columns: 1fr !important; }
+  .photo-mosaic > figure.lead { grid-column: span 1 !important; }
+  h1 { font-size: clamp(28px, 9vw, 40px) !important; max-width: 100% !important; line-height: 1.15 !important; }
+  p { font-size: 16px !important; }
 }
 @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr !important; } }
 .photo-mosaic { display: grid; gap: 20px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .photo-mosaic > figure { position: relative; margin: 0; }
-.photo-mosaic > figure > img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+.photo-mosaic > figure > img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+.photo-mosaic > figure:hover > img { transform: scale(1.02); box-shadow: var(--shadow-md); z-index: 10; position: relative; }
 .photo-mosaic > figure.lead { grid-column: span 2; }
 .photo-mosaic > figure.lead > img { aspect-ratio: 16/10; }
 .photo-mosaic figcaption { position: absolute; left: 14px; right: 14px; bottom: 14px; margin: 0; font-size: 13px; color: var(--color-neutral-100); background: color-mix(in srgb, var(--color-neutral-900) 74%, transparent); border-radius: 999px; padding: 7px 14px; }
 @media (min-width: 980px) { .photo-mosaic { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+.btn { transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); display: inline-flex; justify-content: center; align-items: center; }
+.btn:hover { transform: translateY(-1px) scale(1.02); box-shadow: var(--shadow-md); filter: brightness(1.05); }
+
+/* Hero grid soft background gradient */
+.hero-grid { background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-neutral-100) 100%) !important; position: relative; overflow: hidden; border: 1px solid color-mix(in srgb, var(--color-divider) 30%, transparent) !important; }
+
+/* Sticky header glassmorphism improvement */
+header {
+  background: color-mix(in srgb, var(--color-bg) 75%, transparent) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-divider) 50%, transparent) !important;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+</style>
+<style>
+/* ── Premium Polish Layer: High-End Aesthetics & Micro-Animations ── */
+:root{
+  --nhs-shell: 1160px;
+  --nhs-gut: clamp(20px, 5vw, 40px);
+  --nhs-sec: clamp(48px, 6vw, 80px);
+  --nhs-r-lg: 32px; --nhs-r-md: 24px; --nhs-r-sm: 16px; --nhs-r-pill: 999px;
+  --nhs-line: color-mix(in srgb, var(--color-neutral-900) 10%, transparent);
+  --nhs-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --nhs-shadow-glow: 0 0 20px color-mix(in srgb, var(--color-accent) 20%, transparent);
+  --nhs-shadow-float: 0 12px 32px color-mix(in srgb, var(--color-neutral-900) 8%, transparent), 0 4px 12px color-mix(in srgb, var(--color-neutral-900) 4%, transparent);
+}
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/* Structural Rhythm */
+section > div, header > div, footer > div { max-width: var(--nhs-shell); }
+section { padding-left: var(--nhs-gut) !important; padding-right: var(--nhs-gut) !important; padding-top: var(--nhs-sec) !important; padding-bottom: var(--nhs-sec) !important; }
+section > div { padding: 0 !important; margin: 0 auto; }
+header > div, footer > div { max-width: var(--nhs-shell); margin: 0 auto; }
+
+/* Typography Polish */
+h1, h2, h3 { letter-spacing: -0.025em; text-wrap: balance; font-weight: 800; }
+h1 { letter-spacing: -0.04em; }
+p { text-wrap: pretty; line-height: 1.7; }
+section > span[style*="uppercase"] { letter-spacing: 0.2em !important; font-size: 13px !important; text-transform: uppercase; font-weight: 800; background: linear-gradient(135deg, var(--color-accent), var(--color-accent-600)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+/* Cards & Glassmorphism */
+div[style*="border-radius:28px"], div[style*="border-radius:24px"], div[style*="border-radius:26px"], .hero-grid {
+  border-radius: var(--nhs-r-lg) !important;
+  border: 1px solid color-mix(in srgb, var(--color-surface) 60%, var(--nhs-line));
+  transition: transform 0.4s var(--nhs-ease), box-shadow 0.4s var(--nhs-ease), border-color 0.4s var(--nhs-ease);
+}
+div[style*="background:var(--color-surface)"][style*="border-radius"]:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: var(--nhs-shadow-float);
+  border-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+}
+div[style*="var(--color-accent-900)"][style*="border-radius"], div[style*="var(--color-accent-2-100)"][style*="border-radius"] { border-color: transparent; }
+
+/* Hero Section Depth */
+.hero-grid { box-shadow: var(--nhs-shadow-float) !important; overflow: hidden; position: relative; }
+.hero-grid > div:first-child { position: relative; z-index: 1; overflow: hidden; }
+.hero-grid > div:first-child::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at top right, color-mix(in srgb, var(--color-accent-300) 25%, transparent), transparent 60%);
+  z-index: -1; pointer-events: none;
+}
+.hero-grid > form { border-radius: 0 !important; background: color-mix(in srgb, var(--color-surface) 95%, transparent) !important; backdrop-filter: blur(12px); }
+@media (max-width: 900px) { .hero-grid > form { border-radius: 0 0 var(--nhs-r-lg) var(--nhs-r-lg) !important; } }
+
+/* Imagery & Borders */
+.photo-mosaic > figure > img { border-radius: var(--nhs-r-md) !important; filter: saturate(1.05) contrast(1.02); transition: transform 0.5s var(--nhs-ease), filter 0.5s var(--nhs-ease); }
+.photo-mosaic > figure:hover > img { transform: scale(1.03); filter: saturate(1.15) contrast(1.05); z-index: 10; position: relative; }
+.photo-mosaic figcaption { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-weight: 600; letter-spacing: 0.02em; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.15); }
+figure { border-radius: var(--nhs-r-md) !important; }
+figure > img { border-radius: inherit; }
+
+/* Refined List Steps */
+span[style*="border-radius:50%"][style*="background:var(--color-accent)"] {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-500)) !important;
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-accent) 15%, transparent), var(--nhs-shadow-glow);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Premium Buttons & Controls */
+.btn { font-weight: 700; letter-spacing: 0.02em; transition: transform 0.3s var(--nhs-ease), box-shadow 0.3s var(--nhs-ease), background 0.3s ease; position: relative; overflow: hidden; }
+.btn-primary { background: linear-gradient(135deg, var(--color-accent), var(--color-accent-700)) !important; box-shadow: 0 4px 14px color-mix(in srgb, var(--color-accent) 40%, transparent); border: none !important; }
+.btn-primary:hover { box-shadow: 0 6px 20px color-mix(in srgb, var(--color-accent) 50%, transparent); transform: translateY(-2px); }
+.btn-primary::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent); transform: translateX(-100%); transition: transform 0.6s var(--nhs-ease); }
+.btn-primary:hover::after { transform: translateX(100%); }
+.btn:active { transform: translateY(0) scale(0.98); }
+.input { border-radius: var(--nhs-r-md) !important; transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; background: color-mix(in srgb, var(--color-neutral-100) 50%, var(--color-surface)) !important; }
+.input:focus { outline: none; border-color: var(--color-accent) !important; box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 20%, transparent); background: var(--color-surface) !important; }
+a:focus-visible, button:focus-visible, .btn:focus-visible, .input:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+
+/* Navigation Interactivity */
+header nav { border-radius: var(--nhs-r-pill) !important; box-shadow: 0 2px 10px rgba(0,0,0,0.03); border: 1px solid color-mix(in srgb, var(--color-divider) 40%, transparent) !important; }
+header nav a { transition: background 0.3s var(--nhs-ease), color 0.3s var(--nhs-ease), transform 0.2s ease; position: relative; z-index: 1; }
+header nav a:hover { transform: scale(1.05); }
+header nav::-webkit-scrollbar { display: none; }
+
+/* Treatment Rows Glow */
+.tx-row { transition: background 0.4s var(--nhs-ease), transform 0.4s var(--nhs-ease), padding-left 0.4s var(--nhs-ease); border-radius: var(--nhs-r-md); }
+.tx-row:hover { background: color-mix(in srgb, var(--color-accent) 4%, transparent); transform: scale(1.01); padding-left: 12px; box-shadow: var(--nhs-shadow-glow); }
+@media (max-width: 760px) { .tx-row { grid-template-columns: 44px minmax(0, 1fr) !important; gap: 14px !important; } .tx-row > p { grid-column: 1 / -1 !important; margin-top: -6px; } }
+@media (max-width: 700px) { #doctor > div { grid-template-columns: minmax(0, 1fr) !important; } }
+.bleed-band img { display: block; }
+
+
+/* Hero Section 100vh Fit */
+section:first-of-type { padding-top: clamp(16px, 2.5vh, 32px) !important; }
+.hero-grid { 
+  min-height: calc(100vh - 120px);
+  height: auto !important; 
+}
+.hero-grid > div:first-child { 
+  padding: clamp(32px, 5vh, 68px) clamp(32px, 4vw, 68px) !important; 
+  justify-content: center !important; 
+  display: flex !important; flex-direction: column !important; 
+}
+.hero-grid > form { 
+  padding: clamp(32px, 5vh, 44px) clamp(32px, 4vw, 44px) !important; 
+  justify-content: center !important; 
+  display: flex !important; flex-direction: column !important; 
+}
+.hero-grid > form h2 { margin-bottom: 8px !important; font-size: clamp(24px, 3.5vh, 28px) !important; }
+.hero-grid > form p:first-of-type { margin-bottom: clamp(16px, 2.5vh, 24px) !important; }
+.hero-grid > form > div { gap: clamp(10px, 1.8vh, 12px) !important; }
+.hero-grid > form .input { min-height: clamp(44px, 6vh, 48px) !important; }
+.hero-grid > form .btn { padding: clamp(12px, 2vh, 16px) !important; }
+
+@media (max-width: 900px) { 
+  .hero-grid { height: auto !important; min-height: 0 !important; } 
+  .hero-grid > div:first-child { padding: 32px 24px !important; }
+  .hero-grid > form { padding: 32px 24px !important; }
+}
+
+
+/* Constant Spacing Between Sections */
+section:not([style*="background"]) + section:not([style*="background"]) { 
+  padding-top: 0 !important; 
+}
+
+
+/* Premium Doctor Section */
+#doctor {
+  background: transparent !important;
+  border: none !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+#doctor::before {
+  display: none !important;
+}
+#doctor > div {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--color-accent-200) 80%, transparent), color-mix(in srgb, var(--color-surface) 60%, transparent)) !important;
+  border: 1px solid color-mix(in srgb, var(--color-accent-400) 25%, transparent) !important;
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--nhs-r-lg);
+  padding: clamp(32px, 4vw, 56px) !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  box-shadow: 0 24px 48px color-mix(in srgb, var(--color-accent-900) 8%, transparent), inset 0 2px 4px color-mix(in srgb, var(--color-surface) 50%, transparent);
+  gap: clamp(32px, 4vw, 64px) !important;
+  position: relative;
+  z-index: 2;
+}
+#doctor img {
+  border-radius: var(--nhs-r-lg) !important;
+  box-shadow: var(--nhs-shadow-float) !important;
+  border: 6px solid var(--color-surface);
+  transform: rotate(-1.5deg);
+  transition: transform 0.4s var(--nhs-ease), box-shadow 0.4s var(--nhs-ease);
+}
+#doctor img:hover {
+  transform: scale(1.02) rotate(0deg);
+  box-shadow: 0 16px 40px color-mix(in srgb, var(--color-neutral-900) 12%, transparent) !important;
+}
+#doctor h2 {
+  font-size: clamp(32px, 4vw, 42px) !important;
+  background: linear-gradient(135deg, var(--color-text), var(--color-accent-700));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  margin-bottom: 16px !important;
+}
+#doctor h2 + p {
+  display: inline-block;
+  background: var(--color-surface);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-accent-700) !important;
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--color-accent-900) 6%, transparent);
+  margin-bottom: 24px !important;
+}
+#doctor p:nth-of-type(2) {
+  font-size: 17.5px !important;
+  line-height: 1.65 !important;
+  color: color-mix(in srgb, var(--color-text) 85%, transparent) !important;
+}
+@media (max-width: 700px) {
+  #doctor > div { text-align: center; padding: 32px 20px !important; }
+  #doctor img { margin: 0 auto; max-width: 200px !important; transform: rotate(0deg); }
+  #doctor h2 + p { font-size: 12px !important; padding: 6px 12px; }
+}
+
+/* Layout Expansion for Large Screens */
+:root {
+  --nhs-shell: 1536px; /* Widens the container to reduce empty space on large monitors */
+}
+[style*="max-width:1360px"] {
+  max-width: var(--nhs-shell) !important;
+}
+
+/* Footer Polish */
+footer { border-top: 1px solid color-mix(in srgb, var(--color-neutral-800) 50%, transparent); position: relative; overflow: hidden; }
+footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--color-accent-300) 50%, transparent), transparent); }
+footer a { transition: color 0.3s ease, transform 0.3s ease; display: inline-block; }
+footer a:not(.btn):hover { color: #fff !important; transform: translateX(4px); }
+header, header > div, footer > div, [data-lang] > div:first-child > div { padding-left: var(--nhs-gut) !important; padding-right: var(--nhs-gut) !important; }
+header > div { padding-left: 0 !important; padding-right: 0 !important; }
+
 </style>
 </helmet>
 <div data-lang="{{ lang }}" style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body)">
 
 <div style="background:var(--color-neutral-900);color:var(--color-neutral-200);font-size:13px">
-<div style="max-width:1160px;margin:0 auto;padding:9px 24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+<div style="max-width:1360px;margin:0 auto;padding:9px 24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
 <span><span class="en">Near Sports College, 300 m from Kapurthala Chowk, Jalandhar</span><span class="pa">ਸਪੋਰਟਸ ਕਾਲਜ ਦੇ ਨੇੜੇ, ਕਪੂਰਥਲਾ ਚੌਕ ਤੋਂ 300 ਮੀਟਰ, ਜਲੰਧਰ</span></span>
 <a href="tel:+911814707700" style="color:var(--color-accent-300);text-decoration:none;font-weight:700"><span class="en">Emergency 24×7 · 0181-4707700</span><span class="pa">24 ਘੰਟੇ ਐਮਰਜੈਂਸੀ · 0181-4707700</span></a>
 </div>
 </div>
 
 <header style="position:sticky;top:0;z-index:50;padding:14px 24px;background:color-mix(in srgb, var(--color-bg) 90%, transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--color-divider)">
-<div style="max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:10px">
-<a href="/" style="display:flex;align-items:center;text-decoration:none;background:var(--color-neutral-900);border-radius:999px;padding:8px 16px;flex:0 0 auto"><img src="/assets/logo.png" alt="NHS Hospital, Jalandhar" style="height:30px;width:auto"></a>
+<div style="max-width:1360px;margin:0 auto;display:flex;align-items:center;gap:10px">
+<a href="../index.html" style="display:flex;align-items:center;text-decoration:none;background:var(--color-neutral-900);border-radius:999px;padding:8px 16px;flex:0 0 auto"><img src="../assets/logo.png" alt="NHS Hospital, Jalandhar" style="height:30px;width:auto"></a>
 <nav aria-label="Sections" style="display:flex;gap:4px;padding:5px;border-radius:999px;background:var(--color-surface);border:1px solid var(--color-divider);flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none">
 <a href="#treatments" style="text-decoration:none;color:var(--color-text);font-size:14px;font-weight:600;padding:9px 14px;border-radius:999px;white-space:nowrap" style-hover="background:var(--color-accent-100);color:var(--color-accent-700)"><span class="en">Procedures</span><span class="pa">ਪ੍ਰੋਸੀਜਰ</span></a>
 <a href="#how" style="text-decoration:none;color:var(--color-text);font-size:14px;font-weight:600;padding:9px 14px;border-radius:999px;white-space:nowrap" style-hover="background:var(--color-accent-100);color:var(--color-accent-700)"><span class="en">What happens</span><span class="pa">ਕੀ ਹੋਵੇਗਾ</span></a>
@@ -83,26 +328,23 @@ h1 .pa, h2 .pa, h3 .pa { font-weight: 700; line-height: 1.35; letter-spacing: 0;
 </div>
 </header>
 
-<section style="max-width:1160px;margin:0 auto;padding:clamp(28px,4vw,48px) 24px 0">
+<section style="max-width:1360px;margin:0 auto;padding:clamp(28px,4vw,48px) 24px 0">
 <div class="hero-grid" style="background:var(--color-surface);border-radius:44px;overflow:hidden;box-shadow:var(--shadow-md);display:grid;grid-template-columns:1.05fr 0.95fr;align-items:stretch">
-<div style="padding:clamp(32px,4.5vw,56px);display:flex;flex-direction:column;gap:16px;justify-content:center">
-<span style="display:inline-flex;align-items:center;gap:8px;background:var(--color-accent-100);color:var(--color-accent-700);border-radius:999px;padding:8px 16px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;width:fit-content"><span class="en">Stomach, liver &amp; endoscopy · Jalandhar</span><span class="pa">ਪੇਟ, ਜਿਗਰ ਤੇ ਐਂਡੋਸਕੋਪੀ · ਜਲੰਧਰ</span></span>
-<h1 style="font-family:var(--font-heading);font-size:clamp(32px,4.4vw,50px);line-height:1.05;margin:0;max-width:17ch;text-wrap:pretty"><span class="en">Endoscopy, colonoscopy and liver care in one visit</span><span class="pa">ਐਂਡੋਸਕੋਪੀ, ਕੋਲਨੋਸਕੋਪੀ ਤੇ ਜਿਗਰ ਦਾ ਇਲਾਜ ਇੱਕੋ ਫੇਰੀ ਵਿੱਚ</span></h1>
-<p style="font-size:17.5px;color:var(--color-neutral-700);max-width:42ch;margin:0;text-wrap:pretty"><span class="en">Upper GI endoscopy, colonoscopy, ERCP and painless FibroScan for fatty liver — most of it day-care, with the endoscopy suite and lab in this building.</span><span class="pa">ਐਂਡੋਸਕੋਪੀ, ਕੋਲਨੋਸਕੋਪੀ, ERCP ਤੇ ਬਿਨਾਂ ਦਰਦ ਫ਼ਾਈਬਰੋਸਕੈਨ।</span></p>
+<div style="padding:clamp(40px,5vw,68px);display:flex;flex-direction:column;gap:20px;justify-content:center;background:var(--color-accent-900);position:relative">
+<span style="display:inline-flex;align-items:center;gap:10px;color:var(--color-accent-300);font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;width:fit-content;padding-bottom:14px;border-bottom:1px solid color-mix(in srgb,var(--color-accent-300) 40%,transparent)"><span class="en">Stomach, liver &amp; endoscopy · Jalandhar</span><span class="pa">ਪੇਟ, ਜਿਗਰ ਤੇ ਐਂਡੋਸਕੋਪੀ · ਜਲੰਧਰ</span></span>
+<h1 style="font-family:var(--font-heading);font-size:clamp(38px,5.4vw,68px);line-height:1;letter-spacing:-.035em;margin:0;max-width:15ch;color:#fff;text-wrap:balance"><span class="en">Endoscopy, colonoscopy and liver care in one visit</span><span class="pa">ਐਂਡੋਸਕੋਪੀ, ਕੋਲਨੋਸਕੋਪੀ ਤੇ ਜਿਗਰ ਦਾ ਇਲਾਜ ਇੱਕੋ ਫੇਰੀ ਵਿੱਚ</span></h1>
+<p style="font-size:18px;line-height:1.65;color:var(--color-accent-200);max-width:44ch;margin:0;text-wrap:pretty"><span class="en">Upper GI endoscopy, colonoscopy, ERCP and painless FibroScan for fatty liver — most of it day-care, with the endoscopy suite and lab in this building.</span><span class="pa">ਐਂਡੋਸਕੋਪੀ, ਕੋਲਨੋਸਕੋਪੀ, ERCP ਤੇ ਬਿਨਾਂ ਦਰਦ ਫ਼ਾਈਬਰੋਸਕੈਨ।</span></p>
 <div style="display:flex;flex-wrap:wrap;gap:10px">
-<span style="padding:8px 14px;border-radius:999px;background:var(--color-accent-100);color:var(--color-accent-800);font-size:14px;font-weight:600"><span class="en">Consultant-led procedures</span><span class="pa">ਸੀਨੀਅਰ ਡਾਕਟਰ</span></span>
-<span style="padding:8px 14px;border-radius:999px;background:var(--color-accent-100);color:var(--color-accent-800);font-size:14px;font-weight:600"><span class="en">Mostly day-care</span><span class="pa">ਬਹੁਤਾ ਡੇ-ਕੇਅਰ</span></span>
-<span style="padding:8px 14px;border-radius:999px;background:var(--color-accent-100);color:var(--color-accent-800);font-size:14px;font-weight:600"><span class="en">Cashless TPA</span><span class="pa">ਕੈਸ਼ਲੈਸ TPA</span></span>
+<span style="padding:9px 16px;border-radius:999px;border:1px solid color-mix(in srgb,var(--color-accent-300) 45%,transparent);color:var(--color-accent-200);font-size:13.5px;font-weight:600"><span class="en">Consultant-led procedures</span><span class="pa">ਸੀਨੀਅਰ ਡਾਕਟਰ</span></span>
+<span style="padding:9px 16px;border-radius:999px;border:1px solid color-mix(in srgb,var(--color-accent-300) 45%,transparent);color:var(--color-accent-200);font-size:13.5px;font-weight:600"><span class="en">Mostly day-care</span><span class="pa">ਬਹੁਤਾ ਡੇ-ਕੇਅਰ</span></span>
+<span style="padding:9px 16px;border-radius:999px;border:1px solid color-mix(in srgb,var(--color-accent-300) 45%,transparent);color:var(--color-accent-200);font-size:13.5px;font-weight:600"><span class="en">Cashless TPA</span><span class="pa">ਕੈਸ਼ਲੈਸ TPA</span></span>
 </div>
-<figure style="margin:8px 0 0;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-md)">
-<img src="/assets/hospital-15.jpg" alt="Outpatient department at NHS Hospital" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block">
-</figure>
 </div>
-<form id="book" action="{{ formAction }}" method="POST" style="background:var(--color-neutral-900);border-radius:0 44px 44px 0;padding:clamp(28px,3.2vw,38px);display:flex;flex-direction:column;justify-content:center">
+<form id="book" action="{{ formAction }}" method="POST" style="background:var(--color-surface);border-radius:0;padding:clamp(32px,3.6vw,44px);display:flex;flex-direction:column;justify-content:center">
 <input type="hidden" name="_redirect" value="https://enquire.nhshospital.in/thank-you">
 <input type="hidden" name="department" value="Gastroenterology">
-<h2 style="font-size:24px;margin:0 0 6px;color:#fff"><span class="en">Book a gastro consultation</span><span class="pa">ਪੇਟ ਤੇ ਜਿਗਰ ਦੀ ਸਲਾਹ</span></h2>
-<p style="font-size:14.5px;color:var(--color-neutral-400);margin:0 0 18px"><span class="en">Bring earlier endoscopy, ultrasound or liver reports if you have them.</span><span class="pa">ਪਹਿਲੀ ਰਿਪੋਰਟ ਲਿਆਓ।</span></p>
+<h2 style="font-size:26px;letter-spacing:-.02em;margin:0 0 8px;color:var(--color-text)"><span class="en">Book a gastro consultation</span><span class="pa">ਪੇਟ ਤੇ ਜਿਗਰ ਦੀ ਸਲਾਹ</span></h2>
+<p style="font-size:14.5px;color:var(--color-neutral-600);margin:0 0 22px"><span class="en">Bring earlier endoscopy, ultrasound or liver reports if you have them.</span><span class="pa">ਪਹਿਲੀ ਰਿਪੋਰਟ ਲਿਆਓ।</span></p>
 <div style="display:flex;flex-direction:column;gap:12px">
 <input class="input" name="patient_name" type="text" required placeholder="{{ phName }}" style="min-height:48px;font-size:15.5px;border-radius:12px;padding:10px 16px">
 <input class="input" name="mobile" type="tel" required placeholder="{{ phMobile }}" style="min-height:48px;font-size:15.5px;border-radius:12px;padding:10px 16px">
@@ -114,92 +356,41 @@ h1 .pa, h2 .pa, h3 .pa { font-weight: 700; line-height: 1.35; letter-spacing: 0;
 <option>ਐਂਡੋਸਕੋਪੀ ਦੀ ਸਲਾਹ / Endoscopy or colonoscopy advised</option>
 <option>ਭਾਰ ਦੀ ਸਮੱਸਿਆ / Weight and metabolic problems</option>
 </select>
-<label style="display:flex;gap:9px;align-items:flex-start;font-size:12.5px;color:var(--color-neutral-400);line-height:1.5;cursor:pointer">
+<label style="display:flex;gap:9px;align-items:flex-start;font-size:12.5px;color:var(--color-neutral-600);line-height:1.5;cursor:pointer">
 <input type="checkbox" name="consent" required style="margin-top:3px;width:17px;height:17px;accent-color:var(--color-accent-400)">
-<span><span class="en">I agree to be contacted about this enquiry; see <a href="/privacy.html#privacy" style="color:var(--color-accent-300)">privacy policy</a>.</span><span class="pa">ਮੈਂ ਸੰਪਰਕ ਲਈ ਸਹਿਮਤ ਹਾਂ।</span></span>
+<span><span class="en">I agree to be contacted about this enquiry; see <a href="../privacy.html#privacy" style="color:var(--color-accent-300)">privacy policy</a>.</span><span class="pa">ਮੈਂ ਸੰਪਰਕ ਲਈ ਸਹਿਮਤ ਹਾਂ।</span></span>
 </label>
 <button type="submit" class="btn btn-primary btn-block" style="border-radius:999px;padding:14px;font-size:16px"><span class="en">Request appointment</span><span class="pa">ਬਿਨਤੀ ਭੇਜੋ</span></button>
-<p style="font-size:12px;color:var(--color-neutral-500);margin:0;text-align:center"><span class="en">An appointment request only — not medical advice or a diagnosis.</span><span class="pa">ਇਹ ਸਿਰਫ਼ ਬਿਨਤੀ ਹੈ।</span></p>
+<p style="font-size:12px;color:var(--color-neutral-600);margin:0"><span class="en">An appointment request only — not medical advice or a diagnosis.</span><span class="pa">ਇਹ ਸਿਰਫ਼ ਬਿਨਤੀ ਹੈ।</span></p>
 </div>
 </form>
 </div>
 </section>
 
-<section style="max-width:1160px;margin:0 auto;padding:clamp(44px,5vw,76px) 24px">
+<figure class="bleed-band" style="max-width:1360px;margin:clamp(40px,5vw,72px) auto 0;padding:0 var(--nhs-gut);position:relative">
+<img src="../assets/hospital-15.jpg" alt="Outpatient department at NHS Hospital" style="width:100%;height:clamp(240px,38vw,460px);object-fit:cover;display:block;filter:saturate(.9) contrast(1.03)">
+<figcaption style="position:absolute;left:var(--nhs-gut);right:var(--nhs-gut);bottom:0;padding:clamp(18px,3vw,28px) clamp(20px,2.4vw,28px);color:#fff;font-size:14px;font-weight:600;letter-spacing:.02em;background:linear-gradient(to top,rgba(23,19,16,.72),transparent)">Outpatient department at NHS Hospital</figcaption>
+</figure>
+
+
+
+<section style="max-width:1360px;margin:0 auto;padding:clamp(44px,5vw,76px) 24px">
 <span style="display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700);font-weight:700;margin-bottom:14px"><span style="width:10px;height:10px;border-radius:50%;background:var(--color-accent);display:inline-block"></span><span class="en">Inside the hospital</span><span class="pa">ਹਸਪਤਾਲ ਦੇ ਅੰਦਰ</span></span>
 <h2 style="font-family:var(--font-heading);font-size:clamp(28px,3.4vw,42px);margin:0 0 10px"><span class="en">See the place before you arrive</span><span class="pa">ਆਉਣ ਤੋਂ ਪਹਿਲਾਂ ਥਾਂ ਦੇਖ ਲਓ</span></h2>
 <p style="font-size:17.5px;color:var(--color-neutral-700);max-width:56ch;margin:0 0 28px"><span class="en">Where the consultation, the procedure and the overnight stay happen.</span><span class="pa">ਮੁਲਾਕਾਤ, ਪ੍ਰੋਸੀਜਰ ਤੇ ਰਾਤ ਰੁਕਣਾ।</span></p>
 <div class="photo-mosaic">
-<figure class="lead"><img src="/assets/hospital-12.jpg" alt="Modular operation theatre at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">Modular operation theatre</span><span class="pa">ਮਾਡਿਊਲਰ ਆਪਰੇਸ਼ਨ ਥੀਏਟਰ</span></figcaption></figure>
-<figure class="lead"><img src="/assets/hospital-22.jpg" alt="Consultation in the outpatient clinic" loading="lazy" class="washed"><figcaption><span class="en">Consultation in the outpatient clinic</span><span class="pa">OPD ਵਿੱਚ ਸਲਾਹ</span></figcaption></figure>
-<figure><img src="/assets/hospital-16.jpg" alt="Inpatient ward at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">Inpatient ward</span><span class="pa">ਵਾਰਡ</span></figcaption></figure>
-<figure><img src="/assets/hospital-7.jpg" alt="Silent MRI suite at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">GE silent MRI suite</span><span class="pa">ਸਾਈਲੈਂਟ MRI</span></figcaption></figure>
-<figure><img src="/assets/hospital-15.jpg" alt="Outpatient department at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">Outpatient department</span><span class="pa">OPD</span></figcaption></figure>
-<figure><img src="/assets/hospital-17.jpg" alt="Consultant round at the bedside" loading="lazy" class="washed"><figcaption><span class="en">Consultant round at the bedside</span><span class="pa">ਡਾਕਟਰ ਦਾ ਗੇੜਾ</span></figcaption></figure>
-</div>
-</section>
-
-<section id="treatments" style="max-width:1160px;margin:0 auto;padding:clamp(48px,6vw,80px) 24px;scroll-margin-top:90px">
-<span style="display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700);font-weight:700;margin-bottom:14px"><span style="width:10px;height:10px;border-radius:50%;background:var(--color-accent);display:inline-block"></span><span class="en">What we treat</span><span class="pa">ਅਸੀਂ ਕੀ ਇਲਾਜ ਕਰਦੇ ਹਾਂ</span></span>
-<h2 style="font-family:var(--font-heading);font-size:clamp(30px,3.8vw,46px);margin:0 0 12px"><span class="en">Procedures offered here</span><span class="pa">ਇੱਥੇ ਹੋਣ ਵਾਲੇ ਪ੍ਰੋਸੀਜਰ</span></h2>
-<p style="font-size:18px;color:var(--color-neutral-700);max-width:56ch;margin:0 0 32px"><span class="en">Most digestive problems are diagnosed and treated through the scope rather than through an incision. Which test you need is decided at the consultation.</span><span class="pa">ਕਿਹੜਾ ਟੈਸਟ ਚਾਹੀਦਾ ਹੈ, ਇਹ ਮੁਲਾਕਾਤ ਵਿੱਚ ਤੈਅ ਹੁੰਦਾ ਹੈ।</span></p>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px">
-<div style="background:var(--color-accent-900);border-radius:28px;padding:28px">
-<h3 style="font-size:23px;margin:0 0 10px;color:var(--color-neutral-100)"><span class="en">Endoscopy &amp; colonoscopy</span><span class="pa">ਐਂਡੋਸਕੋਪੀ ਤੇ ਕੋਲਨੋਸਕੋਪੀ</span></h3>
-<p style="font-size:15.5px;color:var(--color-accent-200);margin:0"><span class="en">Upper GI endoscopy and colonoscopy for acidity, bleeding, ulcers, polyps and unexplained symptoms.</span><span class="pa">ਪੇਟ ਦੀ ਦੂਰਬੀਨ ਜਾਂਚ।</span></p>
-</div>
-<div style="background:var(--color-surface);border-radius:28px;padding:28px">
-<h3 style="font-size:23px;margin:0 0 10px"><span class="en">FibroScan</span><span class="pa">ਫ਼ਾਈਬਰੋਸਕੈਨ</span></h3>
-<p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">A painless scan that measures liver stiffness and fat — no needle, result the same day.</span><span class="pa">ਬਿਨਾਂ ਦਰਦ ਸਕੈਨ।</span></p>
-</div>
-<div style="background:var(--color-surface);border-radius:28px;padding:28px">
-<h3 style="font-size:23px;margin:0 0 10px"><span class="en">ERCP &amp; bile duct work</span><span class="pa">ERCP ਤੇ ਪਿੱਤ ਦੀ ਨਾਲੀ</span></h3>
-<p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">Endoscopic treatment of bile duct stones, blockages and strictures.</span><span class="pa">ਪਿੱਤ ਦੀ ਨਾਲੀ ਦਾ ਦੂਰਬੀਨ ਇਲਾਜ।</span></p>
-</div>
-<div style="background:var(--color-surface);border-radius:28px;padding:28px">
-<h3 style="font-size:23px;margin:0 0 10px"><span class="en">Liver care</span><span class="pa">ਜਿਗਰ ਦਾ ਇਲਾਜ</span></h3>
-<p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">Fatty liver and NASH, hepatitis, cirrhosis and jaundice, followed up with imaging and blood work on site.</span><span class="pa">ਚਰਬੀ ਵਾਲਾ ਜਿਗਰ, ਹੈਪੇਟਾਈਟਸ।</span></p>
-</div>
-<div style="background:var(--color-surface);border-radius:28px;padding:28px">
-<h3 style="font-size:23px;margin:0 0 10px"><span class="en">Laser treatment for piles</span><span class="pa">ਬਵਾਸੀਰ ਦਾ ਲੇਜ਼ਰ ਇਲਾਜ</span></h3>
-<p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">Piles, fissure, fistula and pilonidal sinus treated with laser techniques in suitable cases.</span><span class="pa">ਢੁਕਵੇਂ ਕੇਸਾਂ ਵਿੱਚ ਲੇਜ਼ਰ ਇਲਾਜ।</span></p>
-</div>
-<div style="background:var(--color-accent-2-100);border-radius:28px;padding:28px">
-<h3 style="font-size:23px;margin:0 0 10px"><span class="en">Weight &amp; metabolic care</span><span class="pa">ਭਾਰ ਤੇ ਪਾਚਣ ਦਾ ਇਲਾਜ</span></h3>
-<p style="font-size:15.5px;color:var(--color-accent-2-800);margin:0"><span class="en">Gastric balloon and medically supervised weight management, with dietetics in the same building.</span><span class="pa">ਗੈਸਟ੍ਰਿਕ ਬੈਲੂਨ ਤੇ ਭਾਰ ਘਟਾਉਣਾ।</span></p>
-</div>
-</div>
-</section>
-
-<section style="background:var(--color-surface)">
-<div style="max-width:1160px;margin:0 auto;padding:clamp(44px,5vw,72px) 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(26px,4vw,48px);align-items:center">
-<div>
-<h2 style="font-family:var(--font-heading);font-size:clamp(26px,3.2vw,34px);margin:0 0 14px"><span class="en">Bloating is a symptom, not a diagnosis</span><span class="pa">ਪੇਟ ਫੁੱਲਣਾ ਇੱਕ ਨਿਸ਼ਾਨੀ ਹੈ, ਬਿਮਾਰੀ ਦਾ ਨਾਂ ਨਹੀਂ</span></h2>
-<div style="display:flex;flex-direction:column;gap:10px;max-width:52ch">
-<p style="font-size:17px;color:var(--color-neutral-700);margin:0"><span class="en">Persistent bloating has many possible causes — diet and gut motility, acid problems, intolerance, gallbladder or liver disease among them. The point of the workup is to find which one it is instead of treating it blindly.</span><span class="pa">ਲਗਾਤਾਰ ਪੇਟ ਫੁੱਲਣ ਦੇ ਕਈ ਕਾਰਨ ਹੋ ਸਕਦੇ ਹਨ।</span></p>
-<p style="font-size:14.5px;color:var(--color-neutral-600);margin:0"><span class="en">General information only — it cannot tell you what is causing your own symptoms.</span><span class="pa">ਸਿਰਫ਼ ਆਮ ਜਾਣਕਾਰੀ।</span></p>
-</div>
-</div>
-<figure>
-<img src="/assets/hospital-15.jpg" alt="Outpatient department at NHS Hospital" class="washed" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:24px;box-shadow:var(--shadow-md)">
-<figcaption style="font-size:13px;margin-top:10px"><span class="en">Outpatient department on a working morning.</span><span class="pa">ਕੰਮ ਵਾਲੇ ਦਿਨ ਦੀ OPD।</span></figcaption>
-</figure>
-</div>
-</section>
-
-<section id="how" style="max-width:1160px;margin:0 auto;padding:clamp(48px,6vw,80px) 24px;scroll-margin-top:90px">
-<h2 style="font-family:var(--font-heading);font-size:clamp(26px,3.2vw,36px);margin:0 0 28px"><span class="en">Your care pathway</span><span class="pa">ਤੁਹਾਡਾ ਇਲਾਜ ਦਾ ਰਾਹ</span></h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px">
-<div style="display:flex;flex-direction:column;gap:12px"><span style="width:46px;height:46px;border-radius:50%;background:var(--color-accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:20px">1</span><h3 style="font-size:20px;margin:0"><span class="en">Consultation</span><span class="pa">ਮੁਲਾਕਾਤ</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">Your history, examination, and a plain explanation of which test will actually answer the question.</span><span class="pa">ਸਾਫ਼ ਸ਼ਬਦਾਂ ਵਿੱਚ ਟੈਸਟ ਦੀ ਜਾਣਕਾਰੀ।</span></p></div>
-<div style="display:flex;flex-direction:column;gap:12px"><span style="width:46px;height:46px;border-radius:50%;background:var(--color-accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:20px">2</span><h3 style="font-size:20px;margin:0"><span class="en">Tests on site</span><span class="pa">ਟੈਸਟ ਇੱਥੇ ਹੀ</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">Blood work, ultrasound, FibroScan or endoscopy — usually without a second trip across town.</span><span class="pa">ਦੂਜੀ ਥਾਂ ਜਾਣ ਦੀ ਲੋੜ ਨਹੀਂ।</span></p></div>
-<div style="display:flex;flex-direction:column;gap:12px"><span style="width:46px;height:46px;border-radius:50%;background:var(--color-accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:20px">3</span><h3 style="font-size:20px;margin:0"><span class="en">Procedure &amp; recovery</span><span class="pa">ਪ੍ਰੋਸੀਜਰ ਤੇ ਆਰਾਮ</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">Day-care in most cases, with written instructions before you leave and the insurance desk handling approvals.</span><span class="pa">ਬੀਮੇ ਦੀ ਮਨਜ਼ੂਰੀ ਸਾਡਾ ਕਾਊਂਟਰ।</span></p></div>
-<div style="display:flex;flex-direction:column;gap:12px"><span style="width:46px;height:46px;border-radius:50%;background:var(--color-accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:20px">4</span><h3 style="font-size:20px;margin:0"><span class="en">Follow-up</span><span class="pa">ਅਗਲੀ ਜਾਂਚ</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">Review of biopsy or scan results, diet guidance, and a longer-term plan where the condition needs one.</span><span class="pa">ਖ਼ੁਰਾਕ ਦੀ ਸਲਾਹ ਤੇ ਲੰਮੇ ਸਮੇਂ ਦੀ ਯੋਜਨਾ।</span></p></div>
+<figure class="lead"><img src="../assets/hospital-12.jpg" alt="Modular operation theatre at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">Modular operation theatre</span><span class="pa">ਮਾਡਿਊਲਰ ਆਪਰੇਸ਼ਨ ਥੀਏਟਰ</span></figcaption></figure>
+<figure class="lead"><img src="../assets/hospital-22.jpg" alt="Consultation in the outpatient clinic" loading="lazy" class="washed"><figcaption><span class="en">Consultation in the outpatient clinic</span><span class="pa">OPD ਵਿੱਚ ਸਲਾਹ</span></figcaption></figure>
+<figure><img src="../assets/hospital-16.jpg" alt="Inpatient ward at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">Inpatient ward</span><span class="pa">ਵਾਰਡ</span></figcaption></figure>
+<figure><img src="../assets/hospital-7.jpg" alt="Silent MRI suite at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">GE silent MRI suite</span><span class="pa">ਸਾਈਲੈਂਟ MRI</span></figcaption></figure>
+<figure><img src="../assets/hospital-15.jpg" alt="Outpatient department at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">Outpatient department</span><span class="pa">OPD</span></figcaption></figure>
+<figure><img src="../assets/hospital-17.jpg" alt="Consultant round at the bedside" loading="lazy" class="washed"><figcaption><span class="en">Consultant round at the bedside</span><span class="pa">ਡਾਕਟਰ ਦਾ ਗੇੜਾ</span></figcaption></figure>
 </div>
 </section>
 
 <section id="doctor" style="background:var(--color-accent-100);scroll-margin-top:90px">
-<div style="max-width:1160px;margin:0 auto;padding:clamp(44px,5vw,72px) 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(26px,4vw,48px);align-items:center">
-<img src="/assets/dr-anuj.jpeg" alt="Dr. Anuj Arora, consultant gastroenterologist" class="washed" style="width:100%;max-width:300px;aspect-ratio:1;object-fit:cover;border-radius:24px;box-shadow:var(--shadow-md)">
+<div style="max-width:1360px;margin:0 auto;padding:clamp(44px,5vw,72px) 24px;display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:clamp(20px,2.6vw,36px);align-items:center">
+<img src="../assets/dr-anuj.jpeg" alt="Dr. Anuj Arora, consultant gastroenterologist" class="washed" style="width:100%;max-width:300px;aspect-ratio:1;object-fit:cover;border-radius:24px;box-shadow:var(--shadow-md)">
 <div>
 <h2 style="font-family:var(--font-heading);font-size:clamp(26px,3vw,34px);margin:0 0 6px"><span class="en">Dr. Anuj Arora</span><span class="pa">ਡਾ. ਅਨੁਜ ਅਰੋੜਾ</span></h2>
 <p style="font-size:16px;color:var(--color-accent-800);margin:0 0 16px;font-weight:600"><span class="en">Consultant Gastroenterologist — therapeutic endoscopy, liver disease</span><span class="pa">ਪੇਟ ਤੇ ਜਿਗਰ ਰੋਗਾਂ ਦੇ ਮਾਹਿਰ</span></p>
@@ -209,7 +400,71 @@ h1 .pa, h2 .pa, h3 .pa { font-weight: 700; line-height: 1.35; letter-spacing: 0;
 </div>
 </section>
 
-<section style="max-width:1160px;margin:0 auto;padding:clamp(44px,5vw,72px) 24px">
+<section id="treatments" style="max-width:1360px;margin:0 auto;padding:clamp(48px,6vw,80px) 24px;scroll-margin-top:90px">
+<span style="display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700);font-weight:700;margin-bottom:14px"><span style="width:10px;height:10px;border-radius:50%;background:var(--color-accent);display:inline-block"></span><span class="en">What we treat</span><span class="pa">ਅਸੀਂ ਕੀ ਇਲਾਜ ਕਰਦੇ ਹਾਂ</span></span>
+<h2 style="font-family:var(--font-heading);font-size:clamp(30px,3.8vw,46px);margin:0 0 12px"><span class="en">Procedures offered here</span><span class="pa">ਇੱਥੇ ਹੋਣ ਵਾਲੇ ਪ੍ਰੋਸੀਜਰ</span></h2>
+<p style="font-size:18px;color:var(--color-neutral-700);max-width:56ch;margin:0 0 32px"><span class="en">Most digestive problems are diagnosed and treated through the scope rather than through an incision. Which test you need is decided at the consultation.</span><span class="pa">ਕਿਹੜਾ ਟੈਸਟ ਚਾਹੀਦਾ ਹੈ, ਇਹ ਮੁਲਾਕਾਤ ਵਿੱਚ ਤੈਅ ਹੁੰਦਾ ਹੈ।</span></p>
+<div class="tx-index" style="border-top:2px solid var(--color-neutral-900)">
+<div class="tx-row" style="display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.15fr);gap:clamp(16px,3vw,40px);align-items:start;padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--nhs-line);transition:background .3s var(--nhs-ease)">
+<span style="font-family:var(--font-heading);font-size:15px;font-weight:700;color:var(--color-accent);letter-spacing:.08em;padding-top:6px">01</span>
+<h3 style="font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;margin:0;line-height:1.2"><span class="en">Endoscopy &amp; colonoscopy</span><span class="pa">ਐਂਡੋਸਕੋਪੀ ਤੇ ਕੋਲਨੋਸਕੋਪੀ</span></h3>
+<p style="font-size:16px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="en">Upper GI endoscopy and colonoscopy for acidity, bleeding, ulcers, polyps and unexplained symptoms.</span><span class="pa">ਪੇਟ ਦੀ ਦੂਰਬੀਨ ਜਾਂਚ।</span></p>
+</div>
+<div class="tx-row" style="display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.15fr);gap:clamp(16px,3vw,40px);align-items:start;padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--nhs-line);transition:background .3s var(--nhs-ease)">
+<span style="font-family:var(--font-heading);font-size:15px;font-weight:700;color:var(--color-accent);letter-spacing:.08em;padding-top:6px">02</span>
+<h3 style="font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;margin:0;line-height:1.2"><span class="en">FibroScan</span><span class="pa">ਫ਼ਾਈਬਰੋਸਕੈਨ</span></h3>
+<p style="font-size:16px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="en">A painless scan that measures liver stiffness and fat — no needle, result the same day.</span><span class="pa">ਬਿਨਾਂ ਦਰਦ ਸਕੈਨ।</span></p>
+</div>
+<div class="tx-row" style="display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.15fr);gap:clamp(16px,3vw,40px);align-items:start;padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--nhs-line);transition:background .3s var(--nhs-ease)">
+<span style="font-family:var(--font-heading);font-size:15px;font-weight:700;color:var(--color-accent);letter-spacing:.08em;padding-top:6px">03</span>
+<h3 style="font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;margin:0;line-height:1.2"><span class="en">ERCP &amp; bile duct work</span><span class="pa">ERCP ਤੇ ਪਿੱਤ ਦੀ ਨਾਲੀ</span></h3>
+<p style="font-size:16px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="en">Endoscopic treatment of bile duct stones, blockages and strictures.</span><span class="pa">ਪਿੱਤ ਦੀ ਨਾਲੀ ਦਾ ਦੂਰਬੀਨ ਇਲਾਜ।</span></p>
+</div>
+<div class="tx-row" style="display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.15fr);gap:clamp(16px,3vw,40px);align-items:start;padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--nhs-line);transition:background .3s var(--nhs-ease)">
+<span style="font-family:var(--font-heading);font-size:15px;font-weight:700;color:var(--color-accent);letter-spacing:.08em;padding-top:6px">04</span>
+<h3 style="font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;margin:0;line-height:1.2"><span class="en">Liver care</span><span class="pa">ਜਿਗਰ ਦਾ ਇਲਾਜ</span></h3>
+<p style="font-size:16px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="en">Fatty liver and NASH, hepatitis, cirrhosis and jaundice, followed up with imaging and blood work on site.</span><span class="pa">ਚਰਬੀ ਵਾਲਾ ਜਿਗਰ, ਹੈਪੇਟਾਈਟਸ।</span></p>
+</div>
+<div class="tx-row" style="display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.15fr);gap:clamp(16px,3vw,40px);align-items:start;padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--nhs-line);transition:background .3s var(--nhs-ease)">
+<span style="font-family:var(--font-heading);font-size:15px;font-weight:700;color:var(--color-accent);letter-spacing:.08em;padding-top:6px">05</span>
+<h3 style="font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;margin:0;line-height:1.2"><span class="en">Laser treatment for piles</span><span class="pa">ਬਵਾਸੀਰ ਦਾ ਲੇਜ਼ਰ ਇਲਾਜ</span></h3>
+<p style="font-size:16px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="en">Piles, fissure, fistula and pilonidal sinus treated with laser techniques in suitable cases.</span><span class="pa">ਢੁਕਵੇਂ ਕੇਸਾਂ ਵਿੱਚ ਲੇਜ਼ਰ ਇਲਾਜ।</span></p>
+</div>
+<div class="tx-row" style="display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.15fr);gap:clamp(16px,3vw,40px);align-items:start;padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--nhs-line);transition:background .3s var(--nhs-ease)">
+<span style="font-family:var(--font-heading);font-size:15px;font-weight:700;color:var(--color-accent);letter-spacing:.08em;padding-top:6px">06</span>
+<h3 style="font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;margin:0;line-height:1.2"><span class="en">Weight &amp; metabolic care</span><span class="pa">ਭਾਰ ਤੇ ਪਾਚਣ ਦਾ ਇਲਾਜ</span></h3>
+<p style="font-size:16px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="en">Gastric balloon and medically supervised weight management, with dietetics in the same building.</span><span class="pa">ਗੈਸਟ੍ਰਿਕ ਬੈਲੂਨ ਤੇ ਭਾਰ ਘਟਾਉਣਾ।</span></p>
+</div>
+</div>
+</section>
+
+<section style="background:var(--color-surface)">
+<div style="max-width:1360px;margin:0 auto;padding:clamp(44px,5vw,72px) 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(26px,4vw,48px);align-items:center">
+<div>
+<h2 style="font-family:var(--font-heading);font-size:clamp(26px,3.2vw,34px);margin:0 0 14px"><span class="en">Bloating is a symptom, not a diagnosis</span><span class="pa">ਪੇਟ ਫੁੱਲਣਾ ਇੱਕ ਨਿਸ਼ਾਨੀ ਹੈ, ਬਿਮਾਰੀ ਦਾ ਨਾਂ ਨਹੀਂ</span></h2>
+<div style="display:flex;flex-direction:column;gap:10px;max-width:52ch">
+<p style="font-size:17px;color:var(--color-neutral-700);margin:0"><span class="en">Persistent bloating has many possible causes — diet and gut motility, acid problems, intolerance, gallbladder or liver disease among them. The point of the workup is to find which one it is instead of treating it blindly.</span><span class="pa">ਲਗਾਤਾਰ ਪੇਟ ਫੁੱਲਣ ਦੇ ਕਈ ਕਾਰਨ ਹੋ ਸਕਦੇ ਹਨ।</span></p>
+<p style="font-size:14.5px;color:var(--color-neutral-600);margin:0"><span class="en">General information only — it cannot tell you what is causing your own symptoms.</span><span class="pa">ਸਿਰਫ਼ ਆਮ ਜਾਣਕਾਰੀ।</span></p>
+</div>
+</div>
+<figure>
+<img src="../assets/hospital-15.jpg" alt="Outpatient department at NHS Hospital" class="washed" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:24px;box-shadow:var(--shadow-md)">
+<figcaption style="font-size:13px;margin-top:10px"><span class="en">Outpatient department on a working morning.</span><span class="pa">ਕੰਮ ਵਾਲੇ ਦਿਨ ਦੀ OPD।</span></figcaption>
+</figure>
+</div>
+</section>
+
+<section id="how" style="max-width:1360px;margin:0 auto;padding:clamp(48px,6vw,80px) 24px;scroll-margin-top:90px">
+<h2 style="font-family:var(--font-heading);font-size:clamp(26px,3.2vw,36px);margin:0 0 28px"><span class="en">Your care pathway</span><span class="pa">ਤੁਹਾਡਾ ਇਲਾਜ ਦਾ ਰਾਹ</span></h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px">
+<div style="display:flex;flex-direction:column;gap:12px"><span style="width:46px;height:46px;border-radius:50%;background:var(--color-accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:20px">1</span><h3 style="font-size:20px;margin:0"><span class="en">Consultation</span><span class="pa">ਮੁਲਾਕਾਤ</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">Your history, examination, and a plain explanation of which test will actually answer the question.</span><span class="pa">ਸਾਫ਼ ਸ਼ਬਦਾਂ ਵਿੱਚ ਟੈਸਟ ਦੀ ਜਾਣਕਾਰੀ।</span></p></div>
+<div style="display:flex;flex-direction:column;gap:12px"><span style="width:46px;height:46px;border-radius:50%;background:var(--color-accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:20px">2</span><h3 style="font-size:20px;margin:0"><span class="en">Tests on site</span><span class="pa">ਟੈਸਟ ਇੱਥੇ ਹੀ</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">Blood work, ultrasound, FibroScan or endoscopy — usually without a second trip across town.</span><span class="pa">ਦੂਜੀ ਥਾਂ ਜਾਣ ਦੀ ਲੋੜ ਨਹੀਂ।</span></p></div>
+<div style="display:flex;flex-direction:column;gap:12px"><span style="width:46px;height:46px;border-radius:50%;background:var(--color-accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:20px">3</span><h3 style="font-size:20px;margin:0"><span class="en">Procedure &amp; recovery</span><span class="pa">ਪ੍ਰੋਸੀਜਰ ਤੇ ਆਰਾਮ</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">Day-care in most cases, with written instructions before you leave and the insurance desk handling approvals.</span><span class="pa">ਬੀਮੇ ਦੀ ਮਨਜ਼ੂਰੀ ਸਾਡਾ ਕਾਊਂਟਰ।</span></p></div>
+<div style="display:flex;flex-direction:column;gap:12px"><span style="width:46px;height:46px;border-radius:50%;background:var(--color-accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:20px">4</span><h3 style="font-size:20px;margin:0"><span class="en">Follow-up</span><span class="pa">ਅਗਲੀ ਜਾਂਚ</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">Review of biopsy or scan results, diet guidance, and a longer-term plan where the condition needs one.</span><span class="pa">ਖ਼ੁਰਾਕ ਦੀ ਸਲਾਹ ਤੇ ਲੰਮੇ ਸਮੇਂ ਦੀ ਯੋਜਨਾ।</span></p></div>
+</div>
+</section>
+
+<section style="max-width:1360px;margin:0 auto;padding:clamp(44px,5vw,72px) 24px">
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px">
 <div style="background:var(--color-surface);border-radius:24px;padding:26px"><h3 style="font-size:20px;margin:0 0 8px"><span class="en">Cashless &amp; TPA</span><span class="pa">ਕੈਸ਼ਲੈਸ ਤੇ TPA</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0">Insurance approvals and government schemes handled by our desk before your procedure.</p></div>
 <div style="background:var(--color-surface);border-radius:24px;padding:26px"><h3 style="font-size:20px;margin:0 0 8px"><span class="en">Round-the-clock lab</span><span class="pa">24 ਘੰਟੇ ਲੈਬ</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">On-site pathology under a consultant pathologist, so reports are not sent out and waited on.</span><span class="pa">ਰਿਪੋਰਟਾਂ ਬਾਹਰ ਭੇਜਣ ਦੀ ਲੋੜ ਨਹੀਂ।</span></p></div>
@@ -219,19 +474,52 @@ h1 .pa, h2 .pa, h3 .pa { font-weight: 700; line-height: 1.35; letter-spacing: 0;
 
 
 <footer style="background:var(--color-neutral-900);color:var(--color-neutral-300)">
-<div style="max-width:1160px;margin:0 auto;padding:clamp(36px,4vw,52px) 24px;display:flex;flex-direction:column;gap:20px">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px">
-<div><img src="/assets/logo.png" alt="NHS Hospital" style="height:38px;width:auto;margin-bottom:12px"><p style="font-size:14px;margin:0;color:var(--color-neutral-400)">Nasa &amp; Hub Superspeciality Hospital<br>Near Sports College, 300 m from Kapurthala Chowk<br>Jalandhar, Punjab 144001, India</p></div>
-<div><h3 style="font-size:16px;color:var(--color-neutral-100);margin:0 0 8px"><span class="en">Contact</span><span class="pa">ਸੰਪਰਕ</span></h3><p style="font-size:14px;margin:0;color:var(--color-neutral-400)">Emergency 24 hours: <a href="tel:+911814707700" style="color:var(--color-accent-300)">0181-4707700</a><br>Appointments: <a href="tel:+911814633333" style="color:var(--color-accent-300)">0181-4633333</a><br>info@nhshospital.in</p></div>
-<div><h3 style="font-size:16px;color:var(--color-neutral-100);margin:0 0 8px"><span class="en">Information</span><span class="pa">ਜਾਣਕਾਰੀ</span></h3><div style="display:flex;flex-direction:column;gap:6px;font-size:14px">
-<a href="/" style="color:var(--color-neutral-300);text-decoration:none"><span class="en">All specialties</span><span class="pa">ਸਾਰੇ ਵਿਭਾਗ</span></a>
-<a href="/privacy.html#privacy" style="color:var(--color-neutral-300);text-decoration:none"><span class="en">Privacy policy</span><span class="pa">ਪਰਾਈਵੇਸੀ ਪਾਲਿਸੀ</span></a>
-<a href="/privacy.html#terms" style="color:var(--color-neutral-300);text-decoration:none"><span class="en">Terms &amp; conditions</span><span class="pa">ਨਿਯਮ ਤੇ ਸ਼ਰਤਾਂ</span></a>
-</div></div>
+<div style="max-width:1360px;margin:0 auto;padding:clamp(44px,5vw,72px) var(--nhs-gut) 0">
+
+<div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:end;padding-bottom:clamp(28px,3.5vw,44px);border-bottom:1px solid color-mix(in srgb,var(--color-neutral-100) 16%,transparent)">
+<h2 style="font-family:var(--font-heading);font-size:clamp(26px,3.4vw,44px);line-height:1.05;letter-spacing:-.03em;margin:0;color:#fff;max-width:18ch"><span class="en">Talk to a gastroenterologist before you decide.</span><span class="pa">ਫ਼ੈਸਲਾ ਲੈਣ ਤੋਂ ਪਹਿਲਾਂ ਡਾਕਟਰ ਨਾਲ ਗੱਲ ਕਰੋ।</span></h2>
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<a href="#book" class="btn btn-primary" style="border-radius:999px;padding:14px 24px;font-size:15px"><span class="en">Request an appointment</span><span class="pa">ਬਿਨਤੀ ਭੇਜੋ</span></a>
+<a href="tel:+911814707700" class="btn" style="border-radius:999px;padding:14px 24px;font-size:15px;border:1px solid color-mix(in srgb,var(--color-accent-300) 50%,transparent);color:var(--color-accent-300)"><span class="en">Emergency 24×7</span><span class="pa">ਐਮਰਜੈਂਸੀ 24 ਘੰਟੇ</span></a>
 </div>
-<div style="border-top:1px solid color-mix(in srgb, var(--color-neutral-100) 18%, transparent);padding-top:18px;display:flex;flex-direction:column;gap:10px">
-<p style="font-size:13.5px;color:var(--color-neutral-400);margin:0;max-width:90ch"><span class="en"><strong style="color:var(--color-neutral-200)">Medical disclaimer.</strong> This page is general health information, not medical advice, diagnosis or treatment. Endoscopic and laser procedures are advised individually after examination, and their risks are explained before consent. Outcomes differ between patients and nothing here is a promise of results. In an emergency, call 0181-4707700 or go to your nearest emergency department.</span><span class="pa"><strong style="color:var(--color-neutral-200)">ਡਾਕਟਰੀ ਸੂਚਨਾ।</strong> ਇਹ ਪੰਨਾ ਆਮ ਸਿਹਤ ਜਾਣਕਾਰੀ ਹੈ। ਨਤੀਜੇ ਵੱਖ-ਵੱਖ ਹਨ। ਐਮਰਜੈਂਸੀ ਵਿੱਚ 0181-4707700 ਉੱਤੇ ਫ਼ੋਨ ਕਰੋ।</span></p>
-<p style="font-size:13.5px;color:var(--color-neutral-500);margin:0">© 2026 Nasa &amp; Hub Superspeciality Hospital, Jalandhar.</p>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:clamp(24px,3vw,44px);padding:clamp(30px,3.6vw,46px) 0">
+<div style="display:flex;flex-direction:column;gap:14px">
+<img src="../assets/logo.png" alt="NHS Hospital" style="height:40px;width:auto;align-self:flex-start">
+<p style="font-size:14px;line-height:1.7;margin:0;color:var(--color-neutral-400)">Nasa &amp; Hub Superspeciality Hospital<br>Near Sports College, 300 m from Kapurthala Chowk<br>Jalandhar, Punjab 144001, India</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-300);margin:0;font-weight:700"><span class="en">Contact</span><span class="pa">ਸੰਪਰਕ</span></h3>
+<div style="display:flex;flex-direction:column;gap:9px;font-size:14.5px">
+<a href="tel:+911814707700" style="color:var(--color-neutral-200);text-decoration:none"><span class="en">Emergency · 0181-4707700</span><span class="pa">ਐਮਰਜੈਂਸੀ · 0181-4707700</span></a>
+<a href="tel:+911814633333" style="color:var(--color-neutral-200);text-decoration:none"><span class="en">Appointments · 0181-4633333</span><span class="pa">ਮੁਲਾਕਾਤ · 0181-4633333</span></a>
+<a href="mailto:info@nhshospital.in" style="color:var(--color-neutral-200);text-decoration:none">info@nhshospital.in</a>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-300);margin:0;font-weight:700"><span class="en">Departments</span><span class="pa">ਵਿਭਾਗ</span></h3>
+<div style="display:flex;flex-direction:column;gap:9px;font-size:14.5px">
+<a href="../Cardiology/index.html" style="color:var(--color-neutral-400);text-decoration:none">Cardiology</a>
+<a href="../Orthopaedics/index.html" style="color:var(--color-neutral-400);text-decoration:none">Orthopaedics</a>
+<a href="../Nephrology/index.html" style="color:var(--color-neutral-400);text-decoration:none">Nephrology</a>
+<a href="../Urology/index.html" style="color:var(--color-neutral-400);text-decoration:none">Urology</a>
+<a href="../Gastroenterology/index.html" style="color:var(--color-neutral-400);text-decoration:none">Gastroenterology</a>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-300);margin:0;font-weight:700"><span class="en">Information</span><span class="pa">ਜਾਣਕਾਰੀ</span></h3>
+<div style="display:flex;flex-direction:column;gap:9px;font-size:14.5px">
+<a href="../index.html" style="color:var(--color-neutral-400);text-decoration:none"><span class="en">All specialties</span><span class="pa">ਸਾਰੇ ਵਿਭਾਗ</span></a>
+<a href="../privacy.html#privacy" style="color:var(--color-neutral-400);text-decoration:none"><span class="en">Privacy policy</span><span class="pa">ਪਰਾਈਵੇਸੀ ਪਾਲਿਸੀ</span></a>
+<a href="../privacy.html#terms" style="color:var(--color-neutral-400);text-decoration:none"><span class="en">Terms &amp; conditions</span><span class="pa">ਨਿਯਮ ਤੇ ਸ਼ਰਤਾਂ</span></a>
+</div>
+</div>
+</div>
+
+<div style="border-top:1px solid color-mix(in srgb,var(--color-neutral-100) 16%,transparent);padding:22px 0 clamp(28px,3vw,40px);display:flex;flex-direction:column;gap:14px">
+<p style="font-size:13px;line-height:1.65;color:var(--color-neutral-500);margin:0;max-width:92ch"><span class="en"><strong style="color:var(--color-neutral-300);font-weight:600">Medical disclaimer.</strong> This page is general health information, not medical advice, diagnosis or treatment, and it is not a substitute for consulting your own doctor. A second opinion is an independent clinical assessment; it does not guarantee any particular finding, treatment or outcome. In an emergency, call 0181-4707700 or go to your nearest emergency department.</span><span class="pa"><strong style="color:var(--color-neutral-300);font-weight:600">ਡਾਕਟਰੀ ਸੂਚਨਾ।</strong> ਇਹ ਪੰਨਾ ਆਮ ਸਿਹਤ ਜਾਣਕਾਰੀ ਹੈ। ਐਮਰਜੈਂਸੀ ਵਿੱਚ 0181-4707700 ਉੱਤੇ ਫ਼ੋਨ ਕਰੋ।</span></p>
+<p style="font-size:13px;color:var(--color-neutral-600);margin:0">© 2026 Nasa &amp; Hub Superspeciality Hospital, Jalandhar.</p>
 </div>
 </div>
 </footer>
