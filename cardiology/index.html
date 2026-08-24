@@ -317,8 +317,8 @@ header > div { padding-left: 0 !important; padding-right: 0 !important; }
 <a href="../index.html" style="display:flex;align-items:center;text-decoration:none;background:var(--color-neutral-900);border-radius:999px;padding:8px 16px;flex:0 0 auto"><img src="../assets/logo.png" alt="NHS Hospital, Jalandhar" style="height:30px;width:auto"></a>
 <nav aria-label="Sections" style="display:flex;gap:4px;padding:5px;border-radius:999px;background:var(--color-surface);border:1px solid var(--color-divider);flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none">
 <a href="#treatments" style="text-decoration:none;color:var(--color-text);font-size:14px;font-weight:600;padding:9px 14px;border-radius:999px;white-space:nowrap" style-hover="background:var(--color-accent-100);color:var(--color-accent-700)"><span class="en">Treatments</span><span class="pa">ਇਲਾਜ</span></a>
-<a href="#how" style="text-decoration:none;color:var(--color-text);font-size:14px;font-weight:600;padding:9px 14px;border-radius:999px;white-space:nowrap" style-hover="background:var(--color-accent-100);color:var(--color-accent-700)"><span class="en">What happens</span><span class="pa">ਕੀ ਹੋਵੇਗਾ</span></a>
-<a href="#surgeon" style="text-decoration:none;color:var(--color-text);font-size:14px;font-weight:600;padding:9px 14px;border-radius:999px;white-space:nowrap" style-hover="background:var(--color-accent-100);color:var(--color-accent-700)"><span class="en">Your surgeon</span><span class="pa">ਤੁਹਾਡਾ ਸਰਜਨ</span></a>
+<a href="#how" style="text-decoration:none;color:var(--color-text);font-size:14px;font-weight:600;padding:9px 14px;border-radius:999px;white-space:nowrap" style-hover="background:var(--color-accent-100);color:var(--color-accent-700)"><span class="en">Second opinion</span><span class="pa">ਦੂਜੀ ਰਾਏ</span></a>
+<a href="#doctor" style="text-decoration:none;color:var(--color-text);font-size:14px;font-weight:600;padding:9px 14px;border-radius:999px;white-space:nowrap" style-hover="background:var(--color-accent-100);color:var(--color-accent-700)"><span class="en">Your cardiologist</span><span class="pa">ਦਿਲ ਦੇ ਡਾਕਟਰ</span></a>
 </nav>
 <div role="group" aria-label="Language" style="display:flex;gap:2px;padding:3px;border-radius:999px;background:var(--color-neutral-200);flex:0 0 auto">
 <button type="button" onClick="{{ setEn }}" aria-pressed="{{ isEn }}" style="{{ enBtn }}">English</button>
@@ -331,145 +331,128 @@ header > div { padding-left: 0 !important; padding-right: 0 !important; }
 <section style="max-width:1360px;margin:0 auto;padding:clamp(28px,4vw,48px) 24px 0">
 <div class="hero-grid" style="background:var(--color-surface);border-radius:44px;overflow:hidden;box-shadow:var(--shadow-md);display:grid;grid-template-columns:1.05fr 0.95fr;align-items:stretch">
 <div style="padding:clamp(40px,5vw,68px);display:flex;flex-direction:column;gap:20px;justify-content:center;background:var(--color-accent-900);position:relative">
-<span style="display:inline-flex;align-items:center;gap:10px;color:var(--color-accent-300);font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;width:fit-content;padding-bottom:14px;border-bottom:1px solid color-mix(in srgb,var(--color-accent-300) 40%,transparent)"><span class="en">Knee &amp; hip replacement · Jalandhar</span><span class="pa">ਗੋਡਾ ਤੇ ਚੂਲਾ ਬਦਲਣਾ · ਜਲੰਧਰ</span></span>
-<h1 style="font-family:var(--font-heading);font-size:clamp(38px,5.4vw,68px);line-height:1;letter-spacing:-.035em;margin:0;max-width:15ch;color:#fff;text-wrap:balance"><span class="en">Robotic-assisted knee and hip replacement</span><span class="pa">ਰੋਬੋਟ ਦੀ ਮਦਦ ਨਾਲ ਗੋਡਾ ਤੇ ਚੂਲਾ ਬਦਲਣਾ</span></h1>
-<p style="font-size:18px;line-height:1.65;color:var(--color-accent-200);max-width:44ch;margin:0;text-wrap:pretty"><span class="en">Total knee, half knee and hip replacement planned on a 3D model of your own joint, with the robotics system and theatre in this building.</span><span class="pa">ਪੂਰਾ ਗੋਡਾ, ਅੱਧਾ ਗੋਡਾ ਤੇ ਚੂਲਾ ਬਦਲਣ ਦੀ ਯੋਜਨਾ ਤੁਹਾਡੇ ਹੀ ਜੋੜ ਦੇ 3D ਮਾਡਲ ਉੱਤੇ।</span></p>
+<span style="display:inline-flex;align-items:center;gap:10px;color:var(--color-accent-300);font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;width:fit-content;padding-bottom:14px;border-bottom:1px solid color-mix(in srgb,var(--color-accent-300) 40%,transparent)"><span class="en">Cardiac sciences · Jalandhar</span><span class="pa">ਦਿਲ ਦੇ ਰੋਗ · ਜਲੰਧਰ</span></span>
+<h1 style="font-family:var(--font-heading);font-size:clamp(38px,5.4vw,68px);line-height:1;letter-spacing:-.035em;margin:0;max-width:15ch;color:#fff;text-wrap:balance"><span class="en">Cardiology care, and a second opinion before a stent</span><span class="pa">ਦਿਲ ਦਾ ਇਲਾਜ, ਤੇ ਸਟੰਟ ਤੋਂ ਪਹਿਲਾਂ ਦੂਜੀ ਰਾਏ</span></h1>
+<p style="font-size:18px;line-height:1.65;color:var(--color-accent-200);max-width:44ch;margin:0;text-wrap:pretty"><span class="en">Angiography, angioplasty and pacemaker implantation in our own cath lab — and a written review of your reports if a stent or bypass has already been advised elsewhere.</span><span class="pa">ਸਾਡੀ ਆਪਣੀ ਕੈਥ ਲੈਬ ਵਿੱਚ ਐਂਜੀਓਗ੍ਰਾਫ਼ੀ, ਐਂਜੀਓਪਲਾਸਟੀ ਤੇ ਪੇਸਮੇਕਰ।</span></p>
 <div style="display:flex;flex-wrap:wrap;gap:10px">
-<span style="padding:9px 16px;border-radius:999px;border:1px solid color-mix(in srgb,var(--color-accent-300) 45%,transparent);color:var(--color-accent-200);font-size:13.5px;font-weight:600"><span class="en">22+ years experience</span><span class="pa">22+ ਸਾਲ ਤਜਰਬਾ</span></span>
+<span style="padding:9px 16px;border-radius:999px;border:1px solid color-mix(in srgb,var(--color-accent-300) 45%,transparent);color:var(--color-accent-200);font-size:13.5px;font-weight:600"><span class="en">Review in 24–48 hours</span><span class="pa">24–48 ਘੰਟੇ</span></span>
+<span style="padding:9px 16px;border-radius:999px;border:1px solid color-mix(in srgb,var(--color-accent-300) 45%,transparent);color:var(--color-accent-200);font-size:13.5px;font-weight:600"><span class="en">Cath lab in the building</span><span class="pa">ਇਮਾਰਤ ਵਿੱਚ ਕੈਥ ਲੈਬ</span></span>
 <span style="padding:9px 16px;border-radius:999px;border:1px solid color-mix(in srgb,var(--color-accent-300) 45%,transparent);color:var(--color-accent-200);font-size:13.5px;font-weight:600"><span class="en">Cashless TPA</span><span class="pa">ਕੈਸ਼ਲੈਸ TPA</span></span>
-<span style="padding:9px 16px;border-radius:999px;border:1px solid color-mix(in srgb,var(--color-accent-300) 45%,transparent);color:var(--color-accent-200);font-size:13.5px;font-weight:600"><span class="en">Physiotherapy in-house</span><span class="pa">ਫ਼ਿਜ਼ੀਓਥੈਰੇਪੀ ਇੱਥੇ ਹੀ</span></span>
 </div>
 </div>
 <form id="book" action="{{ formAction }}" method="POST" style="background:var(--color-surface);border-radius:0;padding:clamp(32px,3.6vw,44px);display:flex;flex-direction:column;justify-content:center">
 <input type="hidden" name="_redirect" value="https://enquire.nhshospital.in/thank-you">
-<input type="hidden" name="department" value="Orthopaedics &amp; joint replacement">
-<h2 style="font-size:26px;letter-spacing:-.02em;margin:0 0 8px;color:var(--color-text)"><span class="en">Book a joint pain consultation</span><span class="pa">ਜੋੜਾਂ ਦੇ ਦਰਦ ਦੀ ਸਲਾਹ</span></h2>
-<p style="font-size:14.5px;color:var(--color-neutral-600);margin:0 0 22px"><span class="en">Bring or send your X-ray or MRI if you already have one.</span><span class="pa">ਜੇ X-ray ਜਾਂ MRI ਹੈ ਤਾਂ ਨਾਲ ਲਿਆਓ।</span></p>
+<input type="hidden" name="department" value="Cardiology">
+<h2 style="font-size:26px;letter-spacing:-.02em;margin:0 0 8px;color:var(--color-text)"><span class="en">Request a cardiac consultation</span><span class="pa">ਦਿਲ ਦੀ ਸਲਾਹ ਲਈ ਬਿਨਤੀ</span></h2>
+<p style="font-size:14.5px;color:var(--color-neutral-600);margin:0 0 22px"><span class="en">If you have an angiography report or CD, mention it below.</span><span class="pa">ਜੇ ਰਿਪੋਰਟ ਹੈ ਤਾਂ ਦੱਸੋ।</span></p>
 <div style="display:flex;flex-direction:column;gap:12px">
 <input class="input" name="patient_name" type="text" required placeholder="{{ phName }}" style="min-height:48px;font-size:15.5px;border-radius:12px;padding:10px 16px">
 <input class="input" name="mobile" type="tel" required placeholder="{{ phMobile }}" style="min-height:48px;font-size:15.5px;border-radius:12px;padding:10px 16px">
 <select class="input" name="problem" style="min-height:48px;font-size:15.5px;border-radius:12px;padding:10px 16px">
-<option>ਗੋਡੇ ਦਾ ਦਰਦ / Knee pain / arthritis</option>
-<option>ਚੂਲੇ ਦਾ ਦਰਦ / Hip pain</option>
-<option>ਦੂਜੀ ਰਾਏ / Advised knee replacement — want a review</option>
-<option>ਖੇਡ ਸੱਟ / Sports or ligament injury</option>
-<option>ਹੱਡੀ ਟੁੱਟਣ / Fracture or trauma follow-up</option>
-<option>ਬੱਚੇ ਦੀ ਸਮੱਸਿਆ / Child's bone or spine problem</option>
+<option>ਦੂਜੀ ਰਾਏ / Second opinion on advised stent or bypass</option>
+<option>ਛਾਤੀ ਦਾ ਦਰਦ / Chest pain or breathlessness</option>
+<option>ਬੀ.ਪੀ. / ਕੋਲੈਸਟਰੋਲ / High BP / cholesterol review</option>
+<option>ਪੇਸਮੇਕਰ / Pacemaker or rhythm problem</option>
+<option>ਆਮ ਜਾਂਚ / Routine heart check-up</option>
 </select>
 <label style="display:flex;gap:9px;align-items:flex-start;font-size:12.5px;color:var(--color-neutral-600);line-height:1.5;cursor:pointer">
 <input type="checkbox" name="consent" required style="margin-top:3px;width:17px;height:17px;accent-color:var(--color-accent-400)">
 <span><span class="en">I agree to be contacted about this enquiry; see <a href="../privacy.html#privacy" style="color:var(--color-accent-300)">privacy policy</a>.</span><span class="pa">ਮੈਂ ਸੰਪਰਕ ਲਈ ਸਹਿਮਤ ਹਾਂ।</span></span>
 </label>
 <button type="submit" class="btn btn-primary btn-block" style="border-radius:999px;padding:14px;font-size:16px"><span class="en">Request appointment</span><span class="pa">ਬਿਨਤੀ ਭੇਜੋ</span></button>
-<p style="font-size:12px;color:var(--color-neutral-600);margin:0"><span class="en">An appointment request only — not medical advice or a diagnosis.</span><span class="pa">ਇਹ ਸਿਰਫ਼ ਬਿਨਤੀ ਹੈ।</span></p>
+<p style="font-size:12px;color:var(--color-neutral-600);margin:0"><span class="en">Not for emergencies. If you have chest pain now, call 0181-4707700.</span><span class="pa">ਐਮਰਜੈਂਸੀ ਲਈ ਨਹੀਂ। ਹੁਣ ਦਰਦ ਹੈ ਤਾਂ 0181-4707700।</span></p>
 </div>
 </form>
 </div>
 </section>
 
 <figure class="bleed-band" style="max-width:1360px;margin:clamp(40px,5vw,72px) auto 0;padding:0 var(--nhs-gut);position:relative">
-<img src="../assets/hospital-1.jpg" alt="Surgeon with the NAVIO robotics platform in theatre" style="width:100%;height:clamp(240px,38vw,460px);object-fit:cover;object-position:center 25%;display:block;filter:saturate(.9) contrast(1.03)">
-<figcaption style="position:absolute;left:var(--nhs-gut);right:var(--nhs-gut);bottom:0;padding:clamp(18px,3vw,28px) clamp(20px,2.4vw,28px);color:#fff;font-size:14px;font-weight:600;letter-spacing:.02em;background:linear-gradient(to top,rgba(23,19,16,.72),transparent)">Surgeon with the NAVIO robotics platform in theatre</figcaption>
+<img src="../assets/hospital-9.jpg" alt="Cath lab with C-arm fluoroscopy at NHS Hospital" style="width:100%;height:clamp(240px,38vw,460px);object-fit:cover;display:block;filter:saturate(.9) contrast(1.03)">
+<figcaption style="position:absolute;left:var(--nhs-gut);right:var(--nhs-gut);bottom:0;padding:clamp(18px,3vw,28px) clamp(20px,2.4vw,28px);color:#fff;font-size:14px;font-weight:600;letter-spacing:.02em;background:linear-gradient(to top,rgba(23,19,16,.72),transparent)"><span class="en">Our own cath lab — C-arm fluoroscopy suite, inside this building</span><span class="pa">ਸਾਡੀ ਆਪਣੀ ਕੈਥ ਲੈਬ</span></figcaption>
 </figure>
-
-
 
 <section style="max-width:1360px;margin:0 auto;padding:clamp(44px,5vw,76px) 24px">
 <span style="display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700);font-weight:700;margin-bottom:14px"><span style="width:10px;height:10px;border-radius:50%;background:var(--color-accent);display:inline-block"></span><span class="en">Inside the hospital</span><span class="pa">ਹਸਪਤਾਲ ਦੇ ਅੰਦਰ</span></span>
-<h2 style="font-family:var(--font-heading);font-size:clamp(28px,3.4vw,42px);margin:0 0 10px"><span class="en">Photographs from the unit</span><span class="pa">ਵਿਭਾਗ ਦੀਆਂ ਤਸਵੀਰਾਂ</span></h2>
-<p style="font-size:17.5px;color:var(--color-neutral-700);max-width:56ch;margin:0 0 28px">The robotics platform, the navigation screen and the theatre it all happens in.</p>
+<h2 style="font-family:var(--font-heading);font-size:clamp(28px,3.4vw,42px);margin:0 0 10px"><span class="en">The rooms your case would pass through</span><span class="pa">ਤੁਹਾਡਾ ਇਲਾਜ ਕਿਹੜੇ ਕਮਰਿਆਂ ਵਿੱਚ ਹੋਵੇਗਾ</span></h2>
+<p style="font-size:17.5px;color:var(--color-neutral-700);max-width:56ch;margin:0 0 28px"><span class="en">The cath lab, critical care and the wards — all inside this building.</span><span class="pa">ਕੈਥ ਲੈਬ, ICU ਤੇ ਵਾਰਡ — ਸਭ ਇਸੇ ਇਮਾਰਤ ਵਿੱਚ।</span></p>
 <div class="photo-mosaic">
-<figure class="lead"><img src="../assets/hospital-1.jpg" alt="Surgeon with the NAVIO robotics platform in theatre" loading="lazy" class="washed"><figcaption><span class="en">Surgeon with the NAVIO robotics platform</span><span class="pa">NAVIO ਰੋਬੋਟਿਕ ਸਿਸਟਮ</span></figcaption></figure>
-<figure class="lead"><img src="../assets/hospital-8.jpg" alt="Navigated joint surgery with the planning screen live in theatre" loading="lazy" class="washed"><figcaption><span class="en">Navigation running live through the case</span><span class="pa">ਚੱਲਦੀ ਨੈਵੀਗੇਸ਼ਨ</span></figcaption></figure>
-<figure><img src="../assets/hospital-5.jpg" alt="Optical tracker arrays fixed to bone during robotic knee surgery" loading="lazy" class="washed"><figcaption><span class="en">Optical trackers fixed to the bone</span><span class="pa">ਹੱਡੀ ਨਾਲ ਲੱਗੇ ਟਰੈਕਰ</span></figcaption></figure>
-<figure><img src="../assets/hospital-2.jpg" alt="Joint replacement surgery under way at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">Joint replacement under way</span><span class="pa">ਜੋੜ ਬਦਲਣ ਦਾ ਆਪਰੇਸ਼ਨ</span></figcaption></figure>
-<figure><img src="../assets/hospital-3.jpg" alt="The robotic joint replacement team at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">The joint replacement team</span><span class="pa">ਜੋੜ ਬਦਲਣ ਵਾਲੀ ਟੀਮ</span></figcaption></figure>
-<figure><img src="../assets/hospital-12.jpg" alt="Modular operation theatre at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">Modular operation theatre</span><span class="pa">ਮਾਡਿਊਲਰ ਆਪਰੇਸ਼ਨ ਥੀਏਟਰ</span></figcaption></figure>
+<figure class="lead"><img src="../assets/hospital-9.jpg" alt="Cath lab with C-arm fluoroscopy at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">Cath lab — C-arm fluoroscopy suite</span><span class="pa">ਦਿਲ ਦੀ ਕੈਥ ਲੈਬ</span></figcaption></figure>
+<figure class="lead"><img src="../assets/hospital-18.jpg" alt="Consultant reviewing a patient in critical care" loading="lazy" class="washed"><figcaption><span class="en">Consultant review in critical care</span><span class="pa">ICU ਵਿੱਚ ਜਾਂਚ</span></figcaption></figure>
+<figure><img src="../assets/hospital-10.jpg" alt="Intensive care unit at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">Intensive care unit — 45 beds</span><span class="pa">ICU — 45 ਬਿਸਤਰੇ</span></figcaption></figure>
+<figure><img src="../assets/hospital-21.jpg" alt="Consultant in clinic at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">Consultant in clinic</span><span class="pa">ਕਲੀਨਿਕ ਵਿੱਚ ਡਾਕਟਰ</span></figcaption></figure>
+<figure><img src="../assets/hospital-16.jpg" alt="Inpatient ward at NHS Hospital" loading="lazy" class="washed"><figcaption><span class="en">Inpatient ward</span><span class="pa">ਵਾਰਡ</span></figcaption></figure>
+<figure><img src="../assets/hospital-17.jpg" alt="Consultant round at the bedside" loading="lazy" class="washed"><figcaption><span class="en">Consultant round at the bedside</span><span class="pa">ਡਾਕਟਰ ਦਾ ਗੇੜਾ</span></figcaption></figure>
 </div>
 </section>
 
-<section id="surgeon" style="background:var(--color-accent-100);scroll-margin-top:90px">
+<section id="doctor" style="background:var(--color-accent-100);scroll-margin-top:90px">
 <div style="max-width:1360px;margin:0 auto;padding:clamp(44px,5vw,72px) 24px;display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:clamp(20px,2.6vw,36px);align-items:center">
-<img src="../assets/dr-shubhang.jpg" alt="Dr. Shubhang Aggarwal, orthopaedic surgeon" class="washed" style="width:100%;max-width:300px;aspect-ratio:1;object-fit:cover;border-radius:24px;box-shadow:var(--shadow-md)">
+<img src="../assets/dr-sahil.jpeg" alt="Dr. Sahil Sareen, consultant cardiologist" class="washed" style="width:100%;max-width:300px;aspect-ratio:1;object-fit:cover;border-radius:24px;box-shadow:var(--shadow-md)">
 <div>
-<h2 style="font-family:var(--font-heading);font-size:clamp(26px,3vw,34px);margin:0 0 6px"><span class="en">Dr. Shubhang Aggarwal</span><span class="pa">ਡਾ. ਸ਼ੁਭੰਗ ਅਗਰਵਾਲ</span></h2>
-<p style="font-size:16px;color:var(--color-accent-800);margin:0 0 16px;font-weight:600"><span class="en">Director &amp; Consultant Orthopaedic Surgeon — joint replacement, robotics, trauma</span><span class="pa">ਡਾਇਰੈਕਟਰ ਤੇ ਹੱਡੀਆਂ ਦੇ ਸਰਜਨ</span></p>
-<p style="font-size:17px;color:var(--color-accent-900);margin:0 0 12px;max-width:56ch">Practising joint replacement surgery since 2004, with patients travelling from Himachal Pradesh, Jammu &amp; Kashmir and Rajasthan. He introduced computer-navigated joint replacement in Jalandhar and robotic joint replacement at this hospital.</p>
-<p style="font-size:14.5px;color:var(--color-accent-800);margin:0">Ask the desk for his registration details and qualifications at your consultation.</p>
+<h2 style="font-family:var(--font-heading);font-size:clamp(26px,3vw,34px);margin:0 0 6px"><span class="en">Dr. Sahil Sareen</span><span class="pa">ਡਾ. ਸਾਹਿਲ ਸਰੀਨ</span></h2>
+<p style="font-size:16px;color:var(--color-accent-800);margin:0 0 16px;font-weight:600"><span class="en">Consultant Cardiologist — interventional cardiology</span><span class="pa">ਦਿਲ ਦੇ ਰੋਗਾਂ ਦੇ ਮਾਹਿਰ</span></p>
+<p style="font-size:17px;color:var(--color-accent-900);margin:0 0 12px;max-width:56ch"><span class="en">Leads the cardiac sciences service with Dr. Prashant Thandi. Complex cases are discussed as a department, and difficult decisions go to a multidisciplinary panel.</span><span class="pa">ਦਿਲ ਦੇ ਵਿਭਾਗ ਦੀ ਅਗਵਾਈ ਕਰਦੇ ਹਨ।</span></p>
+<p style="font-size:14.5px;color:var(--color-accent-800);margin:0"><span class="en">Qualifications and registration details are available at the desk on request.</span><span class="pa">ਡਿਗਰੀਆਂ ਦੀ ਜਾਣਕਾਰੀ ਕਾਊਂਟਰ ਤੋਂ ਲਈ ਜਾ ਸਕਦੀ ਹੈ।</span></p>
 </div>
 </div>
 </section>
 
 <section id="treatments" style="max-width:1360px;margin:0 auto;padding:clamp(48px,6vw,80px) 24px;scroll-margin-top:90px">
 <span style="display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700);font-weight:700;margin-bottom:14px"><span style="width:10px;height:10px;border-radius:50%;background:var(--color-accent);display:inline-block"></span><span class="en">What we treat</span><span class="pa">ਅਸੀਂ ਕੀ ਇਲਾਜ ਕਰਦੇ ਹਾਂ</span></span>
-<h2 style="font-family:var(--font-heading);font-size:clamp(30px,3.8vw,46px);margin:0 0 12px"><span class="en">Treatments offered here</span><span class="pa">ਇੱਥੇ ਹੋਣ ਵਾਲੇ ਇਲਾਜ</span></h2>
-<p style="font-size:18px;color:var(--color-neutral-700);max-width:56ch;margin:0 0 32px"><span class="en">Which operation suits you depends on how much of the joint is worn, your age and activity level. That is decided in the consultation, not before it.</span><span class="pa">ਇਹ ਫ਼ੈਸਲਾ ਮੁਲਾਕਾਤ ਵਿੱਚ ਹੁੰਦਾ ਹੈ।</span></p>
+<h2 style="font-family:var(--font-heading);font-size:clamp(30px,3.8vw,46px);margin:0 0 12px"><span class="en">What the cardiac team treats</span><span class="pa">ਦਿਲ ਦੀ ਟੀਮ ਕੀ ਇਲਾਜ ਕਰਦੀ ਹੈ</span></h2>
+<p style="font-size:18px;color:var(--color-neutral-700);max-width:56ch;margin:0 0 32px"><span class="en">Diagnostics and treatment run from the same department, so a test and the conversation about what it means happen in one visit where possible.</span><span class="pa">ਜਾਂਚ ਤੇ ਇਲਾਜ ਇੱਕੋ ਵਿਭਾਗ ਵਿੱਚ।</span></p>
 <div class="tx-index" style="border-top:2px solid var(--color-neutral-900)">
-<div class="tx-row" style="display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.15fr);gap:clamp(16px,3vw,40px);align-items:start;padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--nhs-line);transition:background .3s var(--nhs-ease)">
+<div class="tx-row" style="display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.15fr);gap:clamp(16px,3vw,40px);align-items:start;padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--nhs-line);transition:background .3s var(--nhs-ease),padding .3s var(--nhs-ease)">
 <span style="font-family:var(--font-heading);font-size:15px;font-weight:700;color:var(--color-accent);letter-spacing:.08em;padding-top:6px">01</span>
-<h3 style="font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;margin:0;line-height:1.2"><span class="en">Total knee replacement</span><span class="pa">ਪੂਰਾ ਗੋਡਾ ਬਦਲਣਾ</span></h3>
-<p style="font-size:16px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="en">For arthritis that has spread across the whole joint. Planned with robotic assistance.</span><span class="pa">ਰੋਬੋਟ ਦੀ ਮਦਦ ਨਾਲ ਯੋਜਨਾ।</span></p>
+<h3 style="font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;margin:0;line-height:1.2"><span class="en">Angiography &amp; angioplasty</span><span class="pa">ਐਂਜੀਓਗ੍ਰਾਫ਼ੀ ਤੇ ਐਂਜੀਓਪਲਾਸਟੀ</span></h3>
+<p style="font-size:16px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="en">Coronary angiography to see the blockage, and angioplasty with stenting where indicated.</span><span class="pa">ਬੰਦ ਨਾੜੀ ਦੇਖਣ ਲਈ ਐਂਜੀਓਗ੍ਰਾਫ਼ੀ।</span></p>
 </div>
-<div class="tx-row" style="display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.15fr);gap:clamp(16px,3vw,40px);align-items:start;padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--nhs-line);transition:background .3s var(--nhs-ease)">
+<div class="tx-row" style="display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.15fr);gap:clamp(16px,3vw,40px);align-items:start;padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--nhs-line);transition:background .3s var(--nhs-ease),padding .3s var(--nhs-ease)">
 <span style="font-family:var(--font-heading);font-size:15px;font-weight:700;color:var(--color-accent);letter-spacing:.08em;padding-top:6px">02</span>
-<h3 style="font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;margin:0;line-height:1.2"><span class="en">Half knee replacement</span><span class="pa">ਅੱਧਾ ਗੋਡਾ ਬਦਲਣਾ</span></h3>
-<p style="font-size:16px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="en">When only one compartment is worn, the healthy part of the knee and ligaments are left alone.</span><span class="pa">ਸਿਰਫ਼ ਇੱਕ ਹਿੱਸਾ ਬਦਲਿਆ ਜਾਂਦਾ ਹੈ।</span></p>
+<h3 style="font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;margin:0;line-height:1.2"><span class="en">Second opinion on reports</span><span class="pa">ਰਿਪੋਰਟਾਂ ਉੱਤੇ ਦੂਜੀ ਰਾਏ</span></h3>
+<p style="font-size:16px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="en">A consultant reads your angiography, ECG and echo and writes down whether the blockage is significant.</span><span class="pa">ਡਾਕਟਰ ਰਿਪੋਰਟਾਂ ਪੜ੍ਹ ਕੇ ਲਿਖਦਾ ਹੈ।</span></p>
 </div>
-<div class="tx-row" style="display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.15fr);gap:clamp(16px,3vw,40px);align-items:start;padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--nhs-line);transition:background .3s var(--nhs-ease)">
+<div class="tx-row" style="display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.15fr);gap:clamp(16px,3vw,40px);align-items:start;padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--nhs-line);transition:background .3s var(--nhs-ease),padding .3s var(--nhs-ease)">
 <span style="font-family:var(--font-heading);font-size:15px;font-weight:700;color:var(--color-accent);letter-spacing:.08em;padding-top:6px">03</span>
-<h3 style="font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;margin:0;line-height:1.2"><span class="en">Total hip replacement</span><span class="pa">ਪੂਰਾ ਚੂਲਾ ਬਦਲਣਾ</span></h3>
-<p style="font-size:16px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="en">Planned in 3D before the operation, so implant size and position match your own anatomy.</span><span class="pa">ਆਪਰੇਸ਼ਨ ਤੋਂ ਪਹਿਲਾਂ 3D ਯੋਜਨਾ।</span></p>
+<h3 style="font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;margin:0;line-height:1.2"><span class="en">Chest pain assessment</span><span class="pa">ਛਾਤੀ ਦੇ ਦਰਦ ਦੀ ਜਾਂਚ</span></h3>
+<p style="font-size:16px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="en">ECG, echo and stress testing to work out whether symptoms are cardiac or something else.</span><span class="pa">ECG, ਈਕੋ ਤੇ ਸਟਰੈੱਸ ਟੈਸਟ।</span></p>
 </div>
-<div class="tx-row" style="display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.15fr);gap:clamp(16px,3vw,40px);align-items:start;padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--nhs-line);transition:background .3s var(--nhs-ease)">
+<div class="tx-row" style="display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.15fr);gap:clamp(16px,3vw,40px);align-items:start;padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--nhs-line);transition:background .3s var(--nhs-ease),padding .3s var(--nhs-ease)">
 <span style="font-family:var(--font-heading);font-size:15px;font-weight:700;color:var(--color-accent);letter-spacing:.08em;padding-top:6px">04</span>
-<h3 style="font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;margin:0;line-height:1.2"><span class="en">Sports injuries &amp; arthroscopy</span><span class="pa">ਖੇਡਾਂ ਦੀਆਂ ਸੱਟਾਂ</span></h3>
-<p style="font-size:16px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="en">Ligament and cartilage injuries treated through keyhole surgery, with a structured return to activity.</span><span class="pa">ਦੂਰਬੀਨ ਸਰਜਰੀ ਨਾਲ ਇਲਾਜ।</span></p>
+<h3 style="font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;margin:0;line-height:1.2"><span class="en">Pacemakers &amp; rhythm</span><span class="pa">ਪੇਸਮੇਕਰ ਤੇ ਧੜਕਣ</span></h3>
+<p style="font-size:16px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="en">Assessment of palpitations, blackouts and slow rhythms, with pacemaker implantation when indicated.</span><span class="pa">ਧੜਕਣ ਦੀ ਜਾਂਚ, ਪੇਸਮੇਕਰ।</span></p>
 </div>
-<div class="tx-row" style="display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.15fr);gap:clamp(16px,3vw,40px);align-items:start;padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--nhs-line);transition:background .3s var(--nhs-ease)">
+<div class="tx-row" style="display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.15fr);gap:clamp(16px,3vw,40px);align-items:start;padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--nhs-line);transition:background .3s var(--nhs-ease),padding .3s var(--nhs-ease)">
 <span style="font-family:var(--font-heading);font-size:15px;font-weight:700;color:var(--color-accent);letter-spacing:.08em;padding-top:6px">05</span>
-<h3 style="font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;margin:0;line-height:1.2"><span class="en">Trauma &amp; fracture care</span><span class="pa">ਹਾਦਸੇ ਤੇ ਹੱਡੀ ਟੁੱਟਣ</span></h3>
-<p style="font-size:16px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="en">Fractures and revision surgery, supported by 24-hour imaging and 45 critical care beds.</span><span class="pa">24 ਘੰਟੇ ਸਕੈਨ ਤੇ 45 ICU ਬਿਸਤਰੇ।</span></p>
+<h3 style="font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;margin:0;line-height:1.2"><span class="en">Heart failure &amp; follow-up</span><span class="pa">ਦਿਲ ਦੀ ਕਮਜ਼ੋਰੀ</span></h3>
+<p style="font-size:16px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="en">Medical management, monitoring and review after a heart attack or a procedure.</span><span class="pa">ਦਵਾਈਆਂ ਨਾਲ ਇਲਾਜ ਤੇ ਨਿਗਰਾਨੀ।</span></p>
 </div>
-<div class="tx-row" style="display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.15fr);gap:clamp(16px,3vw,40px);align-items:start;padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--nhs-line);transition:background .3s var(--nhs-ease)">
+<div class="tx-row" style="display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.15fr);gap:clamp(16px,3vw,40px);align-items:start;padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--nhs-line);transition:background .3s var(--nhs-ease),padding .3s var(--nhs-ease)">
 <span style="font-family:var(--font-heading);font-size:15px;font-weight:700;color:var(--color-accent);letter-spacing:.08em;padding-top:6px">06</span>
-<h3 style="font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;margin:0;line-height:1.2"><span class="en">Children's orthopaedics &amp; scoliosis</span><span class="pa">ਬੱਚਿਆਂ ਦੀਆਂ ਹੱਡੀਆਂ</span></h3>
-<p style="font-size:16px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="en">Growth-related bone and joint problems, and assessment of spinal curves in children and teenagers.</span><span class="pa">ਬੱਚਿਆਂ ਵਿੱਚ ਰੀੜ੍ਹ ਦੀ ਟੇਢ ਦੀ ਜਾਂਚ।</span></p>
+<h3 style="font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;margin:0;line-height:1.2"><span class="en">Risk-factor care</span><span class="pa">ਖ਼ਤਰੇ ਘਟਾਉਣ ਦਾ ਇਲਾਜ</span></h3>
+<p style="font-size:16px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="en">Blood pressure, cholesterol, diabetes and lifestyle, with dietetics support in the same building.</span><span class="pa">ਬੀ.ਪੀ., ਕੋਲੈਸਟਰੋਲ, ਸ਼ੂਗਰ ਦਾ ਇਲਾਜ।</span></p>
 </div>
 </div>
 </section>
 
-<section style="background:var(--color-surface)">
-<div style="max-width:1360px;margin:0 auto;padding:clamp(44px,5vw,72px) 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,52px);align-items:center">
-<div>
-<h2 style="font-family:var(--font-heading);font-size:clamp(26px,3.2vw,34px);margin:0 0 14px"><span class="en">What robotic assistance actually adds</span><span class="pa">ਰੋਬੋਟ ਦੀ ਮਦਦ ਨਾਲ ਕੀ ਫ਼ਰਕ ਪੈਂਦਾ ਹੈ</span></h2>
-<div style="display:flex;flex-direction:column;gap:14px;max-width:54ch">
-<p style="font-size:17px;color:var(--color-neutral-700);margin:0"><strong>A plan built on your anatomy.</strong> The joint is mapped before any cut is made, so implant position is decided against your measurements.</p>
-<p style="font-size:17px;color:var(--color-neutral-700);margin:0"><strong>Alignment that can be checked.</strong> Navigation runs live through the operation, and the result is verified on screen rather than by eye.</p>
-<p style="font-size:14.5px;color:var(--color-neutral-600);margin:0"><span class="en">Robotic assistance is a surgical tool, not a guarantee. Suitability, benefits and risks are explained to you before you consent.</span><span class="pa">ਰੋਬੋਟ ਇੱਕ ਸੰਦ ਹੈ, ਗਰੰਟੀ ਨਹੀਂ।</span></p>
-</div>
-</div>
-<figure>
-<img src="../assets/hospital-6.jpg" alt="Robotic navigation screen showing 3-D hip planning" class="washed" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:24px;box-shadow:var(--shadow-md)">
-<figcaption style="font-size:13px;margin-top:10px"><span class="en">Robotic navigation screen — 3-D hip planning with cup angles.</span><span class="pa">ਰੋਬੋਟਿਕ ਨੈਵੀਗੇਸ਼ਨ ਸਕਰੀਨ।</span></figcaption>
-</figure>
-</div>
-</section>
-
-<section id="how" style="max-width:1360px;margin:0 auto;padding:clamp(48px,6vw,80px) 24px;scroll-margin-top:90px">
-<h2 style="font-family:var(--font-heading);font-size:clamp(26px,3.2vw,36px);margin:0 0 28px"><span class="en">From first visit to walking again</span><span class="pa">ਪਹਿਲੀ ਮੁਲਾਕਾਤ ਤੋਂ ਮੁੜ ਤੁਰਨ ਤੱਕ</span></h2>
+<section id="how" style="background:var(--color-surface);scroll-margin-top:90px">
+<div style="max-width:1360px;margin:0 auto;padding:clamp(44px,5vw,72px) 24px">
+<h2 style="font-family:var(--font-heading);font-size:clamp(26px,3.2vw,36px);margin:0 0 12px"><span class="en">How the second opinion works</span><span class="pa">ਦੂਜੀ ਰਾਏ ਕਿਵੇਂ ਮਿਲਦੀ ਹੈ</span></h2>
+<p style="font-size:17.5px;color:var(--color-neutral-700);max-width:56ch;margin:0 0 30px"><span class="en">A review does not replace your treating doctor. It gives you a second qualified reading of the same evidence before you decide.</span><span class="pa">ਇਹ ਤੁਹਾਡੇ ਡਾਕਟਰ ਦੀ ਥਾਂ ਨਹੀਂ ਲੈਂਦੀ।</span></p>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px">
-<div style="display:flex;flex-direction:column;gap:12px"><span style="width:46px;height:46px;border-radius:50%;background:var(--color-accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:20px">1</span><h3 style="font-size:20px;margin:0"><span class="en">Consultation &amp; scans</span><span class="pa">ਮੁਲਾਕਾਤ ਤੇ ਸਕੈਨ</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">X-ray or MRI on site, examined the same day, and a frank conversation about whether surgery is needed at all.</span><span class="pa">X-ray ਜਾਂ MRI ਇੱਥੇ ਹੀ।</span></p></div>
-<div style="display:flex;flex-direction:column;gap:12px"><span style="width:46px;height:46px;border-radius:50%;background:var(--color-accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:20px">2</span><h3 style="font-size:20px;margin:0"><span class="en">Planning &amp; approvals</span><span class="pa">ਯੋਜਨਾ ਤੇ ਮਨਜ਼ੂਰੀ</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">Pre-operative checks, the surgical plan, and the insurance desk handling your paperwork.</span><span class="pa">ਬੀਮੇ ਦਾ ਕੰਮ ਸਾਡਾ ਕਾਊਂਟਰ।</span></p></div>
-<div style="display:flex;flex-direction:column;gap:12px"><span style="width:46px;height:46px;border-radius:50%;background:var(--color-accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:20px">3</span><h3 style="font-size:20px;margin:0"><span class="en">Surgery &amp; ward care</span><span class="pa">ਆਪਰੇਸ਼ਨ ਤੇ ਵਾਰਡ</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">The operation, then inpatient care with the consultant reviewing you and physiotherapy starting early.</span><span class="pa">ਛੇਤੀ ਸ਼ੁਰੂ ਹੋਣ ਵਾਲੀ ਫ਼ਿਜ਼ੀਓਥੈਰੇਪੀ।</span></p></div>
-<div style="display:flex;flex-direction:column;gap:12px"><span style="width:46px;height:46px;border-radius:50%;background:var(--color-accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:20px">4</span><h3 style="font-size:20px;margin:0"><span class="en">Rehabilitation at home</span><span class="pa">ਘਰ ਵਿੱਚ ਕਸਰਤ</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">Written instructions, an exercise programme and follow-up appointments. Recovery time varies from patient to patient.</span><span class="pa">ਠੀਕ ਹੋਣ ਦਾ ਸਮਾਂ ਹਰ ਮਰੀਜ਼ ਲਈ ਵੱਖਰਾ ਹੈ।</span></p></div>
+<div style="display:flex;flex-direction:column;gap:12px"><span style="width:46px;height:46px;border-radius:50%;background:var(--color-accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:20px">1</span><h3 style="font-size:20px;margin:0"><span class="en">Send your case summary</span><span class="pa">ਵੇਰਵਾ ਭੇਜੋ</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">Age, symptoms, what you have been advised so far, and the medicines you are on.</span><span class="pa">ਉਮਰ, ਤਕਲੀਫ਼, ਦਵਾਈਆਂ।</span></p></div>
+<div style="display:flex;flex-direction:column;gap:12px"><span style="width:46px;height:46px;border-radius:50%;background:var(--color-accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:20px">2</span><h3 style="font-size:20px;margin:0"><span class="en">Share the files</span><span class="pa">ਰਿਪੋਰਟਾਂ ਸਾਂਝੀਆਂ ਕਰੋ</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">Angiography CD or report, ECG, echo and blood work.</span><span class="pa">CD, ECG, ਈਕੋ, ਖ਼ੂਨ ਦੇ ਟੈਸਟ।</span></p></div>
+<div style="display:flex;flex-direction:column;gap:12px"><span style="width:46px;height:46px;border-radius:50%;background:var(--color-accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:20px">3</span><h3 style="font-size:20px;margin:0"><span class="en">A written view, in 24–48 hours</span><span class="pa">24–48 ਘੰਟਿਆਂ ਵਿੱਚ ਰਾਏ</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">Whether the narrowing is significant, and how urgent it is.</span><span class="pa">ਰੁਕਾਵਟ ਕਿੰਨੀ ਗੰਭੀਰ ਹੈ।</span></p></div>
+</div>
+<p style="font-size:14.5px;color:var(--color-neutral-600);margin:26px 0 0;max-width:80ch"><span class="en">Turnaround depends on the files being complete and legible. A second opinion is a clinical assessment, not a promise of a particular conclusion or outcome.</span><span class="pa">ਦੂਜੀ ਰਾਏ ਇੱਕ ਡਾਕਟਰੀ ਜਾਂਚ ਹੈ, ਵਾਅਦਾ ਨਹੀਂ।</span></p>
 </div>
 </section>
 
 <section style="max-width:1360px;margin:0 auto;padding:clamp(44px,5vw,72px) 24px">
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px">
-<div style="background:var(--color-surface);border-radius:24px;padding:26px"><h3 style="font-size:20px;margin:0 0 8px"><span class="en">Cashless &amp; TPA</span><span class="pa">ਕੈਸ਼ਲੈਸ ਤੇ TPA</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">Insurance approvals, government schemes and paperwork handled by our desk before admission.</span><span class="pa">ਬੀਮੇ ਦੀ ਮਨਜ਼ੂਰੀ ਸਾਡਾ ਕਾਊਂਟਰ।</span></p></div>
-<div style="background:var(--color-surface);border-radius:24px;padding:26px"><h3 style="font-size:20px;margin:0 0 8px"><span class="en">Everything on site</span><span class="pa">ਸਭ ਕੁਝ ਇੱਕੋ ਥਾਂ</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">MRI and CT 24 hours, on-site pathology, laminar airflow theatres and 45 critical care beds.</span><span class="pa">24 ਘੰਟੇ MRI ਤੇ CT।</span></p></div>
-<div style="background:var(--color-surface);border-radius:24px;padding:26px"><h3 style="font-size:20px;margin:0 0 8px"><span class="en">Coming from out of town</span><span class="pa">ਬਾਹਰੋਂ ਆ ਰਹੇ ਹੋ?</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">Send reports ahead and we will schedule the consultation and scans on the same day.</span><span class="pa">ਰਿਪੋਰਟਾਂ ਪਹਿਲਾਂ ਭੇਜ ਦਿਓ।</span></p></div>
+<div style="background:var(--color-surface);border-radius:24px;padding:26px"><h3 style="font-size:20px;margin:0 0 8px"><span class="en">If it is happening now</span><span class="pa">ਜੇ ਹੁਣ ਹੋ ਰਿਹਾ ਹੈ</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0">Sudden chest pain, breathlessness or sweating needs emergency care, not a form. Call <a href="tel:+911814707700">0181-4707700</a>.</p></div>
+<div style="background:var(--color-surface);border-radius:24px;padding:26px"><h3 style="font-size:20px;margin:0 0 8px"><span class="en">Cashless &amp; TPA</span><span class="pa">ਕੈਸ਼ਲੈਸ ਤੇ TPA</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">Insurance approvals and government schemes handled by our desk before admission.</span><span class="pa">ਬੀਮੇ ਦੀ ਮਨਜ਼ੂਰੀ ਸਾਡਾ ਕਾਊਂਟਰ।</span></p></div>
+<div style="background:var(--color-surface);border-radius:24px;padding:26px"><h3 style="font-size:20px;margin:0 0 8px"><span class="en">What to bring</span><span class="pa">ਕੀ ਲੈ ਕੇ ਆਉਣਾ ਹੈ</span></h3><p style="font-size:15.5px;color:var(--color-neutral-700);margin:0"><span class="en">Angiography CD and report, ECG, echo, recent blood tests and your current prescription.</span><span class="pa">CD, ECG, ਈਕੋ, ਟੈਸਟ।</span></p></div>
 </div>
 </section>
 
@@ -478,7 +461,7 @@ header > div { padding-left: 0 !important; padding-right: 0 !important; }
 <div style="max-width:1360px;margin:0 auto;padding:clamp(44px,5vw,72px) var(--nhs-gut) 0">
 
 <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:end;padding-bottom:clamp(28px,3.5vw,44px);border-bottom:1px solid color-mix(in srgb,var(--color-neutral-100) 16%,transparent)">
-<h2 style="font-family:var(--font-heading);font-size:clamp(26px,3.4vw,44px);line-height:1.05;letter-spacing:-.03em;margin:0;color:#fff;max-width:18ch"><span class="en">Talk to an orthopaedic surgeon before you decide.</span><span class="pa">ਫ਼ੈਸਲਾ ਲੈਣ ਤੋਂ ਪਹਿਲਾਂ ਡਾਕਟਰ ਨਾਲ ਗੱਲ ਕਰੋ।</span></h2>
+<h2 style="font-family:var(--font-heading);font-size:clamp(26px,3.4vw,44px);line-height:1.05;letter-spacing:-.03em;margin:0;color:#fff;max-width:18ch"><span class="en">Talk to a cardiologist before you decide.</span><span class="pa">ਫ਼ੈਸਲਾ ਲੈਣ ਤੋਂ ਪਹਿਲਾਂ ਡਾਕਟਰ ਨਾਲ ਗੱਲ ਕਰੋ।</span></h2>
 <div style="display:flex;flex-wrap:wrap;gap:10px">
 <a href="#book" class="btn btn-primary" style="border-radius:999px;padding:14px 24px;font-size:15px"><span class="en">Request an appointment</span><span class="pa">ਬਿਨਤੀ ਭੇਜੋ</span></a>
 <a href="tel:+911814707700" class="btn" style="border-radius:999px;padding:14px 24px;font-size:15px;border:1px solid color-mix(in srgb,var(--color-accent-300) 50%,transparent);color:var(--color-accent-300)"><span class="en">Emergency 24×7</span><span class="pa">ਐਮਰਜੈਂਸੀ 24 ਘੰਟੇ</span></a>
@@ -501,11 +484,11 @@ header > div { padding-left: 0 !important; padding-right: 0 !important; }
 <div style="display:flex;flex-direction:column;gap:12px">
 <h3 style="font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-300);margin:0;font-weight:700"><span class="en">Departments</span><span class="pa">ਵਿਭਾਗ</span></h3>
 <div style="display:flex;flex-direction:column;gap:9px;font-size:14.5px">
-<a href="../Cardiology/index.html" style="color:var(--color-neutral-400);text-decoration:none">Cardiology</a>
-<a href="../Orthopaedics/index.html" style="color:var(--color-neutral-400);text-decoration:none">Orthopaedics</a>
-<a href="../Nephrology/index.html" style="color:var(--color-neutral-400);text-decoration:none">Nephrology</a>
-<a href="../Urology/index.html" style="color:var(--color-neutral-400);text-decoration:none">Urology</a>
-<a href="../Gastroenterology/index.html" style="color:var(--color-neutral-400);text-decoration:none">Gastroenterology</a>
+<a href="../cardiology/index.html" style="color:var(--color-neutral-400);text-decoration:none">Cardiology</a>
+<a href="../orthopaedics/index.html" style="color:var(--color-neutral-400);text-decoration:none">Orthopaedics</a>
+<a href="../nephrology/index.html" style="color:var(--color-neutral-400);text-decoration:none">Nephrology</a>
+<a href="../urology/index.html" style="color:var(--color-neutral-400);text-decoration:none">Urology</a>
+<a href="../gastroenterology/index.html" style="color:var(--color-neutral-400);text-decoration:none">Gastroenterology</a>
 </div>
 </div>
 <div style="display:flex;flex-direction:column;gap:12px">
