@@ -6,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Thank You | NHS Hospital</title>
   <script src="../support.js"></script>
+  <!-- Event snippet for Submit lead form conversion page -->
+  <script>
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18376013385/V8APCP-gxeccEMnsrrpE',
+      'value': 1.0,
+      'currency': 'INR'
+    });
+  </script>
 </head>
 
 <body>
@@ -41,7 +49,7 @@
           --shadow-md: 0 8px 24px color-mix(in srgb, #171310 10%, transparent);
           --nhs-gut: clamp(20px, 5vw, 40px);
         }
-        
+
         body {
           margin: 0;
           font-size: 17px;
@@ -73,11 +81,20 @@
           box-shadow: 0 6px 20px color-mix(in srgb, var(--color-accent) 50%, transparent);
           transform: translateY(-2px);
         }
-        
-        [data-lang="en"] .pa { display: none !important; }
-        [data-lang="pa"] .en { display: none !important; }
-        .pa { font-family: "Noto Sans Gurmukhi", var(--font-body); line-height: 1.8; }
-        
+
+        [data-lang="en"] .pa {
+          display: none !important;
+        }
+
+        [data-lang="pa"] .en {
+          display: none !important;
+        }
+
+        .pa {
+          font-family: "Noto Sans Gurmukhi", var(--font-body);
+          line-height: 1.8;
+        }
+
         header {
           background: color-mix(in srgb, var(--color-bg) 90%, transparent);
           backdrop-filter: blur(12px);
@@ -86,7 +103,7 @@
           top: 0;
           z-index: 50;
         }
-        
+
         .thank-you-card {
           background: var(--color-surface);
           border-radius: 32px;
@@ -111,23 +128,30 @@
         }
       </style>
     </helmet>
-    <div data-lang="{{ lang }}" style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);min-height:100vh;display:flex;flex-direction:column">
-      
+    <div data-lang="{{ lang }}"
+      style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);min-height:100vh;display:flex;flex-direction:column">
+
       <!-- Top Bar -->
       <div style="background:var(--color-neutral-900);color:var(--color-neutral-200);font-size:13px">
-        <div style="max-width:1360px;margin:0 auto;padding:9px 24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
-          <span><span class="en">Near Sports College, 300 m from Kapurthala Chowk, Jalandhar</span><span class="pa">ਸਪੋਰਟਸ ਕਾਲਜ ਦੇ ਨੇੜੇ, ਕਪੂਰਥਲਾ ਚੌਕ ਤੋਂ 300 ਮੀਟਰ, ਜਲੰਧਰ</span></span>
-          <a href="tel:+911814707700" style="color:var(--color-accent-300);text-decoration:none;font-weight:700"><span class="en">Emergency 24×7 · 0181-4707700</span><span class="pa">24 ਘੰਟੇ ਐਮਰਜੈਂਸੀ · 0181-4707700</span></a>
+        <div
+          style="max-width:1360px;margin:0 auto;padding:9px 24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+          <span><span class="en">Near Sports College, 300 m from Kapurthala Chowk, Jalandhar</span><span
+              class="pa">ਸਪੋਰਟਸ ਕਾਲਜ ਦੇ ਨੇੜੇ, ਕਪੂਰਥਲਾ ਚੌਕ ਤੋਂ 300 ਮੀਟਰ, ਜਲੰਧਰ</span></span>
+          <a href="tel:+911814707700" style="color:var(--color-accent-300);text-decoration:none;font-weight:700"><span
+              class="en">Emergency 24×7 · 0181-4707700</span><span class="pa">24 ਘੰਟੇ ਐਮਰਜੈਂਸੀ · 0181-4707700</span></a>
         </div>
       </div>
 
       <!-- Header -->
       <header style="padding:14px 24px;">
-        <div style="max-width:1360px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px">
-          <a href="../" style="display:flex;align-items:center;background:var(--color-neutral-900);border-radius:999px;padding:8px 16px;">
+        <div
+          style="max-width:1360px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px">
+          <a href="../"
+            style="display:flex;align-items:center;background:var(--color-neutral-900);border-radius:999px;padding:8px 16px;">
             <img src="../assets/logo.png" alt="NHS Hospital, Jalandhar" style="height:30px;width:auto">
           </a>
-          <div role="group" aria-label="Language" style="display:flex;gap:2px;padding:3px;border-radius:999px;background:var(--color-neutral-200);">
+          <div role="group" aria-label="Language"
+            style="display:flex;gap:2px;padding:3px;border-radius:999px;background:var(--color-neutral-200);">
             <button type="button" onClick="{{ setEn }}" aria-pressed="{{ isEn }}" style="{{ enBtn }}">English</button>
             <button type="button" onClick="{{ setPa }}" aria-pressed="{{ isPa }}" style="{{ paBtn }}">ਪੰਜਾਬੀ</button>
           </div>
@@ -138,18 +162,22 @@
       <main style="flex:1;padding:0 24px;">
         <div class="thank-you-card">
           <div class="thank-you-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
               <polyline points="22 4 12 14.01 9 11.01"></polyline>
             </svg>
           </div>
-          <h1 style="font-family:var(--font-heading);font-size:clamp(32px, 5vw, 48px);margin:0 0 16px;color:var(--color-text);letter-spacing:-.02em;">
+          <h1
+            style="font-family:var(--font-heading);font-size:clamp(32px, 5vw, 48px);margin:0 0 16px;color:var(--color-text);letter-spacing:-.02em;">
             <span class="en">Request Received</span>
             <span class="pa">ਬਿਨਤੀ ਮਿਲ ਗਈ ਹੈ</span>
           </h1>
           <p style="font-size:18px;color:var(--color-neutral-700);margin:0 0 32px;text-wrap:balance;">
-            <span class="en">Thank you for reaching out. Our nephrology team will review your details and contact you shortly.</span>
-            <span class="pa">ਸੰਪਰਕ ਕਰਨ ਲਈ ਧੰਨਵਾਦ। ਸਾਡੀ ਗੁਰਦਾ ਰੋਗਾਂ ਦੀ ਟੀਮ ਤੁਹਾਡੀ ਜਾਣਕਾਰੀ ਦੀ ਜਾਂਚ ਕਰਕੇ ਜਲਦੀ ਹੀ ਸੰਪਰਕ ਕਰੇਗੀ।</span>
+            <span class="en">Thank you for reaching out. Our nephrology team will review your details and contact you
+              shortly.</span>
+            <span class="pa">ਸੰਪਰਕ ਕਰਨ ਲਈ ਧੰਨਵਾਦ। ਸਾਡੀ ਗੁਰਦਾ ਰੋਗਾਂ ਦੀ ਟੀਮ ਤੁਹਾਡੀ ਜਾਣਕਾਰੀ ਦੀ ਜਾਂਚ ਕਰਕੇ ਜਲਦੀ ਹੀ ਸੰਪਰਕ
+              ਕਰੇਗੀ।</span>
           </p>
           <a href="./" class="btn btn-primary" style="border-radius:999px;padding:14px 28px;font-size:16px;">
             <span class="en">Return to Nephrology</span>
@@ -161,7 +189,8 @@
       <!-- Footer Minimal -->
       <footer style="background:var(--color-neutral-900);color:var(--color-neutral-300);">
         <div style="max-width:1360px;margin:0 auto;padding:40px var(--nhs-gut);text-align:center;">
-          <p style="font-size:13px;color:var(--color-neutral-600);margin:0">© 2026 Nasa &amp; Hub Superspeciality Hospital, Jalandhar.</p>
+          <p style="font-size:13px;color:var(--color-neutral-600);margin:0">© 2026 Nasa &amp; Hub Superspeciality
+            Hospital, Jalandhar.</p>
         </div>
       </footer>
     </div>
@@ -198,4 +227,5 @@ class Component extends DCLogic {
 }
 </script>
 </body>
+
 </html>
